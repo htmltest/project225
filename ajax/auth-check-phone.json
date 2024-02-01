@@ -1,0 +1,7 @@
+{
+    "status"            : true,
+    "errorMessage"      : "Введен неверный номер телефона",
+    "needRegistration"  : false,
+    "timeNewSMS"        : 5,
+    "linkNewSMS"        : "ajax/auth-new-sms.json"
+}

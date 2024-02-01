@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>ПСБ</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+
+            <!-- auth -->
+            <div class="auth">
+                <div class="auth-header">
+                    <div class="auth-logo"><img src="images/logo.svg" alt=""></div>
+                    <a href="#" class="auth-close"><svg><use xlink:href="images/sprite.svg#auth-close"></use></svg></a>
+                </div>
+
+                <div class="auth-container visible">
+                    <div class="registration">
+                        <div class="auth-title">Регистрация</div>
+                        <div class="registration-form">
+                            <form action="#" method="post">
+                                <div class="form-input"><span class="form-input-label">Фамилия</span><input type="text" name="lastname" value=""></div>
+                                <div class="form-input"><span class="form-input-label">Имя</span><input type="text" name="firstname" value=""></div>
+                                <div class="form-input"><span class="form-input-label">Отчество</span><input type="text" name="middlename" value=""></div>
+                                <div class="form-input"><span class="form-input-label">Номер полиса<span>*</span></span><input type="text" name="polis" value="" class="required"><div class="form-input-hint">Например: 1234-5678-9010-1112-1345</div></div>
+                                <div class="form-input form-input-date"><span class="form-input-label">Дата рождения <em>*</em></span><input type="text" name="birthday" value="" class="required birthday18"></div>
+                                <div class="form-input"><span class="form-input-label">Электронная почта</span><input type="text" name="email" value="" class="email"><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                <div class="registration-form-checkboxes">
+                                    <div class="form-checkbox">
+                                        <label><input type="checkbox" name="personal" class="required" /><span>Выражаю свое согласие ООО «ПСБ Страхование»<br> <a href="#">на обработку моих персональных данных</a></span></label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <label><input type="checkbox" name="medical" /><span>Выражаю свое согласие ООО «ПСБ Страхование»<br> <a href="#">на обработку моих медицинских данных</a></span></label>
+                                    </div>
+                                </div>
+                                <div class="registration-form-ctrl">
+                                    <div class="registration-form-help">
+                                        <div class="registration-form-help-container">
+                                            <div class="registration-form-help-link">Возникли проблемы?</div>
+                                            <div class="registration-form-help-popup">
+                                                <p>Возможные причины:</p>
+                                                <ol>
+                                                    <li>Вы&nbsp;не&nbsp;сообщили в&nbsp;банк новый номер телефона и&nbsp;код пришел на&nbsp;старый. Обратитесь по&nbsp;бесплатному номеру <a href="tel:+78007006543">8-800-700-65-43</a></li>
+                                                    <li>Проблемы у&nbsp;сотового оператора.<br> Обратитесь в&nbsp;службу его поддержки.</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-submit"><button type="submit" class="btn">Зарегистрироваться</button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- auth END -->
+
+        </div>
+        <!-- wrapper END -->
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>

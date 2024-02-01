@@ -1,0 +1,24 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad-1" y2="1" x2="0">
+              <stop offset="5%" stop-color="#FFFFFF" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+        </linearGradient>
+        <linearGradient id="grad-2" y2="1" x2="0">
+              <stop offset="5%" stop-color="#FFFFFF" stop-opacity="0.0" />
+              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1.0" />
+        </linearGradient>
+        <pattern id="pattern" x="0" y="0" width="100%" height="100%" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="100%" height="100%" fill="url(#grad-1)" />
+              <rect x="50%" y="0" width="50%" height="100%" fill="url(#grad-2)" />
+        </pattern>
+    </defs>
+
+    <circle cx="15" cy="15" r="13.75" stroke-width="2.5" stroke="url(#pattern)">
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 15 15;360 15 15" keyTimes="0;1"></animateTransform>
+    </circle>
+
+    <ellipse cx="15" cy="28.75" rx="1.25" ry="1.25" fill="#FFFFFF">
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 15 15;360 15 15" keyTimes="0;1"></animateTransform>
+    </ellipse>
+</svg>

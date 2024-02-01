@@ -1,0 +1,267 @@
+*,
+*::before,
+*::after {outline:none; box-sizing:border-box}
+
+html {min-width:375px; height:100%}
+
+body {min-width:375px; height:100%; margin:0; padding:0; font:500 15px/23px Arial, sans-serif; color:#5C5C73; background:#F8F8FC; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-anchor:none}
+.fonts-loaded body {font-family:Gilroy, sans-serif}
+
+a {outline:none; color:#E86630; text-decoration:none; transition:color 0.3s}
+@media screen and (min-width:1100px) {
+    a:hover {color:#ED885E}
+}
+
+img {border:none; max-width:100%; height:auto}
+iframe {border:none; max-width:100%}
+
+::-ms-clear {display:none}
+
+strong, b {font-weight:600}
+
+.btn {display:inline-flex; border-radius:8px; background:#E86630; margin:0; padding:0 30px; height:66px; outline:none; overflow:visible; border:none; text-decoration:none; box-sizing:border-box; color:#FFFFFF; align-items:center; justify-content:center; text-transform:uppercase; font:600 12px/15px Arial, sans-serif; letter-spacing:0.09em; -webkit-appearance:none; cursor:pointer; transition:background-color 0.3s}
+.fonts-loaded .btn {font-family:Gilroy, sans-serif}
+@media screen and (min-width:1100px) {
+    .btn:hover {background-color:#ED885E; color:#FFFFFF}
+}
+.btn:disabled {cursor:default; background-color:#F29D79}
+@media screen and (min-width:1100px) {
+    .btn:disabled:hover {background-color:#F29D79; color:#FFFFFF}
+}
+.btn svg {display:block; margin:0 10px 0 0; width:24px; height:24px; fill:#FFFFFF}
+.btn.loading {background-image:url(../images/loading.svg); background-repeat:no-repeat; background-position:center}
+.btn.loading svg {display:none}
+
+@media (max-width:767px) {
+    .btn.loading {background-size:24px 24px}
+    .btn {height:40px; font-size:11px; border-radius:4px}
+}
+
+.form-input {position:relative; margin:20px 0}
+.form-input-label {position:absolute; left:15px; top:20px; font-weight:600; font-size:20px; line-height:26px; color:#8D8DA6; transition:all 0.3s; z-index:1; pointer-events:none; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; right:54px}
+.form-input.focus .form-input-label {top:10px; font-size:11px; line-height:15px; letter-spacing:0.09em; text-transform:uppercase}
+.form-input-label span {color:#BC3F46}
+.form-input-clear {display:none; position:absolute; right:0; top:0; width:54px; height:66px; align-items:center; justify-content:center}
+.form-input-clear svg {display:block; width:14px; height:14px; fill:#A8A8BF}
+.form-input.focus .form-input-clear {display:flex}
+.form-input input:disabled+.form-input-clear,
+.form-input input:disabled+label.error+.form-input-clear {pointer-events:none}
+
+@media (max-width:767px) {
+    .form-input-label {top:21px; font-size:15px; line-height:19px; right:48px}
+    .form-input.focus .form-input-label {top:12px}
+    .form-input-clear {height:62px; width:48px}
+}
+
+.form-input.loading::before {content:""; position:absolute; z-index:2; left:0; top:0; right:0; bottom:0; background:url(../images/loading-inverse.svg) no-repeat center}
+
+.form-input input {position:relative; border:1px solid #E6E6EF; font:600 20px/26px Arial, sans-serif; color:#3E3E59; vertical-align:top; margin:0; padding:29px 53px 9px 14px; width:100%; height:66px; box-sizing:border-box; outline:none; border-radius:8px; background:#FFFFFF; -webkit-appearance:none; transition:border-color 0.3s}
+.fonts-loaded .form-input input {font-family:Gilroy, sans-serif}
+.form-input input.error {border-color:#BC3F46; color:#BC3F46}
+.form-input input:focus,
+.form-input textarea:focus {border-color:#E86630}
+.form-input label.error {display:block; color:#BC3F46; font-size:13px; line-height:18px; letter-spacing:0.02em; margin:5px 0 0 0}
+.form-input input:disabled {background:#F8F8FC; border-color:#E6E6EF; color:#A8A8BF}
+
+@media (max-width:767px) {
+    .form-input input {font-size:15px; line-height:19px; padding:30px 47px 11px 14px; height:62px}
+    .form-input label.error {margin:4px 0 0 0}
+}
+
+.form-input input:-webkit-autofill,
+.form-input input:-webkit-autofill:active,
+.form-input input:-webkit-autofill:focus,
+.form-input input:-webkit-autofill:hover {-webkit-text-fill-color:#3E3E59; caret-color:#3E3E59; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
+
+.form-input-date::after {content:""; width:20px; height:20px; position:absolute; right:20px; top:23px; background:url(../images/form-input-date.svg) no-repeat; background-size:100%; pointer-events:none}
+
+@media (max-width:767px) {
+    .form-input-date::after {top:21px}
+}
+
+.form-input-hint {margin:5px 0 0 0; font-size:13px; line-height:18px; letter-spacing:0.02em; color:#8D8DA6}
+
+.form-checkbox {margin:12px 0; user-select:none; display:flex; font-size:13px; line-height:20px; position:relative}
+.form-checkbox label {margin:0; cursor:pointer}
+.form-checkbox input {display:none}
+.form-checkbox span {display:block; padding:0 0 0 32px; position:relative}
+.form-checkbox span::before {content:""; display:block; position:absolute; left:0; top:0; width:20px; height:20px; border:1px solid #E6E6EF; background:#E6E6EF url(../images/checkbox.svg) no-repeat -999px -999px; border-radius:4px; transition:border-color 0.2s, background-color 0.2s}
+.form-checkbox label input:checked+span::before,
+.form-checkbox label input:checked+label+span::before {background-position:center; background-color:#E86630}
+.form-checkbox label input.error+span,
+.form-checkbox label input.error+label.error+span {padding-bottom:23px}
+.form-checkbox label input.error+span::before,
+.form-checkbox label input.error+label+span::before {border-color:#BC3F46}
+.form-checkbox label.error {position:absolute; left:0; bottom:0; right:0; color:#BC3F46; font-size:13px; line-height:18px; letter-spacing:0.02em}
+.form-checkbox span em {font-style:normal; color:#ff6200}
+.form-checkbox span a {color:#5C5C73; text-decoration:underline}
+@media screen and (min-width:1100px) {
+    .form-checkbox span a:hover {text-decoration:none}
+}
+
+@media (max-width:767px) {
+    .form-checkbox span br {display:none}
+}
+
+
+.form-submit .btn {display:flex; width:100%}
+
+.container {margin:0 auto; max-width:1100px; padding:0 20px}
+
+.wrapper {display:flex; flex-direction:column; width:100%; min-width:375px; min-height:100%; position:relative; overflow:hidden}
+.wrapper-inner {height:100%; flex:1}
+
+.auth {display:flex; width:100%; flex:1; height:100%; padding:128px 0; align-items:center; justify-content:center; background:url(../images/auth-bg.png) no-repeat center top; position:relative; overflow:auto}
+
+@media (max-width:1680px) {
+    .auth {background-image:url(../images/auth-bg-desktop.png)}
+}
+
+@media (max-width:1099px) {
+    .auth {padding:120px 0; background-image:url(../images/auth-bg-tablet.png)}
+}
+
+@media (max-width:767px) {
+    .auth {padding:90px 0; background-image:url(../images/auth-bg-mobile.png)}
+}
+
+.auth-header {position:absolute; left:40px; top:40px; right:40px; display:flex; align-items:center; justify-content:space-between}
+.auth-logo {min-width:34px; max-width:34px}
+.auth-logo img {display:block; width:100%}
+.auth-close {display:flex; min-width:48px; max-width:48px; height:48px; align-items:center; justify-content:center; border-radius:50%; background:#E6E6EF; transition:background 0.3s}
+@media screen and (min-width:1100px) {
+    .auth-close:hover {background:#A8A8BF}
+}
+.auth-close svg {display:block; width:24px; height:24px; fill:#5C5C73}
+
+@media (max-width:1099px) {
+    .auth-header {left:36px; top:36px; right:36px}
+}
+
+@media (max-width:767px) {
+    .auth-header {left:15px; top:15px; right:15px}
+    .auth-close {min-width:36px; max-width:36px; height:36px}
+    .auth-close svg {width:18px; height:18px}
+}
+
+.auth-container {display:none; min-width:696px; max-width:696px; padding:24px 30px; background:#FFFFFF; border-radius:12px; box-shadow:0px 10px 30px 0px rgba(0, 0, 0, 0.05), 0px 0px 10px 0px rgba(0, 0, 0, 0.02)}
+.auth-container.visible {display:block}
+.auth-title {text-align:center; font-weight:600; font-size:24px; line-height:31px; color:#3E3E59}
+.auth-form {margin:30px 0 0 0}
+.auth-form form {display:flex; margin:0; padding:0}
+.auth-form .form-input {width:100%; margin:0}
+.auth-form .form-submit {margin:0 0 0 10px; min-width:76px; max-width:76px}
+.auth-form .form-submit .btn svg {margin:0; width:16px; height:16px}
+.auth-form .form-submit .btn span {display:none}
+
+@media (max-width:767px) {
+    .auth-container {min-width:345px; max-width:345px; padding:16px}
+    .auth-form form {display:block}
+    .auth-form .form-submit {margin:10px 0 0 0; min-width:0; max-width:none}
+    .auth-form .form-submit .btn svg {display:none}
+    .auth-form .form-submit .btn span {display:inline}
+    .auth-form .form-submit .btn.loading span {display:none}
+}
+
+.auth-back {display:flex; position:relative; margin:0 0 -8px 0; font-size:13px; line-height:18px}
+.auth-back a {display:flex; align-items:center; color:#8D8DA6; opacity:0.6; transition:opacity 0.3s}
+@media screen and (min-width:1100px) {
+    .auth-back a:hover {opacity:1}
+}
+.auth-back a svg {display:block; width:12px; height:12px; margin:-2px 10px 0 0; fill:#8D8DA6}
+
+@media (max-width:767px) {
+    .auth-back {margin:0 0 2px 0}
+}
+
+.auth-code-text {margin:12px 0 0 0; text-align:center}
+.auth-code-form {max-width:340px; margin:20px auto 0 auto}
+.auth-code-form form {margin:0; padding:0}
+.auth-code-new {margin:20px 0 0 0; display:flex; justify-content:center; color:#8D8DA6}
+.auth-code-new a {display:block; border-bottom:1px dashed #E86630; transition:color 0.3s, border-color 0.3s}
+@media screen and (min-width:1100px) {
+    .auth-code-new a:hover {border-bottom-color:transparent}
+}
+.auth-code-not {margin:20px 0 0 0; display:flex; justify-content:center}
+.auth-code-not-container {position:relative; cursor:pointer}
+.auth-code-not-link {border-bottom:1px dashed #E86630; color:#E86630; transition:color 0.3s, border-color 0.3s}
+@media screen and (min-width:1100px) {
+    .auth-code-not-container:hover .auth-code-not-link {color:#ED885E; border-bottom-color:transparent}
+}
+
+@media (max-width:767px) {
+    .auth-code-text {margin:12px auto 0 auto; max-width:250px}
+    .auth-code-form {max-width:none}
+}
+
+.auth-code-not-popup {display:none; position:absolute; z-index:2; left:50%; bottom:39px; width:510px; margin:0 0 0 -255px; padding:20px; background:#5C5C73; border-radius:6px; color:#FFFFFF}
+@media screen and (min-width:1100px) {
+    .auth-code-not-container:hover .auth-code-not-popup {display:block}
+}
+.auth-code-not-popup::before {content:""; position:absolute; left:50%; bottom:-9px; width:27px; height:9px; margin:0 0 0 -13.5px; background:url(../images/auth-code-not-popup.svg) no-repeat center bottom}
+.auth-code-not-popup::after {content:""; position:absolute; left:0; bottom:-39px; right:0; height:39px}
+.auth-code-not-popup p {margin:5px 0}
+.auth-code-not-popup ol {margin:5px 0; padding:0; list-style:none; counter-reset:point}
+.auth-code-not-popup ol li {margin:5px 0; padding:0 0 0 30px; position:relative}
+.auth-code-not-popup ol li::before {content:counter(point)"."; counter-increment:point 1; position:absolute; left:0; top:0; color:#FFFFFF}
+.auth-code-not-popup a {color:#FFFFFF; border-bottom:1px dashed #FFFFFF; transition:border-color 0.3s; white-space:nowrap}
+@media screen and (min-width:1100px) {
+    .auth-code-not-popup a:hover {border-bottom-color:transparent}
+}
+.auth-code-not-popup *:first-child {margin-top:0}
+.auth-code-not-popup *:last-child {margin-bottom:0}
+
+@media (max-width:767px) {
+    .auth-code-not-popup {width:345px; margin:0 0 0 -172.5px}
+    .auth-code-not-popup::after {display:none}
+    .auth-code-not-link {cursor:pointer}
+    .auth-code-not-container.open .auth-code-not-popup {display:block}
+}
+
+.registration {margin:0 auto; max-width:480px; padding:10px 0 0 0}
+.registration-form {margin:24px 0 0 0}
+.registration-form form {margin:0; padding:0}
+.registration-form-checkboxes {margin:24px 0 0 0}
+.registration-form-ctrl {margin:24px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.registration-form-help {display:flex}
+.registration-form-help-container {position:relative; cursor:pointer}
+.registration-form-help-link {border-bottom:1px dashed #E86630; color:#E86630; transition:color 0.3s, border-color 0.3s}
+@media screen and (min-width:1100px) {
+    .registration-form-help-container:hover .registration-form-help-link {color:#ED885E; border-bottom-color:transparent}
+}
+
+@media (max-width:767px) {
+    .registration {max-width:none; padding:0; margin:0 -2.5px}
+    .registration-form-ctrl {display:block}
+    .registration-form-help-link {cursor:pointer}
+}
+
+.registration-form-help-popup {display:none; position:absolute; z-index:2; left:50%; bottom:39px; width:510px; margin:0 0 0 -255px; padding:20px; background:#5C5C73; border-radius:6px; color:#FFFFFF}
+@media screen and (min-width:1100px) {
+    .registration-form-help-container:hover .registration-form-help-popup {display:block}
+}
+.registration-form-help-popup::before {content:""; position:absolute; left:50%; bottom:-9px; width:27px; height:9px; margin:0 0 0 -13.5px; background:url(../images/auth-code-not-popup.svg) no-repeat center bottom}
+.registration-form-help-popup::after {content:""; position:absolute; left:0; bottom:-39px; right:0; height:39px}
+.registration-form-help-popup p {margin:5px 0}
+.registration-form-help-popup ol {margin:5px 0; padding:0; list-style:none; counter-reset:point}
+.registration-form-help-popup ol li {margin:5px 0; padding:0 0 0 30px; position:relative}
+.registration-form-help-popup ol li::before {content:counter(point)"."; counter-increment:point 1; position:absolute; left:0; top:0; color:#FFFFFF}
+.registration-form-help-popup a {color:#FFFFFF; border-bottom:1px dashed #FFFFFF; transition:border-color 0.3s; white-space:nowrap}
+@media screen and (min-width:1100px) {
+    .registration-form-help-popup a:hover {border-bottom-color:transparent}
+}
+.registration-form-help-popup *:first-child {margin-top:0}
+.registration-form-help-popup *:last-child {margin-bottom:0}
+
+@media (max-width:767px) {
+    .registration-form-help-popup {left:0; width:345px; margin:0 0 0 -15px}
+    .registration-form-help-container.open .registration-form-help-popup {display:block}
+    .registration-form-help-popup::before {left:90px}
+    .registration-form-help-popup::after {display:none}
+}
+
+.registration-form-ctrl .form-submit {margin:0}
+
+@media (max-width:767px) {
+    .registration-form-ctrl .form-submit {margin:20px 0 0 0}
+}

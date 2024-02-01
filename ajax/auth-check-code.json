@@ -1,0 +1,5 @@
+{
+    "status"            : true,
+    "errorMessage"      : "Введен неверный код",
+    "linkSuccess"       : "index.html"
+}

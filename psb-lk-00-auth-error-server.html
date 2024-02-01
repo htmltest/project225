@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>ПСБ</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+
+            <!-- auth -->
+            <div class="auth">
+                <div class="auth-header">
+                    <div class="auth-logo"><img src="images/logo.svg" alt=""></div>
+                    <a href="#" class="auth-close"><svg><use xlink:href="images/sprite.svg#auth-close"></use></svg></a>
+                </div>
+
+                <div class="auth-container visible" id="auth-phone">
+                    <div class="auth-title">Вход в&nbsp;ДМС</div>
+                    <div class="auth-form">
+                        <form method="post" data-urlCheckPhone="ajax/auth-check-phone-server.json" data-urlRegistration="psb-lk-00-registration.html">
+                            <div class="form-input"><span class="form-input-label">Мобильный телефон</span><input type="text" name="phone" value="" class="required phoneRU" autofocus><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                            <div class="form-submit"><button type="submit" class="btn"><svg><use xlink:href="images/sprite.svg#auth-submit"></use></svg><span>Войти</span></button></div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="auth-container" id="auth-code">
+                    <div class="auth-back"><a href="#"><svg><use xlink:href="images/sprite.svg#auth-back"></use></svg>Назад</a></div>
+                    <div class="auth-title">Введите код</div>
+                    <div class="auth-code-text">Отправили код подтверждения на&nbsp;номер <span></span></div>
+                    <div class="auth-code-form">
+                        <form method="post" data-urlCheckCode="ajax/auth-check-code.json">
+                            <div class="form-input"><span class="form-input-label">Код</span><input type="text" name="code" value="" class="required codeSMS"></div>
+                        </form>
+                    </div>
+                    <div class="auth-code-new" data-default="Отправим код повторно через" data-newlink="Отправить еще раз"></div>
+                    <div class="auth-code-not">
+                        <div class="auth-code-not-container">
+                            <div class="auth-code-not-link">Не приходит СМС</div>
+                            <div class="auth-code-not-popup">
+                                <p>Возможные причины:</p>
+                                <ol>
+                                    <li>Вы&nbsp;не&nbsp;сообщили в&nbsp;банк новый номер телефона и&nbsp;код пришел на&nbsp;старый. Обратитесь по&nbsp;бесплатному номеру <a href="tel:+78007006543">8-800-700-65-43</a></li>
+                                    <li>Проблемы у&nbsp;сотового оператора.<br> Обратитесь в&nbsp;службу его поддержки.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- auth END -->
+
+        </div>
+        <!-- wrapper END -->
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
