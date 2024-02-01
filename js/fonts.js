@@ -22,11 +22,15 @@ if (sessionStorage.fontsLoaded) {
         var font600 = new FontFaceObserver('Gilroy', {
             weight: '600'
         });
+        var font700 = new FontFaceObserver('Gilroy', {
+            weight: 'bold'
+        });
 
         Promise.all([
             font400.load(),
             font500.load(),
-            font600.load()
+            font600.load(),
+            font700.load()
         ]).then(function () {
             html.classList.add('fonts-loaded');
             sessionStorage.fontsLoaded = true;
