@@ -24,7 +24,20 @@
                     <div class="header-top">
                         <div class="container">
                             <div class="header-logo"><img src="images/header-logo.svg" alt=""></div>
-                            <div class="header-user"><em><svg><use xlink:href="images/sprite.svg#icon-user-mobile"></use></svg></em>Сергей<span><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></span></div>
+                            <div class="header-user">
+                                <div class="header-user-link"><em><svg><use xlink:href="images/sprite.svg#icon-user-mobile"></use></svg></em><a href="#">Сергей</a><span><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></span></div>
+                                <div class="header-user-menu">
+                                    <ul>
+                                        <li class="active"><a href="#">Рабочий стол</a></li>
+                                        <li><a href="#">Документы</a></li>
+                                        <li><a href="#">Путешественникам</a></li>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Профиль</a></li>
+                                        <li><a href="#">Контакты</a></li>
+                                        <li class="header-user-logout"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
+                                    </ul>
+                                </div>
+                            </div>
                             <a href="#" class="menu-mobile-link"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg></a>
                         </div>
                     </div>
@@ -34,9 +47,10 @@
                                 <li class="active"><a href="#"><svg><use xlink:href="images/sprite.svg#icon-home"></use></svg><span>Рабочий стол</span></a></li>
                                 <li><a href="#">Документы</a></li>
                                 <li><a href="#">Путешественникам</a></li>
+                                <li><a href="#">FAQ</a></li>
                                 <li><a href="#">Профиль</a></li>
                                 <li><a href="#">Контакты</a></li>
-                                <li class="header-nav-mobile"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
+                                <li class="header-nav-logout"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
                             </ul>
                         </div>
                     </div>
@@ -47,19 +61,6 @@
 
                     <!-- dashboard -->
                     <div class="dashboard">
-
-                        <!-- main polis -->
-                        <div class="main-polis">
-                            <div class="main-polis-header">
-                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
-                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
-                            </div>
-                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
-                            <div class="main-polis-ctrl">
-                                <div class="main-polis-ctrl-more"><a href="#"><svg><use xlink:href="images/sprite.svg#main-polis-more"></use></svg>+2 полиса членов семьи</a></div>
-                            </div>
-                        </div>
-                        <!-- main polis END -->
 
                         <!-- dashboard links -->
                         <div class="dashboard-links">
@@ -87,38 +88,193 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <!-- dashboard links END -->
 
-                            <div class="dashboard-links-group">
-                                <div class="dashboard-links-group-title">Дополнительно</div>
-                                <div class="dashboard-links-group-content">
-                                    <div class="dashboard-links-item">
-                                        <a href="#">
-                                            <div class="dashboard-links-item-content">
-                                                <div class="dashboard-links-item-title">консультация<br> врача онлайн</div>
-                                            </div>
-                                            <img src="images/dashboard-link-3.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="dashboard-links-item">
-                                        <a href="#">
-                                            <div class="dashboard-links-item-content">
-                                                <div class="dashboard-links-item-title">Доступные мне клиники</div>
-                                            </div>
-                                            <img src="images/dashboard-link-4.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="dashboard-links-item">
-                                        <a href="#">
-                                            <div class="dashboard-links-item-content">
-                                                <div class="dashboard-links-item-title">Гарантийные письма</div>
-                                            </div>
-                                            <img src="images/dashboard-link-5.png" alt="">
-                                        </a>
+                        <!-- main polises -->
+                        <div class="main-polises">
+                            <div class="main-polises-title">Договоры</div>
+
+                            <!-- main polis -->
+                            <div class="main-polis main-polis-prime">
+                                <div class="main-polis-prime-title"><span>Основной полис</span></div>
+                                <div class="main-polis-header">
+                                    <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                    <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                </div>
+                                <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                <div class="main-polis-ctrl">
+                                    <div class="main-polis-ctrl-more"><a href="#"><svg><use xlink:href="images/sprite.svg#main-polis-more"></use></svg>+2 полиса членов семьи</a></div>
+                                </div>
+                            </div>
+                            <!-- main polis END -->
+
+                            <!-- dashboard links -->
+                            <div class="dashboard-links">
+                                <div class="dashboard-links-group dashboard-links-group-add">
+                                    <div class="dashboard-links-group-content">
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">консультация<br> врача онлайн</div>
+                                                </div>
+                                                <img src="images/dashboard-link-3.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">Доступные мне клиники</div>
+                                                </div>
+                                                <img src="images/dashboard-link-4.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">Гарантийные письма</div>
+                                                </div>
+                                                <img src="images/dashboard-link-5.png" alt="">
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- dashboard links END -->
+
+                            <!-- main polis -->
+                            <div class="main-polis">
+                                <div class="main-polis-header">
+                                    <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                    <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                </div>
+                                <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                <div class="main-polis-ctrl">
+                                    <div class="main-polis-ctrl-more"><a href="#"><svg><use xlink:href="images/sprite.svg#main-polis-more"></use></svg>+2 полиса членов семьи</a></div>
+                                </div>
+                            </div>
+                            <!-- main polis END -->
+
+                            <!-- dashboard links -->
+                            <div class="dashboard-links">
+                                <div class="dashboard-links-group dashboard-links-group-add">
+                                    <div class="dashboard-links-group-content">
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">консультация<br> врача онлайн</div>
+                                                </div>
+                                                <img src="images/dashboard-link-3.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">Доступные мне клиники</div>
+                                                </div>
+                                                <img src="images/dashboard-link-4.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">Гарантийные письма</div>
+                                                </div>
+                                                <img src="images/dashboard-link-5.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard links END -->
+
                         </div>
-                        <!-- dashboard links END -->
+                        <!-- main polises END -->
+
+                        <!-- archive polises -->
+                        <div class="archive-polises">
+                            <div class="archive-polises-title">Архивные договоры</div>
+
+                            <!-- main polis -->
+                            <div class="main-polis">
+                                <div class="main-polis-header">
+                                    <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                    <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                </div>
+                                <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                <div class="main-polis-ctrl">
+                                    <div class="main-polis-ctrl-more"><a href="#"><svg><use xlink:href="images/sprite.svg#main-polis-more"></use></svg>+2 полиса членов семьи</a></div>
+                                </div>
+                            </div>
+                            <!-- main polis END -->
+
+                            <!-- dashboard links -->
+                            <div class="dashboard-links">
+                                <div class="dashboard-links-group dashboard-links-group-add">
+                                    <div class="dashboard-links-group-content">
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">Доступные мне клиники</div>
+                                                </div>
+                                                <img src="images/dashboard-link-4.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">Гарантийные письма</div>
+                                                </div>
+                                                <img src="images/dashboard-link-5.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard links END -->
+
+                            <!-- main polis -->
+                            <div class="main-polis">
+                                <div class="main-polis-header">
+                                    <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                    <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                </div>
+                                <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                <div class="main-polis-ctrl">
+                                    <div class="main-polis-ctrl-more"><a href="#"><svg><use xlink:href="images/sprite.svg#main-polis-more"></use></svg>+2 полиса членов семьи</a></div>
+                                </div>
+                            </div>
+                            <!-- main polis END -->
+
+                            <!-- dashboard links -->
+                            <div class="dashboard-links">
+                                <div class="dashboard-links-group dashboard-links-group-add">
+                                    <div class="dashboard-links-group-content">
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">Доступные мне клиники</div>
+                                                </div>
+                                                <img src="images/dashboard-link-4.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="dashboard-links-item">
+                                            <a href="#">
+                                                <div class="dashboard-links-item-content">
+                                                    <div class="dashboard-links-item-title">Гарантийные письма</div>
+                                                </div>
+                                                <img src="images/dashboard-link-5.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard links END -->
+
+                        </div>
+                        <!-- main polises END -->
+
+                        <div class="main-polis-archive-link"><a href="#"><svg><use xlink:href="images/sprite.svg#main-polis-more"></use></svg><span>Показать архивные договоры</span><span>Скрыть архивные договоры</span></a></div>
 
                         <!-- dashboard events -->
                         <div class="dashboard-events">
@@ -188,6 +344,37 @@
                     </div>
                 </div>
             </footer>
+
+            <div class="apps">
+                <div class="apps-title">Скачать приложение<br> ПСБ&nbsp;Страхование</div>
+                <a href="#" class="apps-link"><img src="images/apps-google.svg" alt="">Google play</a>
+                <a href="#" class="apps-link"><img src="images/apps-store.svg" alt="">Appstore</a>
+                <a href="#" class="apps-close"><svg><use xlink:href="images/sprite.svg#apps-close"></use></svg></a>
+            </div>
+
+            <div class="notifications">
+                <div class="container">
+                    <div class="notifications-list">
+                        <div class="notifications-item">
+                            <div class="notifications-item-icon"><img src="images/notification-success.svg" alt=""></div>
+                            <div class="notifications-item-title">Полис выпущен</div>
+                            <div class="notifications-item-text">ОСАГО и&nbsp;стразование от&nbsp;несчастных случаев по&nbsp;специальной цене для клиентов ПСБ</div>
+                            <a href="#" class="notifications-item-close"><svg><use xlink:href="images/sprite.svg#apps-close"></use></svg></a>
+                        </div>
+                        <div class="notifications-item">
+                            <div class="notifications-item-icon"><img src="images/notification-info.svg" alt=""></div>
+                            <div class="notifications-item-title">Оформи ПСБ ОСАГО+</div>
+                            <a href="#" class="notifications-item-close"><svg><use xlink:href="images/sprite.svg#apps-close"></use></svg></a>
+                        </div>
+                        <div class="notifications-item">
+                            <div class="notifications-item-icon"><img src="images/notification-error.svg" alt=""></div>
+                            <div class="notifications-item-title">Произошла ошибка отправки формы</div>
+                            <div class="notifications-item-text">Попробуйте позднее</div>
+                            <a href="#" class="notifications-item-close"><svg><use xlink:href="images/sprite.svg#apps-close"></use></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <!-- wrapper END -->

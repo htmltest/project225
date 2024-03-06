@@ -267,7 +267,7 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if ($(e.target).hasClass('header-nav')) {
+        if ($(e.target).hasClass('header-user-menu')) {
             if ($('html').hasClass('menu-mobile-open')) {
                 $('html').removeClass('menu-mobile-open');
                 $('meta[name="viewport"]').attr('content', 'width=device-width');
@@ -320,6 +320,33 @@ $(document).ready(function() {
         });
         curForm.removeClass('editable');
         e.preventDefault();
+    });
+
+    $('.apps-close').click(function(e) {
+        $('.apps').fadeOut(function() {
+            $('.apps').remove();
+        });
+        e.preventDefault();
+    });
+
+    $('.main-polis-archive-link a').click(function(e) {
+        $('.main-polis-archive-link').toggleClass('active');
+        $('.archive-polises').slideToggle();
+        e.preventDefault();
+    });
+
+    $('.notifications-item-close').click(function(e) {
+        var curBlock = $(this).parent();
+        curBlock.fadeOut(function() {
+            curBlock.remove();
+        });
+        e.preventDefault();
+    });
+
+    $('.faq-item-title').click(function() {
+        var curItem = $(this).parent();
+        curItem.toggleClass('open');
+        curItem.find('.faq-item-content').slideToggle();
     });
 
 });

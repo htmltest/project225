@@ -28,7 +28,7 @@
                                 <div class="header-user-link"><em><svg><use xlink:href="images/sprite.svg#icon-user-mobile"></use></svg></em><a href="#">Сергей</a><span><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></span></div>
                                 <div class="header-user-menu">
                                     <ul>
-                                        <li><a href="#">Рабочий стол</a></li>
+                                        <li class="active"><a href="#">Рабочий стол</a></li>
                                         <li><a href="#">Документы</a></li>
                                         <li><a href="#">Путешественникам</a></li>
                                         <li><a href="#">FAQ</a></li>
@@ -44,7 +44,7 @@
                     <div class="header-nav">
                         <div class="container">
                             <ul>
-                                <li><a href="#"><svg><use xlink:href="images/sprite.svg#icon-home"></use></svg><span>Рабочий стол</span></a></li>
+                                <li class="active"><a href="#"><svg><use xlink:href="images/sprite.svg#icon-home"></use></svg><span>Рабочий стол</span></a></li>
                                 <li><a href="#">Документы</a></li>
                                 <li><a href="#">Путешественникам</a></li>
                                 <li><a href="#">FAQ</a></li>
@@ -59,20 +59,64 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="section-title">Телемедицинские консультации</div>
+                    <!-- dashboard -->
+                    <div class="dashboard">
 
-                    <!-- telemedicine -->
-                    <div class="telemedicine">
-                        <div class="telemedicine-content">
-                            <div class="telemedicine-title">Услуга телемедицинской консультации оказывается клиникой&nbsp;&mdash; партнером ООО&nbsp;&laquo;ПСБ Cтрахование&raquo;</div>
-                            <div class="telemedicine-links">
-                                <a href="#" class="btn btn-border"><img src="images/googleplay.svg" alt="">Google play</a>
-                                <a href="#" class="btn btn-border"><img src="images/appstore.svg" alt="">appstore</a>
+                        <!-- dashboard links -->
+                        <div class="dashboard-links">
+                            <div class="dashboard-links-group">
+                                <div class="dashboard-links-group-title">Получить медицинскую помощь</div>
+                                <div class="dashboard-links-group-content">
+                                    <div class="dashboard-links-item">
+                                        <a href="tel:+78005558182">
+                                            <div class="dashboard-links-item-content">
+                                                <div class="dashboard-links-item-title">Получить медицинскую помощь</div>
+                                                <div class="dashboard-links-item-regions">Москва, МО, Санкт-Петербург, ЛО</div>
+                                                <div class="dashboard-links-item-phone">8-800-555-81-82</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="dashboard-links-item">
+                                        <a href="tel:+78043338805">
+                                            <div class="dashboard-links-item-content">
+                                                <div class="dashboard-links-item-title">Получить медицинскую помощь</div>
+                                                <div class="dashboard-links-item-regions">Другие регионы России</div>
+                                                <div class="dashboard-links-item-phone">8-804-333-88-05</div>
+                                            </div>
+                                            <img src="images/dashboard-link-1.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="telemedicine-preview"><img src="images/telemedicine.jpg" alt=""></div>
+                        <!-- dashboard links END -->
+
+                        <!-- main polises -->
+                        <div class="main-polises">
+                            <div class="main-polises-loading"><svg><use xlink:href="images/sprite.svg#icon-info"></use></svg>Внимание! Идет загрузка данных договоров. Информация появится примерно через минуту.</div>
+                            <div class="main-polises-title">Договоры</div>
+
+                            <!-- main polis -->
+                            <div class="main-polis loading"></div>
+                            <!-- main polis END -->
+
+                            <!-- dashboard links -->
+                            <div class="dashboard-links">
+                                <div class="dashboard-links-group dashboard-links-group-add">
+                                    <div class="dashboard-links-group-content">
+                                        <div class="dashboard-links-item"><div class="loading"></div></div>
+                                        <div class="dashboard-links-item"><div class="loading"></div></div>
+                                        <div class="dashboard-links-item"><div class="loading"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard links END -->
+
+                        </div>
+                        <!-- main polises END -->
+
                     </div>
-                    <!-- telemedicine END -->
+                    <!-- dashboard END -->
 
                 </div>
                 <!-- container END -->
@@ -100,6 +144,13 @@
                     </div>
                 </div>
             </footer>
+
+            <div class="apps">
+                <div class="apps-title">Скачать приложение<br> ПСБ&nbsp;Страхование</div>
+                <a href="#" class="apps-link"><img src="images/apps-google.svg" alt="">Google play</a>
+                <a href="#" class="apps-link"><img src="images/apps-store.svg" alt="">Appstore</a>
+                <a href="#" class="apps-close"><svg><use xlink:href="images/sprite.svg#apps-close"></use></svg></a>
+            </div>
 
         </div>
         <!-- wrapper END -->
