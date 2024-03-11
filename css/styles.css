@@ -494,8 +494,18 @@ header {position:relative; z-index:20}
     .main-polises-loading svg {left:15px; top:15px}
 }
 
+@keyframes loading {
+    0% {transform:translateX(-100%)}
+    2.5% {transform:translateX(-100%)}
+    49.75% {transform:translateX(10%)}
+    50.25% {transform:translateX(10%)}
+    97.5% {transform:translateX(-100%)}
+    100% {transform:translateX(-100%)}
+}
+
 .main-polis {margin:20px 0 0 0; background:#FFFFFF; border-radius:12px; padding:24px; box-shadow:0px 4px 24px 0px rgba(0, 0, 0, 0.06)}
-.main-polis.loading {min-height:120px; background:linear-gradient(270deg, #F0F0F7 100%, #FFFFFF 121.75%, #F0F0F7 133.73%); box-shadow:none}
+.main-polis.loading {min-height:120px; background:#F0F0F7; box-shadow:none; position:relative; overflow:hidden}
+.main-polis.loading::before {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(270deg, #F0F0F7 0%, #FFFFFF 21%, #F0F0F7 100%); transform:translateX(-100%); animation:loading 4s infinite ease-out}
 .dashboard-links+.main-polis,
 .main-polis+.main-polis {margin-top:36px}
 .main-polis-prime {margin-top:53px}
@@ -544,7 +554,8 @@ header {position:relative; z-index:20}
 .dashboard-links-group-title {display:none}
 .dashboard-links-group-content {display:flex}
 .dashboard-links-item {padding:0 5px 10px 5px; flex-grow:1; width:100%}
-.dashboard-links-item .loading {min-height:84px; border-radius:12px; background:linear-gradient(270deg, #F0F0F7 100%, #FFFFFF 121.75%, #F0F0F7 133.73%)}
+.dashboard-links-item .loading {min-height:84px; border-radius:12px; background:#F0F0F7; position:relative; overflow:hidden}
+.dashboard-links-item .loading::before {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(270deg, #F0F0F7 0%, #FFFFFF 21%, #F0F0F7 100%); transform:translateX(-100%); animation:loading 4s infinite ease-out}
 .dashboard-links-item a {display:flex; align-items:center; padding:0 0 0 30px; position:relative; height:84px; background:#FFFFFF; border-radius:8px; text-decoration:none; color:#3E3E59; transition:box-shadow 0.2s; overflow:hidden}
 @media screen and (min-width:1100px) {
     .dashboard-links-item a:hover {box-shadow:0px 4px 24px 0px rgba(0, 0, 0, 0.06)}
@@ -791,7 +802,8 @@ header {position:relative; z-index:20}
 
 .guarantee-item {margin:20px 0 0 0; padding:24px; background:#FFFFFF; display:flex; align-items:flex-start; justify-content:space-between; border-radius:12px; box-shadow:0px 10px 30px 0px rgba(0, 0, 0, 0.05), 0px 0px 10px 0px rgba(0, 0, 0, 0.02)}
 .guarantee-item:first-child {margin:0}
-.guarantee-item.loading {min-height:126px; background:linear-gradient(270deg, #F0F0F7 100%, #FFFFFF 121.75%, #F0F0F7 133.73%); box-shadow:none}
+.guarantee-item.loading {min-height:126px; background:#F0F0F7; box-shadow:none; position:relative; overflow:hidden}
+.guarantee-item.loading::before {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(270deg, #F0F0F7 0%, #FFFFFF 21%, #F0F0F7 100%); transform:translateX(-100%); animation:loading 4s infinite ease-out}
 .guarantee-item-title {font-weight:600; font-size:24px; line-height:34px; letter-spacing:0.01em; color:#3E3E59}
 .guarantee-item.archive .guarantee-item-title {color:#8D8DA6}
 .guarantee-item-info {margin:12px 0 0 0; display:flex; align-items:flex-end}
