@@ -348,6 +348,10 @@ $(document).ready(function() {
         curItem.toggleClass('open');
         curItem.find('.faq-item-content').slideToggle();
     });
+    
+    $('.policy-pref-inner').click(function() {
+        $('html, body').animate({'scrollTop': $('.policy-form').offset().top - 40});
+    });
 
 });
 

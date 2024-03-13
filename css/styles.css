@@ -1057,7 +1057,7 @@ header {position:relative; z-index:20}
 
 .policy-prefs {margin:30px -10px -20px -10px; display:flex; flex-wrap:wrap}
 .policy-pref {display:flex; min-width:33.33%; max-width:33.33%; padding:0 10px 20px 10px}
-.policy-pref-inner {display:flex; flex-direction:column; width:100%; padding:24px; background:#EAE9F7; border-radius:8px; text-align:center}
+.policy-pref-inner {display:flex; flex-direction:column; width:100%; padding:24px; background:#EAE9F7; border-radius:8px; text-align:center; cursor:pointer}
 .policy-pref-icon {display:flex; min-height:120px; max-height:120px; align-items:center; justify-content:center}
 .policy-pref-icon img {display:block; max-height:100%}
 .policy-pref-text {margin:20px 0 0 0; font-size:17px; line-height:26px; color:#3E3E59}
