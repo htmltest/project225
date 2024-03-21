@@ -563,11 +563,13 @@ header {position:relative; z-index:20}
 .dashboard-links-item-title {font-weight:600; font-size:12px; line-height:18px; letter-spacing:0.09em; text-transform:uppercase}
 .dashboard-links-item-regions {font-weight:normal; font-size:12px; line-height:17px; letter-spacing:0.02em; color:#5C5C73}
 .dashboard-links-item-phone {margin:8px 0 0 0; font-size:14px; line-height:18px}
-.dashboard-links-item img {position:absolute; right:-10px; bottom:-10px}
+.dashboard-links-item img {position:absolute; right:0; bottom:0}
 
 @media (max-width:1099px) {
     .dashboard-links-group-content {flex-wrap:wrap}
     .dashboard-links-item {flex-grow:0; width:auto; min-width:50%; max-width:50%}
+    .dashboard-links-item img {right:-20px}
+    .dashboard-links-group-add .dashboard-links-item img {right:0}
 }
 
 @media (max-width:767px) {
@@ -772,7 +774,8 @@ header {position:relative; z-index:20}
 
 .tabs-menu {display:flex}
 .tabs-menu ul {display:flex; margin:0; padding:0; list-style:none; background:#F0F0F7; border-radius:6px; padding:2px}
-.tabs-menu ul li {margin:0; padding:0}
+.tabs-menu ul li {margin:0 0 0 2px; padding:0}
+.tabs-menu ul li:first-child {margin:0}
 .tabs-menu ul li::before {display:none}
 .tabs-menu ul li a {display:flex; height:43px; padding:0 24px; align-items:center; justify-content:center; color:#3E3E59; font-weight:500; font-size:15px; line-height:23px; letter-spacing:-0.01em; transition:background 0.2s, box-shadow 0.2s; border-radius:4px}
 @media screen and (min-width:1100px) {
@@ -840,8 +843,10 @@ header {position:relative; z-index:20}
     .guarantee-item-download .btn-border {padding:0; width:100%}
 }
 
-.telemedicine {margin:30px 0 0 0; display:flex; justify-content:space-between; padding:0 36px; border-radius:8px; background:#FFFFFF; box-shadow:0px 10px 30px 0px rgba(0, 0, 0, 0.05)}
+.telemedicine {margin:20px 0 0 0; display:flex; justify-content:space-between; padding:0 36px; border-radius:8px; background:#FFFFFF; box-shadow:0px 10px 30px 0px rgba(0, 0, 0, 0.05)}
 .telemedicine-content {display:flex; flex-direction:column; justify-content:space-between; padding:36px 0; max-width:442px}
+.telemedicine-text {min-width:520px; max-width:520px}
+.telemedicine-descr {margin:12px 0 0 0; color:#3E3E59}
 .telemedicine-title {font-weight:600; font-size:20px; line-height:30px; color:#3E3E59}
 .telemedicine-links {display:flex; margin:36px 0 0 0}
 .telemedicine-links .btn-border {height:50px; padding:0 24px; margin:0 0 0 10px; font-weight:500; font-size:12px; line-height:17px; letter-spacing:0.1em; color:#5C5C73}
@@ -866,6 +871,7 @@ header {position:relative; z-index:20}
 @media (max-width:767px) {
     .telemedicine {padding:16px 16px 0 16px; display:block}
     .telemedicine-content {padding:0; max-width:none}
+    .telemedicine-text {min-width:0; max-width:none}
     .telemedicine-title {font-weight:500}
     .telemedicine-links {display:block; margin:24px 0 0 0}
     .telemedicine-links .btn-border {display:flex; margin:8px 0 0 0}
@@ -892,7 +898,10 @@ header {position:relative; z-index:20}
 .contacts-24hour-phones-item-value {margin:10px 0 0 0; font-weight:600; font-size:18px; line-height:23px; color:#3E3E59}
 .contacts-24hour-phones-item-value p {margin:4px 0 0 0}
 .contacts-24hour-phones-item-value a {color:#3E3E59}
-.contacts-24hour-notice {line-height:21px}
+@media screen and (min-width:1100px) {
+    .contacts-24hour-phones-item-value a:hover {color:#ED885E}
+}
+.contacts-24hour-notice {line-height:21px; color:#3E3E59}
 .contacts-24hour-notice p {margin:5px 0; padding:0}
 .contacts-24hour-notice ul {margin:5px 0; padding:0; list-style:none}
 .contacts-24hour-notice ul li {margin:5px 0; padding:0 0 0 26px; position:relative}
@@ -920,7 +929,7 @@ header {position:relative; z-index:20}
     .contacts-24hour-phones-item-value {margin:4px 0 0 0}
 }
 
-.contacts-office {margin:80px 0 0 0; padding:24px; display:flex; align-items:flex-start; justify-content:space-between; border-radius:12px; background:#FFFFFF; box-shadow:0px 4px 24px 0px rgba(0, 0, 0, 0.05)}
+.contacts-office {margin:80px 0; padding:24px; display:flex; align-items:flex-start; justify-content:space-between; border-radius:12px; background:#FFFFFF; box-shadow:0px 4px 24px 0px rgba(0, 0, 0, 0.05)}
 .contacts-office-info {min-width:calc(50% - 20px); max-width:calc(50% - 20px)}
 .contacts-office-title {font-weight:600; font-size:20px; line-height:26px; color:#3E3E59}
 .contacts-office-address {margin:12px 0 0 0; line-height:22px; display:flex; align-items:center}
@@ -935,7 +944,7 @@ header {position:relative; z-index:20}
 .contacts-office-notice span {color:#BC3F46; font-weight:600}
 
 @media (max-width:1680px) {
-    .contacts-office {margin:60px 0 0 0}
+    .contacts-office {margin:60px 0}
     .contacts-office-info {min-width:calc(50% - 10px); max-width:calc(50% - 10px)}
     .contacts-office-notice {min-width:calc(50% - 10px); max-width:calc(50% - 10px)}
 }
@@ -947,27 +956,8 @@ header {position:relative; z-index:20}
     .contacts-office-schedule-title {font-size:17px; line-height:25px}
 }
 
-.contacts-abroad {margin:80px 0 0 0; max-width:788px; padding:20px 24px; border-radius:8px; background:#FFFFFF; box-shadow:0px 0px 25px 0px rgba(0, 0, 0, 0.10); position:relative}
-.contacts-abroad::before {content:""; position:absolute; right:0; bottom:0; width:116px; height:116px; background:url(../images/contacts-abroad.png) no-repeat}
-.contacts-abroad-title {max-width:355px; font-weight:600; font-size:20px; line-height:26px; color:#3E3E59}
-.contacts-abroad-info {margin:16px 0 0 0; line-height:22px}
-.contacts-abroad-info-item {margin:8px 0 0 0; display:flex; align-items:center}
-.contacts-abroad-info-item a {color:#5C5C73; display:flex; align-items:center}
-@media screen and (min-width:1100px) {
-    .contacts-abroad-info-item a:hover {color:#E86630}
-}
-.contacts-abroad-info-item svg {width:22px; height:22px; margin:0 12px 0 0; fill:#8D8DA6}
-
-@media (max-width:1680px) {
-    .contacts-abroad {margin:60px 0 0 0}
-}
-
-@media (max-width:767px) {
-    .contacts-abroad {padding:16px 16px 100px 16px}
-}
-
 .contacts-feedback-anonce {margin:80px 0 0 0; max-width:788px; padding:24px; border-radius:8px; background:#EAE9F7; position:relative}
-.contacts-feedback-anonce::before {content:""; position:absolute; right:0; bottom:0; width:116px; height:106px; background:url(../images/contacts-form.png) no-repeat}
+.contacts-feedback-anonce::before {content:""; position:absolute; right:0; bottom:0; width:136px; height:136px; background:url(../images/contacts-form.png) no-repeat}
 .contacts-feedback-anonce-text {max-width:485px; line-height:22px; color:#3E3E59}
 
 @media (max-width:1680px) {
@@ -1059,7 +1049,7 @@ header {position:relative; z-index:20}
 .policy-prefs {margin:30px -10px -20px -10px; display:flex; flex-wrap:wrap}
 .policy-pref {display:flex; min-width:33.33%; max-width:33.33%; padding:0 10px 20px 10px}
 .policy-pref-inner {display:flex; flex-direction:column; width:100%; padding:24px; background:#EAE9F7; border-radius:8px; text-align:center; cursor:pointer}
-.policy-pref-icon {display:flex; min-height:120px; max-height:120px; align-items:center; justify-content:center}
+.policy-pref-icon {display:flex; min-height:140px; max-height:140px; align-items:center; justify-content:center}
 .policy-pref-icon img {display:block; max-height:100%}
 .policy-pref-text {margin:20px 0 0 0; font-size:17px; line-height:26px; color:#3E3E59}
 .policy-pref-text::before {content:""; display:block; margin:0 auto 20px auto; width:40px; height:3px; background:#ED885E}
@@ -1128,42 +1118,67 @@ header {position:relative; z-index:20}
     .policy-form-submit .btn {height:40px}
 }
 
-.policy-help {margin:30px -10px 0 -10px; display:flex}
+.policy-help {margin:40px 0 0 0}
+.policy-help-title {font-weight:600; font-size:24px; line-height:31px; color:#3E3E59}
+.policy-help-list {margin:20px -10px 0 -10px; display:flex}
 .policy-help-item {display:flex; min-width:50%; max-width:50%; padding:0 10px}
-.policy-help-item-inner {display:flex; width:100%; flex-direction:column; padding:24px; background:#FFFFFF; border-radius:8px; box-shadow:0px 10px 30px 0px rgba(0, 0, 0, 0.05), 0px 0px 10px 0px rgba(0, 0, 0, 0.02)}
-.policy-help-item-inner::before {content:""; display:block; width:40px; height:3px; background:#ED885E; margin:0 0 16px 0}
-.policy-help-item-text {color:#3E3E59}
-.policy-help-item-contacts {display:flex; margin:16px 0 0 0}
-.policy-help-item-contacts-item {margin:0 0 0 20px; padding:0 0 0 20px; border-left:1px solid #C7C7D9}
-.policy-help-item-contacts-item:first-child {margin:0; padding:0; border-left:none}
-.policy-help-item-contacts-item a {display:flex; align-items:center; color:#3E3E59; line-height:22px; text-decoration:none}
+.policy-help-item-inner {display:flex; width:100%; flex-direction:column; padding:20px 174px 20px 24px; background:#FFFFFF; border-radius:8px; box-shadow:0px 0px 25px rgba(0, 0, 0, 0.1); position:relative}
+.policy-help-item:first-child .policy-help-item-inner::before {content:""; position:absolute; right:10px; bottom:0; width:140px; height:140px; background:url(../images/policy-help.png) no-repeat; background-size:100%}
+.policy-help-item-text {font-weight:600; font-size:17px; line-height:24px; color:#3E3E59; margin:0 55px 0 0}
+.policy-help-item-contacts {margin:16px 0 0 0}
+.policy-help-item-contacts-item {margin:8px 0 0 0; position:relative; padding:0 0 0 34px}
+.policy-help-item-contacts-item:first-child {margin:0}
+.policy-help-item-contacts-item a {color:#5C5C73; line-height:22px; text-decoration:none}
 @media screen and (min-width:1100px) {
     .policy-help-item-contacts-item a:hover {color:#E86630}
 }
-.policy-help-item-contacts-item a svg {min-width:22px; max-width:22px; height:22px; fill:#3E3E59; transition:fill 0.2s; margin:0 10px 0 0}
-@media screen and (min-width:1100px) {
-    .policy-help-item-contacts-item a:hover svg {fill:#E86630}
-}
+.policy-help-item-contacts-item svg {position:absolute; left:0; top:1px; width:22px; height:22px; fill:#8D8DA6}
 
 @media (max-width:1680px) {
-    .policy-help {margin:24px -10px 0 -10px}
+    .policy-help-item-inner {padding:20px 104px 20px 24px}
 }
 
 @media (max-width:1099px) {
-    .policy-help {margin:20px 0 0 0; display:block}
-    .policy-help-item {display:block; min-width:0; max-width:none; padding:0; margin:10px 0 0 0}
+    .policy-help {margin:30px 0 0 0}
+    .policy-help-list {margin:20px 0 0 0; display:block}
+    .policy-help-item {display:block; min-width:0; max-width:none; padding:0; margin:20px 0 0 0}
+    .policy-help-item-inner {padding:20px 234px 20px 24px}
+    .policy-help-item:first-child .policy-help-item-inner::before {width:156px; height:156px}
+    .policy-help-item-text {margin:0}
 }
 
 @media (max-width:767px) {
-    .policy-help {margin:24px 0 0 0}
-    .policy-help-item {margin:8px 0 0 0}
-    .policy-help-item-inner {padding:16px}
-    .policy-help-item-contacts {display:block}
-    .policy-help-item-contacts-item {margin:8px 0 0 0; padding:0; border-left:none}
+    .policy-help {margin:20px 0 0 0}
+    .policy-help-title {font-size:20px; line-height:26px}
+    .policy-help-item-inner {padding:16px 16px 20px 16px}
+    .policy-help-item:first-child .policy-help-item-inner {padding-bottom:102px}
+    .policy-help-item:first-child .policy-help-item-inner::before {width:140px; height:140px}
 }
 
-.policy-manual {margin:80px 0 0 0}
-.policy-manual-title {font-weight:600; font-size:24px; line-height:31px; color:#3E3E59}
+.policy-change {margin:60px 0 0 0; max-width:790px; background:#EAE9F7; border-radius:8px; padding:24px 24px 20px 24px}
+.policy-change::before {content:""; display:block; width:40px; height:3px; background:#ED885E; margin:0 0 16px 0}
+.policy-change-title {max-width:472px; font-weight:600; font-size:17px; line-height:26px; color:#3E3E59}
+.policy-change-contacts {display:flex; align-items:center; margin:20px 0 0 0}
+.policy-change-contacts-item {display:flex; align-items:center; margin:0 0 0 20px; padding:0 0 0 20px; border-left:1px solid #C7C7D9; line-height:22px}
+.policy-change-contacts-item:first-child {margin:0; padding:0; border-left:none}
+.policy-change-contacts-item svg {min-width:22px; max-width:22px; height:22px; fill:#3E3E59; margin:0 10px 0 0}
+.policy-change-contacts-item a {color:#3E3E59; text-decoration:none}
+@media screen and (min-width:1100px) {
+    .policy-change-contacts-item a:hover {color:#E86630}
+}
+
+@media (max-width:1099px) {
+    .policy-change {max-width:none}
+}
+
+@media (max-width:767px) {
+    .policy-change {margin:40px 0 0 0; padding:16px 16px 20px 16px}
+    .policy-change-contacts {display:block}
+    .policy-change-contacts-item {margin:10px 0 0 0; padding:0; border-left:none}
+}
+
+.policy-manual {margin:60px 0 0 0}
+.policy-manual-title {font-weight:600; font-size:20px; line-height:26px; color:#3E3E59}
 .policy-manual-container {margin:30px -10px 0 -10px; display:flex}
 .policy-manual-content {min-width:50%; max-width:50%; padding:0 10px}
 .policy-manual-step {margin:16px 0 0 0; padding:0 0 0 30px; position:relative}
@@ -1197,8 +1212,6 @@ header {position:relative; z-index:20}
 }
 
 @media (max-width:1680px) {
-    .policy-manual {margin:60px 0 0 0}
-    .policy-manual-title {font-size:20px; line-height:26px}
     .policy-manual-contacts {padding:0 0 0 24px}
 }
 
@@ -1213,6 +1226,7 @@ header {position:relative; z-index:20}
 }
 
 @media (max-width:767px) {
+    .policy-manual {margin:40px 0 0 0}
     .policy-manual-title {font-size:20px; line-height:26px}
     .policy-manual-step-download-link {display:flex; margin:8px 0 0 -30px; width:auto}
     .policy-manual-step-download-link a {display:flex; border:1px solid rgba(141, 141, 166, 0.5); border-radius:4px; align-items:center; height:40px; padding:0 30px; font-weight:600; font-size:11px; line-height:11px; letter-spacing:0.09em; color:#3E3E59; text-transform:uppercase}
