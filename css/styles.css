@@ -370,7 +370,7 @@ header {position:relative; z-index:20}
 
 .header-top {background:#363676; position:relative; z-index:2}
 .header-top .container {display:flex; height:39px; align-items:center; justify-content:space-between}
-.header-logo {min-width:24px; max-width:24px}
+.header-logo {min-width:77px; max-width:77px}
 .header-logo img {display:block; width:100%}
 .header-user {position:relative}
 .header-user-link {display:flex; align-items:center; font-size:12px; line-height:17px; color:#FFFFFF}
@@ -399,7 +399,7 @@ header {position:relative; z-index:20}
 @media (max-width:767px) {
     .header-top .container {height:51px}
     .header-logo {max-width:none; flex-grow:1}
-    .header-logo img {width:24px}
+    .header-logo img {width:77px}
     .header-user-link em {display:block; margin:0 6px 0 0; min-width:18px; max-width:18px}
     .header-user-link em svg {display:block; width:18px; height:18px; fill:#FFFFFF}
     .header-user-link span {display:none}
@@ -677,13 +677,16 @@ header {position:relative; z-index:20}
 }
 
 .section-title {margin:80px 0 30px 0; font-weight:600; font-size:36px; line-height:47px; color:#3E3E59}
+.back-link+.section-title {margin-top:40px}
 
 @media (max-width:1680px) {
     .section-title {margin:60px 0 24px 0; font-size:30px; line-height:39px}
+    .back-link+.section-title {margin-top:40px}
 }
 
 @media (max-width:767px) {
     .section-title {margin:40px 0 24px 0; font-size:24px; line-height:29px}
+    .back-link+.section-title {margin-top:36px}
 }
 
 .profile {margin:60px -20px 0 -20px; display:flex}
@@ -844,10 +847,13 @@ header {position:relative; z-index:20}
 }
 
 .telemedicine {margin:20px 0 0 0; display:flex; justify-content:space-between; padding:0 36px; border-radius:8px; background:#FFFFFF; box-shadow:0px 10px 30px 0px rgba(0, 0, 0, 0.05)}
+.section-title+.telemedicine {margin-top:-10px}
 .telemedicine-content {display:flex; flex-direction:column; justify-content:space-between; padding:36px 0; max-width:442px}
+.telemedicine-header {font-weight:600; color:#F28D19; text-transform:uppercase; letter-spacing:0.05em}
+.telemedicine-header-2 {color:#17B7B1}
 .telemedicine-text {min-width:520px; max-width:520px}
 .telemedicine-descr {margin:12px 0 0 0; color:#3E3E59}
-.telemedicine-title {font-weight:600; font-size:20px; line-height:30px; color:#3E3E59}
+.telemedicine-title {margin:12px 0 0 0; font-weight:600; font-size:20px; line-height:30px; color:#3E3E59}
 .telemedicine-links {display:flex; margin:36px 0 0 0}
 .telemedicine-links .btn-border {height:50px; padding:0 24px; margin:0 0 0 10px; font-weight:500; font-size:12px; line-height:17px; letter-spacing:0.1em; color:#5C5C73}
 @media screen and (min-width:1100px) {
@@ -855,27 +861,30 @@ header {position:relative; z-index:20}
 }
 .telemedicine-links .btn-border:first-child {margin:0}
 .telemedicine-links .btn-border img {height:30px; margin:0 16px 0 0}
-.telemedicine-preview {min-width:303px; max-width:303px; padding:26px 0 0 0}
+.telemedicine-preview {min-width:302px; max-width:302px; padding:26px 0 0 0}
 .telemedicine-preview img {display:block; width:100%}
 
 @media (max-width:1680px) {
-    .telemedicine {margin:40px 0 0 0}
+    .section-title+.telemedicine {margin-top:-4px}
 }
 
 @media (max-width:1099px) {
-    .telemedicine {margin:24px 0 0 0; padding:0 24px; align-items:flex-end}
-    .telemedicine-content {padding:24px 0}
-    .telemedicine-preview {min-width:198px; max-width:198px; padding:24px 0 0 0}
+    .telemedicine {margin:20px 0 0 0}
+    .telemedicine-content {margin:0 -31px 0 0; position:relative; max-width:416px}
+    .telemedicine-text {min-width:416px; max-width:416px}
+    .telemedicine-preview {min-width:243px; max-width:243px; padding:91px 0 0 0}
+    .telemedicine-links {margin:20px 0 0 0}
 }
 
 @media (max-width:767px) {
+    .section-title+.telemedicine {margin-top:24px}
     .telemedicine {padding:16px 16px 0 16px; display:block}
-    .telemedicine-content {padding:0; max-width:none}
+    .telemedicine-content {padding:0; max-width:none; margin:0}
     .telemedicine-text {min-width:0; max-width:none}
-    .telemedicine-title {font-weight:500}
+    .telemedicine-title {font-size:17px; line-height:25px}
     .telemedicine-links {display:block; margin:24px 0 0 0}
     .telemedicine-links .btn-border {display:flex; margin:8px 0 0 0}
-    .telemedicine-preview {margin:48px auto 0 auto; min-width:0; max-width:311px; padding:0}
+    .telemedicine-preview {margin:33px auto 0 auto; min-width:0; max-width:311px; padding:0}
 }
 
 .contacts-anonce {margin:30px 0 0 0; max-width:788px; color:#3E3E59; line-height:22px}
