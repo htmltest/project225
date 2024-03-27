@@ -1390,3 +1390,47 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
     .notifications-list {float:none; width:auto; position:absolute; left:0; bottom:0; right:0}
     .notifications-item {margin:10px 0 0 0}
 }
+
+.page-unavailable .footer-container {align-items:center}
+
+@media (max-width:1099px) {
+    .page-unavailable .footer-container {display:flex}
+    .page-unavailable .footer-right {margin:0}
+}
+
+@media (max-width:767px) {
+    .page-unavailable .footer-logo {min-width:85px; max-width:85px}
+}
+
+.unavailable {margin:80px 0 0 0}
+.unavailable-logo {width:170px}
+.unavailable-logo img {display:block; width:100%}
+.unavailable-header {margin:60px 0; padding:0 0 70px 0; border-bottom:1px solid #E6E6EF; display:flex; align-items:flex-end; justify-content:space-between}
+.unavailable-header-content {min-width:430px; max-width:430px}
+.unavailable-header-title {font-weight:600; font-size:48px; line-height:58px; color:#3E3E59}
+.unavailable-header-text {margin:20px 0 0 0; font-size:24px; line-height:36px}
+.unavailable-header-img {min-width:301px; max-width:301px}
+.unavailable-header-img img {display:block; width:100%}
+.unavailable .section-title {margin:60px 0 30px 0}
+.unavailable .policy-help {margin:60px 0 0 0}
+
+@media (max-width:1680px) {
+    .unavailable {margin:60px 0}
+    .unavailable-header {margin:40px 0 60px 0}
+}
+
+@media (max-width:1099px) {
+    .unavailable {margin:60px 0 0 0}
+    .unavailable-header {margin:40px 0 50px 0; padding:0 0 60px 0}
+    .unavailable-header-title {font-size:36px; line-height:43px}
+    .unavailable-header-text {font-size:20px; line-height:30px}
+    .unavailable-header-img {min-width:232px; max-width:232px}
+    .unavailable .section-title {margin:50px 0 24px 0}
+}
+
+@media (max-width:767px) {
+    .unavailable-header {margin:60px 0 30px 0; padding:0 0 40px 0; display:block}
+    .unavailable-header-img {min-width:0; max-width:none; display:flex; justify-content:center; margin:40px 0 0 0}
+    .unavailable-header-img img {width:auto; height:200px}
+    .unavailable .section-title {margin:30px 0 24px 0}
+}
