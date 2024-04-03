@@ -508,6 +508,7 @@ header {position:relative; z-index:20}
 .main-polis.loading::before {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(270deg, #F0F0F7 0%, #FFFFFF 21%, #F0F0F7 100%); transform:translateX(-100%); animation:loading 4s infinite ease-out}
 .dashboard-links+.main-polis,
 .main-polis+.main-polis {margin-top:36px}
+.back-link+.main-polis {margin-top:40px}
 .main-polis-prime {margin-top:53px}
 .main-polis-prime-title {display:flex; margin:-41px 0 27px 0}
 .main-polis-prime-title span {padding:10px 20px 8px 20px; background:#2F2A85; border-radius:6px; color:#FFFFFF; font-weight:600; font-size:11px; line-height:15px; letter-spacing:0.09em; text-transform:uppercase}
@@ -531,6 +532,7 @@ header {position:relative; z-index:20}
     .dashboard-links+.main-polis,
     .main-polis+.main-polis {margin-top:24px}
     .main-polis-prime {margin-top:36px}
+    .back-link+.main-polis {margin-top:36px}
 }
 
 @media (max-width:767px) {
@@ -851,6 +853,7 @@ header {position:relative; z-index:20}
 .telemedicine-content {display:flex; flex-direction:column; justify-content:space-between; padding:36px 0; max-width:442px}
 .telemedicine-header {font-weight:600; color:#F28D19; text-transform:uppercase; letter-spacing:0.05em}
 .telemedicine-header-2 {color:#17B7B1}
+.telemedicine-header-3 {color:#FC6365}
 .telemedicine-text {min-width:520px; max-width:520px}
 .telemedicine-descr {margin:12px 0 0 0; color:#3E3E59}
 .telemedicine-title {margin:12px 0 0 0; font-weight:600; font-size:20px; line-height:30px; color:#3E3E59}
@@ -886,6 +889,37 @@ header {position:relative; z-index:20}
     .telemedicine-links .btn-border {display:flex; margin:8px 0 0 0}
     .telemedicine-preview {margin:33px auto 0 auto; min-width:0; max-width:311px; padding:0}
 }
+
+.baby-app-check {position:relative; margin:20px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.baby-app-check::before {content:""; position:absolute; left:50%; top:-184px; margin:0 0 0 -199px; width:420px; height:139px; background:url(../images/baby-app-bg-1.svg) no-repeat; z-index:-1}
+.baby-app-check-content {min-width:510px; max-width:510px; color:#3E3E59}
+.baby-app-check-title {font-weight:600; font-size:24px; line-height:29px}
+.baby-app-check-anonce {margin:20px 0 0 0; font-weight:600; font-size:17px; line-height:26px}
+.baby-app-check-text {margin:10px 0 0 0}
+.baby-app-check-screen {min-width:510px; max-width:510px; position:relative}
+.baby-app-check-screen::before {content:""; position:absolute; right:-178px; top:-49px; width:429px; height:142px; background:url(../images/baby-app-bg-2.svg) no-repeat; z-index:-1}
+.baby-app-check-screen img {display:block; width:100%}
+
+.baby-app-program {position:relative; margin:20px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.baby-app-program::before {content:""; position:absolute; left:-374px; top:-49px; width:447px; height:148px; background:url(../images/baby-app-bg-3.svg) no-repeat; z-index:-1}
+.baby-app-program-screen {min-width:510px; max-width:510px; position:relative}
+.baby-app-program-screen img {display:block; width:100%}
+.baby-app-program-content {min-width:510px; max-width:510px; color:#3E3E59}
+.baby-app-program-title {font-weight:600; font-size:24px; line-height:29px}
+.baby-app-program-anonce {margin:20px 0 0 0; font-weight:600; font-size:17px; line-height:26px}
+.baby-app-program-text {margin:10px 0 0 0}
+
+.baby-app-links {margin:86px 0 0 0; position:relative; background:#EAE9F7; border-radius:8px; padding:49px 40px 50px 40px}
+.baby-app-links::before {content:""; position:absolute; right:0; bottom:0; width:266px; height:266px; background:url(../images/baby-app-screen-3.png) no-repeat}
+.baby-app-links::after {content:""; position:absolute; right:257px; bottom:60px; width:121px; height:99px; background:url(../images/baby-app-bird.svg) no-repeat}
+.baby-app-links-title {font-weight:600; font-size:24px; line-height:31px; color:#3E3E59}
+.baby-app-links-list {display:flex; margin:20px 0 0 0}
+.baby-app-links-list .btn-border {height:50px; padding:0 24px; margin:0 0 0 10px; font-weight:500; font-size:12px; line-height:17px; letter-spacing:0.1em; color:#5C5C73; background:#FFFFFF}
+@media screen and (min-width:1100px) {
+    .baby-app-links-list .btn-border:hover {background:#ED885E; color:#FFFFFF}
+}
+.baby-app-links-list .btn-border:first-child {margin:0}
+.baby-app-links-list .btn-border img {height:30px; margin:0 16px 0 0}
 
 .contacts-anonce {margin:30px 0 0 0; max-width:788px; color:#3E3E59; line-height:22px}
 
@@ -965,16 +999,48 @@ header {position:relative; z-index:20}
     .contacts-office-schedule-title {font-size:17px; line-height:25px}
 }
 
-.contacts-feedback-anonce {margin:80px 0 0 0; max-width:788px; padding:24px; border-radius:8px; background:#EAE9F7; position:relative}
-.contacts-feedback-anonce::before {content:""; position:absolute; right:0; bottom:0; width:136px; height:136px; background:url(../images/contacts-form.png) no-repeat}
-.contacts-feedback-anonce-text {max-width:485px; line-height:22px; color:#3E3E59}
+.contacts-feedback {margin:80px 0 0 0; display:flex; justify-content:space-between}
+.contacts-feedback-item {min-width:calc(50% - 10px); max-width:calc(50% - 10px); background:#EAE9F7; border-radius:8px; padding:24px}
+.contacts-feedback-anonce {padding:24px 80px 130px 24px; position:relative}
+.contacts-feedback-anonce::before {content:""; position:absolute; right:72px; bottom:0; width:136px; height:136px; background:url(../images/contacts-form.png) no-repeat; background-size:100%}
+.contacts-feedback-anonce-text {line-height:22px; color:#3E3E59}
+.contacts-feedback-support {padding:24px 80px 101px 24px; position:relative}
+.contacts-feedback-support::before {content:""; position:absolute; right:0; bottom:0; width:136px; height:136px; background:url(../images/contacts-support.png) no-repeat; background-size:100%}
+.contacts-feedback-support-title {font-weight:600; font-size:17px; line-height:24px; color:#3E3E59; margin:0 0 17px 0}
+.contacts-feedback-support-item {margin:8px 0 0 0; position:relative; padding:0 0 0 34px}
+.contacts-feedback-support-item a {color:#5C5C73; line-height:22px; text-decoration:none}
+@media screen and (min-width:1100px) {
+    .contacts-feedback-support-item a:hover {color:#E86630}
+}
+.contacts-feedback-support-item svg {position:absolute; left:0; top:1px; width:22px; height:22px; fill:#8D8DA6}
+.contacts-feedback-support-item br {display:none}
 
 @media (max-width:1680px) {
-    .contacts-feedback-anonce {margin:60px 0 0 0}
+    .contacts-feedback {margin:60px 0 0 0}
+    .contacts-feedback-anonce {padding:24px 24px 130px 24px}
+    .contacts-feedback-anonce::before {right:2px}
+}
+
+@media (max-width:1099px) {
+    .contacts-feedback {display:block}
+    .contacts-feedback-item {min-width:0; max-width:none; margin:20px 0 0 0; min-height:136px}
+    .contacts-feedback-anonce {padding:24px 191px 24px 24px}
+    .contacts-feedback-anonce::before {right:0}
+    .contacts-feedback-support {padding:24px 173px 24px 24px}
+    .contacts-feedback-support::before {right:20px; bottom:4px}
+    .contacts-feedback-support-title {margin:0 0 16px 0}
+    .contacts-feedback-support-title br {display:none}
 }
 
 @media (max-width:767px) {
     .contacts-feedback-anonce {padding:16px 16px 100px 16px}
+    .contacts-feedback-anonce::before {right:0; bottom:0; background-image:url(../images/contacts-form-mobile.png)}
+    .contacts-feedback-support {padding:16px 16px 87px 16px}
+    .contacts-feedback-support::before {width:117px; height:117px; right:0; bottom:0}
+    .contacts-feedback-support-title {margin:0 0 17px 0}
+    .contacts-feedback-support-title br {display:block}
+    .contacts-feedback-support-item span {display:none}
+    .contacts-feedback-support-item br {display:block}
 }
 
 .contacts-form {margin:80px 0 0 0}
@@ -1434,3 +1500,63 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
     .unavailable-header-img img {width:auto; height:200px}
     .unavailable .section-title {margin:30px 0 24px 0}
 }
+
+.clinics {margin:60px 0 0 0}
+.clinics-header {display:flex; justify-content:space-between; align-items:center}
+.clinics-header-title {font-weight:600; font-size:30px; line-height:36px; color:#3E3E59}
+.clinics-header-views {display:flex}
+.clinics-header-views a {display:flex; min-width:32px; max-width:32px; height:32px; margin:0 0 0 8px; align-items:center; justify-content:center; border:1px solid #C7C7D9; border-radius:4px; transition:border-color 0.2s, background 0.2s, box-shadow 0.2s}
+@media screen and (min-width:1100px) {
+    .clinics-header-views a:hover {border-color:#3E3E59}
+}
+.clinics-header-views a.active {background:#FFFFFF; border-color:#FFFFFF; box-shadow:0px 0px 10px rgba(0, 0, 0, 0.02), 0px 10px 30px rgba(0, 0, 0, 0.05)}
+.clinics-header-views a svg {min-width:24px; max-width:24px; height:24px; fill:#C7C7D9; transition:fill 0.2s}
+@media screen and (min-width:1100px) {
+    .clinics-header-views a:hover svg {fill:#3E3E59}
+}
+.clinics-header-views a.active svg {fill:#3E3E59}
+
+.clinics-list {margin:12px 0 0 0; background:#FFFFFF; border-radius:12px; padding:24px}
+.clinics-list-item {margin:16px 0 0 0; padding:16px 0 0 0; border-top:1px solid #E6E6EF}
+.clinics-list-item:first-child {margin:0; padding:0; border-top:none}
+.clinics-list-item-header {display:flex; justify-content:space-between}
+.clinics-list-item-title {font-weight:600; font-size:20px; line-height:26px; color:#3E3E59}
+.clinics-list-item-ctrl {min-width:88px; max-width:88px; display:flex; align-items:center; justify-content:space-between; margin:1px 0 0 0}
+.clinics-list-item-status {min-width:24px; max-width:24px; position:relative}
+.clinics-list-item-status a {display:block}
+.clinics-list-item-status svg {display:block; width:24px; height:24px; fill:#8D8DA6}
+.clinics-list-item-status a svg {fill:#E86630; transition:fill 0.2s}
+@media screen and (min-width:1100px) {
+    .clinics-list-item-status a:hover svg {fill:#ED885E}
+}
+.clinics-list-item-status span {display:none; position:absolute; left:50%; top:-58px; white-space:nowrap; transform:translateX(-50%); padding:12px 20px; background:#FFFFFF; border-radius:6px; box-shadow:0px 0px 24px rgba(0, 0, 0, 0.1)}
+.clinics-list-item-status span::before {content:""; position:absolute; left:50%; bottom:-8px; width:27px; height:8px; margin:0 0 0 -13.5px; background:url(../images/clinics-list-item-status.svg) no-repeat center bottom}
+@media screen and (min-width:1100px) {
+    .clinics-list-item-status:hover span {display:block}
+}
+.clinics-list-item-bookmark {min-width:24px; max-width:24px; position:relative}
+.clinics-list-item-bookmark a {display:block}
+.clinics-list-item-bookmark svg {display:block; width:24px; height:24px; fill:#8D8DA6}
+.clinics-list-item-bookmark a svg {fill:#E86630; transition:fill 0.2s}
+@media screen and (min-width:1100px) {
+    .clinics-list-item-bookmark a:hover svg {fill:#ED885E}
+}
+.clinics-list-item-bookmark span {display:none; position:absolute; left:50%; top:-58px; white-space:nowrap; transform:translateX(-50%); padding:12px 20px; background:#FFFFFF; border-radius:6px; box-shadow:0px 0px 24px rgba(0, 0, 0, 0.1)}
+.clinics-list-item-bookmark span::before {content:""; position:absolute; left:50%; bottom:-8px; width:27px; height:8px; margin:0 0 0 -13.5px; background:url(../images/clinics-list-item-status.svg) no-repeat center bottom}
+@media screen and (min-width:1100px) {
+    .clinics-list-item-bookmark:hover span {display:block}
+}
+.clinics-list-item-types {margin:4px 0 0 0; font-size:13px; line-height:18px; letter-spacing:0.02em}
+.clinics-list-item-phones {margin:10px 0 0 0; position:relative; padding:0 0 0 28px; display:flex; flex-wrap:wrap}
+.clinics-list-item-phones svg {position:absolute; left:0; top:0; width:18px; height:18px; fill:#5C5C73}
+.clinics-list-item-phone {font-size:13px; line-height:18px; letter-spacing:0.02em}
+.clinics-list-item-phone+.clinics-list-item-phone {margin:0 0 0 16px; padding:0 0 0 16px; border-left:1px solid #E6E6EF}
+.clinics-list-item-phone span {font-weight:600; font-size:11px; line-height:15px; text-transform:uppercase; color:#8D8DA6}
+.clinics-list-item-phone a {color:#5C5C73}
+.clinics-list-item-phone a.main {font-weight:bold; color:#3E3E59}
+@media screen and (min-width:1100px) {
+    .clinics-list-item-phone a:hover {color:#ED885E}
+    .clinics-list-item-phone a.main:hover {color:#ED885E}
+}
+.clinics-list-item-address {margin:4px 0 0 0; position:relative; padding:0 0 0 28px; display:flex; flex-wrap:wrap; font-size:13px; line-height:18px; letter-spacing:0.02em}
+.clinics-list-item-address svg {position:absolute; left:0; top:-1px; width:18px; height:18px; fill:#5C5C73}
