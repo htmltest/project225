@@ -508,6 +508,7 @@ header {position:relative; z-index:20}
 .main-polis.loading::before {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(270deg, #F0F0F7 0%, #FFFFFF 21%, #F0F0F7 100%); transform:translateX(-100%); animation:loading 4s infinite ease-out}
 .dashboard-links+.main-polis,
 .main-polis+.main-polis {margin-top:36px}
+.back-link+.main-polis {margin-top:40px}
 .main-polis-prime {margin-top:53px}
 .main-polis-prime-title {display:flex; margin:-41px 0 27px 0}
 .main-polis-prime-title span {padding:10px 20px 8px 20px; background:#2F2A85; border-radius:6px; color:#FFFFFF; font-weight:600; font-size:11px; line-height:15px; letter-spacing:0.09em; text-transform:uppercase}
@@ -531,6 +532,7 @@ header {position:relative; z-index:20}
     .dashboard-links+.main-polis,
     .main-polis+.main-polis {margin-top:24px}
     .main-polis-prime {margin-top:36px}
+    .back-link+.main-polis {margin-top:36px}
 }
 
 @media (max-width:767px) {
@@ -965,16 +967,48 @@ header {position:relative; z-index:20}
     .contacts-office-schedule-title {font-size:17px; line-height:25px}
 }
 
-.contacts-feedback-anonce {margin:80px 0 0 0; max-width:788px; padding:24px; border-radius:8px; background:#EAE9F7; position:relative}
-.contacts-feedback-anonce::before {content:""; position:absolute; right:0; bottom:0; width:136px; height:136px; background:url(../images/contacts-form.png) no-repeat}
-.contacts-feedback-anonce-text {max-width:485px; line-height:22px; color:#3E3E59}
+.contacts-feedback {margin:80px 0 0 0; display:flex; justify-content:space-between}
+.contacts-feedback-item {min-width:calc(50% - 10px); max-width:calc(50% - 10px); background:#EAE9F7; border-radius:8px; padding:24px}
+.contacts-feedback-anonce {padding:24px 80px 130px 24px; position:relative}
+.contacts-feedback-anonce::before {content:""; position:absolute; right:72px; bottom:0; width:136px; height:136px; background:url(../images/contacts-form.png) no-repeat; background-size:100%}
+.contacts-feedback-anonce-text {line-height:22px; color:#3E3E59}
+.contacts-feedback-support {padding:24px 80px 101px 24px; position:relative}
+.contacts-feedback-support::before {content:""; position:absolute; right:0; bottom:0; width:136px; height:136px; background:url(../images/contacts-support.png) no-repeat; background-size:100%}
+.contacts-feedback-support-title {font-weight:600; font-size:17px; line-height:24px; color:#3E3E59; margin:0 0 17px 0}
+.contacts-feedback-support-item {margin:8px 0 0 0; position:relative; padding:0 0 0 34px}
+.contacts-feedback-support-item a {color:#5C5C73; line-height:22px; text-decoration:none}
+@media screen and (min-width:1100px) {
+    .contacts-feedback-support-item a:hover {color:#E86630}
+}
+.contacts-feedback-support-item svg {position:absolute; left:0; top:1px; width:22px; height:22px; fill:#8D8DA6}
+.contacts-feedback-support-item br {display:none}
 
 @media (max-width:1680px) {
-    .contacts-feedback-anonce {margin:60px 0 0 0}
+    .contacts-feedback {margin:60px 0 0 0}
+    .contacts-feedback-anonce {padding:24px 24px 130px 24px}
+    .contacts-feedback-anonce::before {right:2px}
+}
+
+@media (max-width:1099px) {
+    .contacts-feedback {display:block}
+    .contacts-feedback-item {min-width:0; max-width:none; margin:20px 0 0 0; min-height:136px}
+    .contacts-feedback-anonce {padding:24px 191px 24px 24px}
+    .contacts-feedback-anonce::before {right:0}
+    .contacts-feedback-support {padding:24px 173px 24px 24px}
+    .contacts-feedback-support::before {right:20px; bottom:4px}
+    .contacts-feedback-support-title {margin:0 0 16px 0}
+    .contacts-feedback-support-title br {display:none}
 }
 
 @media (max-width:767px) {
     .contacts-feedback-anonce {padding:16px 16px 100px 16px}
+    .contacts-feedback-anonce::before {right:0; bottom:0; background-image:url(../images/contacts-form-mobile.png)}
+    .contacts-feedback-support {padding:16px 16px 87px 16px}
+    .contacts-feedback-support::before {width:117px; height:117px; right:0; bottom:0}
+    .contacts-feedback-support-title {margin:0 0 17px 0}
+    .contacts-feedback-support-title br {display:block}
+    .contacts-feedback-support-item span {display:none}
+    .contacts-feedback-support-item br {display:block}
 }
 
 .contacts-form {margin:80px 0 0 0}
