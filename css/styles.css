@@ -853,6 +853,7 @@ header {position:relative; z-index:20}
 .telemedicine-content {display:flex; flex-direction:column; justify-content:space-between; padding:36px 0; max-width:442px}
 .telemedicine-header {font-weight:600; color:#F28D19; text-transform:uppercase; letter-spacing:0.05em}
 .telemedicine-header-2 {color:#17B7B1}
+.telemedicine-header-3 {color:#FC6365}
 .telemedicine-text {min-width:520px; max-width:520px}
 .telemedicine-descr {margin:12px 0 0 0; color:#3E3E59}
 .telemedicine-title {margin:12px 0 0 0; font-weight:600; font-size:20px; line-height:30px; color:#3E3E59}
@@ -888,6 +889,37 @@ header {position:relative; z-index:20}
     .telemedicine-links .btn-border {display:flex; margin:8px 0 0 0}
     .telemedicine-preview {margin:33px auto 0 auto; min-width:0; max-width:311px; padding:0}
 }
+
+.baby-app-check {position:relative; margin:20px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.baby-app-check::before {content:""; position:absolute; left:50%; top:-184px; margin:0 0 0 -199px; width:420px; height:139px; background:url(../images/baby-app-bg-1.svg) no-repeat; z-index:-1}
+.baby-app-check-content {min-width:510px; max-width:510px; color:#3E3E59}
+.baby-app-check-title {font-weight:600; font-size:24px; line-height:29px}
+.baby-app-check-anonce {margin:20px 0 0 0; font-weight:600; font-size:17px; line-height:26px}
+.baby-app-check-text {margin:10px 0 0 0}
+.baby-app-check-screen {min-width:510px; max-width:510px; position:relative}
+.baby-app-check-screen::before {content:""; position:absolute; right:-178px; top:-49px; width:429px; height:142px; background:url(../images/baby-app-bg-2.svg) no-repeat; z-index:-1}
+.baby-app-check-screen img {display:block; width:100%}
+
+.baby-app-program {position:relative; margin:20px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.baby-app-program::before {content:""; position:absolute; left:-374px; top:-49px; width:447px; height:148px; background:url(../images/baby-app-bg-3.svg) no-repeat; z-index:-1}
+.baby-app-program-screen {min-width:510px; max-width:510px; position:relative}
+.baby-app-program-screen img {display:block; width:100%}
+.baby-app-program-content {min-width:510px; max-width:510px; color:#3E3E59}
+.baby-app-program-title {font-weight:600; font-size:24px; line-height:29px}
+.baby-app-program-anonce {margin:20px 0 0 0; font-weight:600; font-size:17px; line-height:26px}
+.baby-app-program-text {margin:10px 0 0 0}
+
+.baby-app-links {margin:86px 0 0 0; position:relative; background:#EAE9F7; border-radius:8px; padding:49px 40px 50px 40px}
+.baby-app-links::before {content:""; position:absolute; right:0; bottom:0; width:266px; height:266px; background:url(../images/baby-app-screen-3.png) no-repeat}
+.baby-app-links::after {content:""; position:absolute; right:257px; bottom:60px; width:121px; height:99px; background:url(../images/baby-app-bird.svg) no-repeat}
+.baby-app-links-title {font-weight:600; font-size:24px; line-height:31px; color:#3E3E59}
+.baby-app-links-list {display:flex; margin:20px 0 0 0}
+.baby-app-links-list .btn-border {height:50px; padding:0 24px; margin:0 0 0 10px; font-weight:500; font-size:12px; line-height:17px; letter-spacing:0.1em; color:#5C5C73; background:#FFFFFF}
+@media screen and (min-width:1100px) {
+    .baby-app-links-list .btn-border:hover {background:#ED885E; color:#FFFFFF}
+}
+.baby-app-links-list .btn-border:first-child {margin:0}
+.baby-app-links-list .btn-border img {height:30px; margin:0 16px 0 0}
 
 .contacts-anonce {margin:30px 0 0 0; max-width:788px; color:#3E3E59; line-height:22px}
 
