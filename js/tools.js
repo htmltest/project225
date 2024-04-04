@@ -348,23 +348,9 @@ $(document).ready(function() {
         curItem.toggleClass('open');
         curItem.find('.faq-item-content').slideToggle();
     });
-
+    
     $('.policy-pref-inner').click(function() {
         $('html, body').animate({'scrollTop': $('.policy-form').offset().top - 40});
-    });
-
-    $('.clinics-header-views a').click(function(e) {
-        var curLink = $(this);
-        if (!curLink.hasClass('active')) {
-            $('.clinics-header-views a.active').removeClass('active');
-            curLink.addClass('active');
-            if (curLink.hasClass('clinics-view-map')) {
-                $('.clinics').addClass('map');
-            } else {
-                $('.clinics').removeClass('map');
-            }
-        }
-        e.preventDefault();
     });
 
 });
