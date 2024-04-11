@@ -1230,6 +1230,30 @@ header {position:relative; z-index:20}
     .policy-help-item:first-child .policy-help-item-inner::before {width:140px; height:140px}
 }
 
+.policy-help-withoutregions {max-width:788px}
+.policy-help-withoutregions .policy-help-list {margin:0; display:block}
+.policy-help-withoutregions .policy-help-item {display:block; min-width:0; max-width:none; padding:0}
+.policy-help-withoutregions .policy-help-item-inner {padding:24px 220px 24px 24px}
+.policy-help-withoutregions .policy-help-item:first-child .policy-help-item-inner::before {right:40px}
+.policy-help-withoutregions .policy-help-item-text {margin:0; line-height:22px}
+.policy-help-withoutregions .policy-help-item-contacts {margin:18px 0 0 0}
+
+@media (max-width:1680px) {
+    .policy-help-withoutregions .policy-help-item-inner {padding:24px 113px 24px 24px}
+}
+
+@media (max-width:1099px) {
+    .policy-help-withoutregions {max-width:none}
+    .policy-help-withoutregions .policy-help-item-inner {padding:24px 113px 24px 24px}
+    .policy-help-withoutregions .policy-help-item:first-child .policy-help-item-inner::before {width:140px; height:140px}
+}
+
+@media (max-width:767px) {
+    .policy-help-withoutregions .policy-help-item-inner {padding:16px 16px 114px 16px}
+    .policy-help-withoutregions .policy-help-item:first-child .policy-help-item-inner {padding-bottom:114px}
+    .policy-help-withoutregions .policy-help-item:first-child .policy-help-item-inner::before {right:10px}
+}
+
 .policy-change {margin:60px 0 0 0; max-width:790px; background:#EAE9F7; border-radius:8px; padding:24px 24px 20px 24px}
 .policy-change::before {content:""; display:block; width:40px; height:3px; background:#ED885E; margin:0 0 16px 0}
 .policy-change-title {max-width:472px; font-weight:600; font-size:17px; line-height:26px; color:#3E3E59}
