@@ -856,15 +856,22 @@ header {position:relative; z-index:20}
 .telemedicine-header-3 {color:#FC6365}
 .telemedicine-text {min-width:520px; max-width:520px}
 .telemedicine-descr {margin:12px 0 0 0; color:#3E3E59}
+.telemedicine-manual {margin:16px 0 0 0; display:flex; line-height:22px}
+.telemedicine-manual a {display:flex; align-items:center}
+.telemedicine-manual a svg {width:22px; height:22px; fill:#E86630; margin:0 8px 0 0; transition:fill 0.2s}
+@media screen and (min-width:1100px) {
+    .telemedicine-manual a:hover svg {fill:#ED885E}
+}
 .telemedicine-title {margin:12px 0 0 0; font-weight:600; font-size:20px; line-height:30px; color:#3E3E59}
 .telemedicine-links {display:flex; margin:36px 0 0 0}
 .telemedicine-links .btn-border {height:50px; padding:0 24px; margin:0 0 0 10px; font-weight:500; font-size:12px; line-height:17px; letter-spacing:0.1em; color:#5C5C73}
+.telemedicine-links-web .btn-border {padding:0 41px}
 @media screen and (min-width:1100px) {
     .telemedicine-links .btn-border:hover {color:#FFFFFF}
 }
 .telemedicine-links .btn-border:first-child {margin:0}
 .telemedicine-links .btn-border img {height:30px; margin:0 16px 0 0}
-.telemedicine-preview {min-width:302px; max-width:302px; padding:26px 0 0 0}
+.telemedicine-preview {min-width:302px; max-width:302px; padding:26px 0 0 0; align-self:flex-end}
 .telemedicine-preview img {display:block; width:100%}
 
 @media (max-width:1680px) {
@@ -875,6 +882,7 @@ header {position:relative; z-index:20}
     .telemedicine {margin:20px 0 0 0}
     .telemedicine-content {margin:0 -31px 0 0; position:relative; max-width:416px}
     .telemedicine-text {min-width:416px; max-width:416px}
+    .telemedicine-manual {margin:12px 0 24px 0}
     .telemedicine-preview {min-width:243px; max-width:243px; padding:91px 0 0 0}
     .telemedicine-links {margin:20px 0 0 0}
 }
