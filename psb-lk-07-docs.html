@@ -23,95 +23,392 @@
             <div class="wrapper-inner">
 
                 <header>
-                    <div class="header-top">
-                        <div class="container">
-                            <div class="header-logo"><img src="images/header-logo.svg" alt=""></div>
-                            <div class="header-user">
-                                <div class="header-user-link"><em><svg><use xlink:href="images/sprite.svg#icon-user-mobile"></use></svg></em><a href="#">Сергей</a><span><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></span></div>
-                                <div class="header-user-menu">
-                                    <ul>
-                                        <li><a href="#">Рабочий стол</a></li>
-                                        <li class="active"><a href="#">Документы</a></li>
-                                        <li><a href="#">Путешественникам</a></li>
-                                        <li><a href="#">FAQ</a></li>
-                                        <li><a href="#">Профиль</a></li>
-                                        <li><a href="#">Контакты</a></li>
-                                        <li class="header-user-logout"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="#" class="menu-mobile-link"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg></a>
-                        </div>
-                    </div>
-                    <div class="header-nav">
-                        <div class="container">
+                    <div class="container">
+                        <div class="header-nav">
+                            <div class="header-logo"><a href="#"><img src="images/logo-mini.svg" alt=""></a></div>
                             <ul>
-                                <li><a href="#"><svg><use xlink:href="images/sprite.svg#icon-home"></use></svg><span>Рабочий стол</span></a></li>
-                                <li class="active"><a href="#">Документы</a></li>
-                                <li><a href="#">Путешественникам</a></li>
+                                <li><a href="#">Документы</a></li>
+                                <li><a href="#">Полис путешественника</a></li>
                                 <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Профиль</a></li>
                                 <li><a href="#">Контакты</a></li>
-                                <li class="header-nav-logout"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
+                                <li><a href="#">Профиль</a></li>
                             </ul>
                         </div>
+                        <div class="header-user">
+                            <div class="header-user-link"><em><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></em><a href="#">Сергей</a><span><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></span></div>
+                            <div class="header-user-menu">
+                                <ul>
+                                    <li><a href="#">Документы</a></li>
+                                    <li><a href="#">Полис путешественника</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="#">Профиль</a></li>
+                                    <li class="header-user-logout"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="menu-mobile-link"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg></a>
                     </div>
                 </header>
 
                 <!-- container -->
                 <div class="container">
 
+                    <div class="back-link"><a href="#" class="btn btn-border"><svg><use xlink:href="images/sprite.svg#back-link"></use></svg>к списку полисов</a></div>
+
                     <div class="section-title">Документы</div>
 
                     <!-- docs -->
                     <div class="docs">
-                        <div class="docs-main">
-                            <div class="docs-info">
-                                <div class="main-polis-header">
-                                    <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
-                                    <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
-                                </div>
-                                <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
-                                <div class="main-polis-ctrl">
-                                    <div class="main-polis-ctrl-more"><a href="#"><svg><use xlink:href="images/sprite.svg#main-polis-more"></use></svg>+2 полиса членов семьи</a></div>
-                                </div>
+                        <!-- main polises -->
+                        <div class="docs-polises">
+                            <div class="main-polises-header">
+                                <div class="main-polises-title">Персональные полисы</div>
                             </div>
-                            <div class="docs-main-list">
-                                <div class="docs-list">
-                                    <div class="docs-item">
-                                        <a href="#">
-                                            <div class="docs-item-type">pdf</div>
-                                            <div class="docs-item-title">Полис путешественника</div>
-                                            <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="docs-add">
-                            <div class="docs-list">
-                                <div class="docs-item">
-                                    <a href="#">
-                                        <div class="docs-item-type">pdf</div>
-                                        <div class="docs-item-title">ДМС № ЦО-206-0097-0327</div>
-                                        <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
-                                    </a>
+                            <!-- tabs -->
+                            <div class="tabs">
+                                <div class="tabs-menu">
                                 </div>
-                                <div class="docs-item">
-                                    <a href="#">
-                                        <div class="docs-item-type">pdf</div>
-                                        <div class="docs-item-title">Список Лечебно профилактических учреждений</div>
-                                    </a>
-                                </div>
-                                <div class="docs-item">
-                                    <a href="#">
-                                        <div class="docs-item-type">pdf</div>
-                                        <div class="docs-item-title">Памятка застрахованного лица</div>
-                                    </a>
+                                <div class="tabs-container">
+
+                                    <!-- tabs content -->
+                                    <div class="tabs-content" data-title="Активные">
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime">
+                                            <div class="main-polis-prime-title"><span>Основной полис</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="polis-docs">
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">ДМС № ЦО-206-0097-0327</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Список Лечебно профилактических учреждений</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Памятка застрахованного лица</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Полис путешественника</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                    </div>
+                                    <!-- tabs content END -->
+
+                                    <!-- tabs content -->
+                                    <div class="tabs-content" data-title="Архивные">
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-prime-archive">
+                                            <div class="main-polis-prime-title"><span>Основной полис</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="polis-docs">
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">ДМС № ЦО-206-0097-0327</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Список Лечебно профилактических учреждений</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Памятка застрахованного лица</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Полис путешественника</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                    </div>
+                                    <!-- tabs content END -->
+
                                 </div>
                             </div>
+                            <!-- tabs END -->
+
                         </div>
+                        <!-- main polises END -->
+
+                        <!-- main polises -->
+                        <div class="main-polises">
+                            <div class="main-polises-header">
+                                <div class="main-polises-title">Полисы на детей</div>
+                            </div>
+
+                            <!-- tabs -->
+                            <div class="tabs">
+                                <div class="tabs-menu">
+                                </div>
+                                <div class="tabs-container">
+
+                                    <!-- tabs content -->
+                                    <div class="tabs-content" data-title="Активные">
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="polis-docs">
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">ДМС № ЦО-206-0097-0327</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Список Лечебно профилактических учреждений</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Памятка застрахованного лица</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Полис путешественника</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="polis-docs">
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">ДМС № ЦО-206-0097-0327</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Список Лечебно профилактических учреждений</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Памятка застрахованного лица</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Полис путешественника</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                    </div>
+                                    <!-- tabs content END -->
+
+                                    <!-- tabs content -->
+                                    <div class="tabs-content" data-title="Архивные">
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child main-polis-prime-archive">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="polis-docs">
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">ДМС № ЦО-206-0097-0327</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Список Лечебно профилактических учреждений</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Памятка застрахованного лица</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Полис путешественника</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child main-polis-prime-archive">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="polis-docs">
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">ДМС № ЦО-206-0097-0327</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Список Лечебно профилактических учреждений</div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Памятка застрахованного лица</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="polis-docs-group">
+                                                    <div class="docs-list">
+                                                        <div class="docs-item">
+                                                            <a href="#">
+                                                                <div class="docs-item-type">pdf</div>
+                                                                <div class="docs-item-title">Полис путешественника</div>
+                                                                <div class="docs-item-info">Дата размещения: 31.01.2023 в 17:38<span></span>2,4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                    </div>
+                                    <!-- tabs content END -->
+
+                                </div>
+                            </div>
+                            <!-- tabs END -->
+
+                        </div>
+                        <!-- main polises END -->
                     </div>
                     <!-- docs END -->
 
@@ -134,7 +431,6 @@
                         <div class="footer-right">
                             <div class="footer-copyrights">&copy;&nbsp;2022, ООО &laquo;ПСБ Страхование&raquo;</div>
                             <div class="footer-menu">
-                                <a href="#">Карта сайта</a>
                                 <a href="#">Политика обработки персональных данных</a>
                             </div>
                         </div>

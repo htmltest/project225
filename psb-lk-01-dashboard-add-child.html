@@ -54,40 +54,46 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="back-link"><a href="#" class="btn btn-border"><svg><use xlink:href="images/sprite.svg#back-link"></use></svg>к списку полисов</a></div>
+                    <div class="back-link"><a href="#" class="btn btn-border"><svg><use xlink:href="images/sprite.svg#back-link"></use></svg>К списку полисов</a></div>
 
-                    <div class="section-title">Заботливый родитель</div>
+                    <!-- profile -->
+                    <div class="profile">
 
-                    <!-- baby app check -->
-                    <div class="baby-app-check">
-                        <div class="baby-app-check-content">
-                            <div class="baby-app-check-title">Чек-лист</div>
-                            <div class="baby-app-check-anonce">Отметьте ВСЕ утверждения, которые подходят вашему ребенку. Оцените уровень развития всех сфер малыша.</div>
-                            <div class="baby-app-check-text">Напомним, что все дети разные, и&nbsp;если ваш малыш еще чего-то не&nbsp;умеет делать, то&nbsp;это его &laquo;зона ближайшего развития&raquo; и&nbsp;мы&nbsp;будем на&nbsp;нее ориентироваться в&nbsp;ежедневных играх. Чек-листы будут повторно появляться в&nbsp;каждом важном возрастном периоде.</div>
+                        <!-- profile section -->
+                        <div class="profile-section">
+                            <div class="section-title">Добавить полис ребенка</div>
+                            <div class="profile-add-form ">
+                                <form action="#" method="post">
+                                    <div class="profile-section-form-field">
+                                        <div class="profile-section-form-field-title">Данные</div>
+                                        <div class="form-input"><span class="form-input-label">Фамилия<span>*</span></span><input type="text" name="lastname" value=""></div>
+                                        <div class="form-input"><span class="form-input-label">Имя<span>*</span></span><input type="text" name="firstname" value=""></div>
+                                        <div class="form-input"><span class="form-input-label">Отчество<span>*</span>, если указано в договоре ДМС</span><input type="text" name="middlename" value=""></div>
+                                        <div class="form-input form-input-date"><span class="form-input-label">Дата рождения<span>*</span></span><input type="text" name="birthday" value="" class="required"></div>
+                                    </div>
+                                    <div class="profile-section-form-sep"></div>
+                                    <div class="profile-section-form-field">
+                                        <div class="profile-section-form-field-title">Полис</div>
+                                        <div class="form-input"><span class="form-input-label">Номер полиса<span>*</span></span><input type="text" name="polis" value="" class="required"><div class="form-input-hint">Например: 1234-5678-9010-1112-1345</div></div>
+                                    </div>
+                                    <div class="profile-add-form-ctrl profile-add-form-ctrl-with-checkboxes">
+                                        <div class="profile-add-form-ctrl-checkboxes">
+                                            <div class="form-checkbox">
+                                                <label><input type="checkbox" name="representative" class="required" checked><span>Я являюсь представителем ребенка</span></label>
+                                            </div>
+                                            <div class="form-checkbox">
+                                                <label><input type="checkbox" name="personal" class="required" checked><span>Выражаю свое согласие ООО «ПСБ Страхование»<br> <a href="#">на обработку моих персональных данных</a></span></label>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Добавить" class="btn">
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="baby-app-check-screen"><img src="images/baby-app-screen-1.png" alt=""></div>
-                    </div>
-                    <!-- baby app END -->
+                        <!-- profile section END -->
 
-                    <!-- baby app program -->
-                    <div class="baby-app-program">
-                        <div class="baby-app-program-screen"><img src="images/baby-app-screen-2.png" alt=""></div>
-                        <div class="baby-app-program-content">
-                            <div class="baby-app-program-title">Программа дня</div>
-                            <div class="baby-app-program-anonce">После заполнения чек-листа вы&nbsp;станете получать персонализированную программу развития для вашего ребенка (5-7 игр ежедневно).</div>
-                            <div class="baby-app-program-text">Иногда упражнения будут повторяться, это необходимо для выработки и&nbsp;закрепления любого навыка. Так как у&nbsp;нас создано более 1800&nbsp;упражнений, то&nbsp;повторения будут не&nbsp;частыми. Занимайтесь с&nbsp;малышом каждый день и&nbsp;очень скоро вы&nbsp;увидите результат. Для гармоничного развития рекомендовано выполнение всего комплекса упражнений. Очередность и&nbsp;время игр не&nbsp;важны.</div>
-                        </div>
                     </div>
-                    <!-- baby program END -->
-
-                    <!-- baby app links -->
-                    <div class="baby-app-links">
-                        <div class="baby-app-links-title">Приложение BabyApp в&nbsp;вашем телефоне</div>
-                        <div class="baby-app-links-list">
-                            <a href="#" class="btn btn-border">Ссылка на сайт</a>
-                        </div>
-                    </div>
-                    <!-- baby app links END -->
+                    <!-- profile END -->
 
                 </div>
                 <!-- container END -->

@@ -23,94 +23,463 @@
             <div class="wrapper-inner">
 
                 <header>
-                    <div class="header-top">
-                        <div class="container">
-                            <div class="header-logo"><img src="images/header-logo.svg" alt=""></div>
-                            <div class="header-user">
-                                <div class="header-user-link"><em><svg><use xlink:href="images/sprite.svg#icon-user-mobile"></use></svg></em><a href="#">Сергей</a><span><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></span></div>
-                                <div class="header-user-menu">
-                                    <ul>
-                                        <li><a href="#">Рабочий стол</a></li>
-                                        <li><a href="#">Документы</a></li>
-                                        <li class="active"><a href="#">Путешественникам</a></li>
-                                        <li><a href="#">FAQ</a></li>
-                                        <li><a href="#">Профиль</a></li>
-                                        <li><a href="#">Контакты</a></li>
-                                        <li class="header-user-logout"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="#" class="menu-mobile-link"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg></a>
-                        </div>
-                    </div>
-                    <div class="header-nav">
-                        <div class="container">
+                    <div class="container">
+                        <div class="header-nav">
+                            <div class="header-logo"><a href="#"><img src="images/logo-mini.svg" alt=""></a></div>
                             <ul>
-                                <li><a href="#"><svg><use xlink:href="images/sprite.svg#icon-home"></use></svg><span>Рабочий стол</span></a></li>
                                 <li><a href="#">Документы</a></li>
-                                <li class="active"><a href="#">Путешественникам</a></li>
+                                <li><a href="#">Полис путешественника</a></li>
                                 <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Профиль</a></li>
                                 <li><a href="#">Контакты</a></li>
-                                <li class="header-nav-logout"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
+                                <li><a href="#">Профиль</a></li>
                             </ul>
                         </div>
+                        <div class="header-user">
+                            <div class="header-user-link"><em><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></em><a href="#">Сергей</a><span><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></span></div>
+                            <div class="header-user-menu">
+                                <ul>
+                                    <li><a href="#">Документы</a></li>
+                                    <li><a href="#">Полис путешественника</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="#">Профиль</a></li>
+                                    <li class="header-user-logout"><a href="#">Выход<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="menu-mobile-link"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg></a>
                     </div>
                 </header>
 
                 <!-- container -->
                 <div class="container">
 
-                    <div class="section-title">Полис путешественника</div>
+                    <div class="back-link"><a href="#" class="btn btn-border"><svg><use xlink:href="images/sprite.svg#back-link"></use></svg>к списку полисов</a></div>
 
-                    <!-- policy prefs -->
-                    <div class="policy-prefs">
-                        <div class="policy-pref">
-                            <div class="policy-pref-inner">
-                                <div class="policy-pref-icon"><img src="images/policy-pref-1.png" alt=""></div>
-                                <div class="policy-pref-text">Оформите полис путешественника для&nbsp;выезда за&nbsp;границу</div>
+                    <div class="section-title">Путешественнику</div>
+
+                    <!-- policy help -->
+                    <div class="policy-help">
+                        <div class="policy-help-list">
+                            <div class="policy-help-item">
+                                <div class="policy-help-item-inner">
+                                    <div class="policy-help-item-text">Вызов помощи для путешественника за рубежом</div>
+                                    <div class="policy-help-item-contacts">
+                                        <div class="policy-help-item-contacts-item"><svg><use xlink:href="images/sprite.svg#icon-phone"></use></svg><a href="tel:+74959871775">+7 (495) 987-17-75 (круглосуточно)</a></div>
+                                        <div class="policy-help-item-contacts-item"><svg><use xlink:href="images/sprite.svg#icon-email"></use></svg><a href="mailto:svg@savitar-gr.com">svg@savitar-gr.com</a></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="policy-pref">
-                            <div class="policy-pref-inner">
-                                <div class="policy-pref-icon"><img src="images/policy-pref-2.png" alt=""></div>
-                                <div class="policy-pref-text">Действие оформленного полиса будет с&nbsp;текущей даты по&nbsp;31&nbsp;марта 2025 года</div>
-                            </div>
-                        </div>
-                        <div class="policy-pref">
-                            <div class="policy-pref-inner">
-                                <div class="policy-pref-icon"><img src="images/policy-pref-3.png" alt=""></div>
-                                <div class="policy-pref-text">С&nbsp;покрытием расходов<br> по&nbsp;всему&nbsp;миру</div>
+                            <div class="policy-help-item">
+                                <div class="policy-change">
+                                    <div class="policy-change-title">При необходимости внести изменения в&nbsp;страховой полис путешественника или обнаружении ошибки</div>
+                                    <div class="policy-change-contacts">
+                                        <div class="policy-change-contacts-item"><svg><use xlink:href="images/sprite.svg#icon-email"></use></svg><a href="mailto:travel@psbins.ru">travel@psbins.ru</a></div>
+                                        <div class="policy-change-contacts-item"><svg><use xlink:href="images/sprite.svg#icon-phone"></use></svg><a href="tel:+78005558565">8 (800) 555-85-65</a></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- policy prefs END -->
+                    <!-- policy help END -->
 
-                    <!-- policy form -->
-                    <div class="policy-form">
-                        <div class="policy-form-title">Оформить полис</div>
-                        <div class="policy-form-anonce">Для оформления полиса путешественника вам необходимо заполнить личные данные.</div>
-                        <form action="#" method="post">
-                            <div class="policy-form-notice">Написание латинскими буквами фамилии и&nbsp;имени должно соответствовать данным заграничного паспорта</div>
-                            <div class="policy-form-fields">
-                                <div class="policy-form-fields-group">
-                                    <div class="form-input"><span class="form-input-label">Фамилия<span>*</span></span><input type="text" name="lastname" value="" class="required"></div>
-                                    <div class="form-input"><span class="form-input-label">Имя<span>*</span></span><input type="text" name="firstname" value="" class="required"></div>
-                                    <div class="form-input"><span class="form-input-label">Номер заграничного паспорта</span><input type="text" name="passport" value=""></div>
+                    <!-- policy container -->
+                    <div class="policy-container">
+
+                        <!-- main polises -->
+                        <div class="main-polises">
+                            <div class="main-polises-header">
+                                <div class="main-polises-title">Персональные полисы</div>
+                            </div>
+
+                            <!-- tabs -->
+                            <div class="tabs">
+                                <div class="tabs-menu">
                                 </div>
-                                <div class="policy-form-fields-group">
-                                    <div class="form-input"><span class="form-input-label">Страна поездки</span><input type="text" name="county" value="Весь Мир" disabled></div>
-                                    <div class="form-input"><span class="form-input-label">Срок действие полиса</span><input type="text" name="dateTo" value="до 24.05.2025" disabled></div>
-                                    <div class="form-input"><span class="form-input-label">Дата рождения</span><input type="text" name="birthday" value="28.05.1974" disabled></div>
+                                <div class="tabs-container">
+
+                                    <!-- tabs content -->
+                                    <div class="tabs-content" data-title="Активные">
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime">
+                                            <div class="main-polis-prime-title"><span>Основной полис</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+
+                                            <!-- policy has -->
+                                            <div class="policy-has">
+                                                <div class="policy-has-inner">
+                                                    <div class="policy-has-title">ВЗР № ЦО-206-0097-0327</div>
+                                                    <div class="policy-has-info">
+                                                        <div class="policy-has-info-group">
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Фамилия</div>
+                                                                <div class="policy-has-info-item-value">Baydakov</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Имя</div>
+                                                                <div class="policy-has-info-item-value">Sergey</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Дата рождения</div>
+                                                                <div class="policy-has-info-item-value">28.05.1974</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Номер загран паспорта</div>
+                                                                <div class="policy-has-info-item-value">01 02 123 456</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="policy-has-info-group">
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Страна поездки</div>
+                                                                <div class="policy-has-info-item-value">Весь Мир</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Срок действия полиса</div>
+                                                                <div class="policy-has-info-item-value">от 14 марта 2024 до 31 марта 2025 года</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="policy-has-download"><a href="#" class="btn btn-border"><svg><use xlink:href="images/sprite.svg#icon-download"></use></svg>скачать полис<span>PDF 2,4 мб</span></a></div>
+                                                </div>
+                                            </div>
+                                            <!-- policy has END -->
+                                        </div>
+                                        <!-- main polis END -->
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime open">
+                                            <div class="main-polis-prime-title"><span>Основной полис</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="policy-add-link"><a href="#"><svg><use xlink:href="images/sprite.svg#icon-add"></use></svg><span>Добавить полис&nbsp;путешественника</span></a></div>
+                                            <!-- policy form -->
+                                            <div class="policy-form">
+                                                <form action="#" method="post">
+                                                    <div class="policy-form-title">Оформить полис путешественника</div>
+                                                    <div class="policy-form-notice">Написание латинскими буквами фамилии и&nbsp;имени должно соответствовать данным заграничного паспорта</div>
+                                                    <div class="policy-form-fields">
+                                                        <div class="policy-form-fields-group">
+                                                            <div class="form-input"><span class="form-input-label">Фамилия<span>*</span></span><input type="text" name="lastname" value="" class="required"></div>
+                                                            <div class="form-input"><span class="form-input-label">Имя<span>*</span></span><input type="text" name="firstname" value="" class="required"></div>
+                                                        </div>
+                                                        <div class="policy-form-fields-group">
+                                                            <div class="form-input"><span class="form-input-label">Номер заграничного паспорта</span><input type="text" name="passport" value=""></div>
+                                                            <div class="form-input"><span class="form-input-label">Дата рождения</span><input type="text" name="birthday" value="28.05.1974" disabled></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="policy-form-ctrl">
+                                                        <div class="policy-form-comment">После заполнения данных, полис будет направлен на&nbsp;указанный при регистрации e-mail.<br> А&nbsp;также будет доступен для скачивания в&nbsp;данном разделе.</div>
+                                                        <div class="policy-form-reset"><input type="reset" value="Отменить" class="btn btn-border"></div>
+                                                        <div class="policy-form-submit"><input type="submit" value="Оформить" class="btn"></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- policy form END -->
+                                        </div>
+                                        <!-- main polis END -->
+
+                                    </div>
+                                    <!-- tabs content END -->
+
+                                    <!-- tabs content -->
+                                    <div class="tabs-content" data-title="Архивные">
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-prime-archive">
+                                            <div class="main-polis-prime-title"><span>Основной полис</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+
+                                            <!-- policy has -->
+                                            <div class="policy-has">
+                                                <div class="policy-has-inner">
+                                                    <div class="policy-has-title">ВЗР № ЦО-206-0097-0327</div>
+                                                    <div class="policy-has-info">
+                                                        <div class="policy-has-info-group">
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Фамилия</div>
+                                                                <div class="policy-has-info-item-value">Baydakov</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Имя</div>
+                                                                <div class="policy-has-info-item-value">Sergey</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Дата рождения</div>
+                                                                <div class="policy-has-info-item-value">28.05.1974</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Номер загран паспорта</div>
+                                                                <div class="policy-has-info-item-value">01 02 123 456</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="policy-has-info-group">
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Страна поездки</div>
+                                                                <div class="policy-has-info-item-value">Весь Мир</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Срок действия полиса</div>
+                                                                <div class="policy-has-info-item-value">от 14 марта 2024 до 31 марта 2025 года</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="policy-has-download"><a href="#" class="btn btn-border"><svg><use xlink:href="images/sprite.svg#icon-download"></use></svg>скачать полис<span>PDF 2,4 мб</span></a></div>
+                                                </div>
+                                            </div>
+                                            <!-- policy has END -->
+                                        </div>
+                                        <!-- main polis END -->
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-prime-archive">
+                                            <div class="main-polis-prime-title"><span>Основной полис</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                    </div>
+                                    <!-- tabs content END -->
+
                                 </div>
                             </div>
-                            <div class="policy-form-ctrl">
-                                <div class="policy-form-comment">После заполнения данных, полис будет направлен на&nbsp;указанный при регистрации e-mail.<br> А&nbsp;также будет доступен для скачивания в&nbsp;данном разделе.</div>
-                                <div class="policy-form-submit"><input type="submit" value="Оформить" class="btn"></div>
+                            <!-- tabs END -->
+
+                        </div>
+                        <!-- main polises END -->
+
+                        <!-- main polises -->
+                        <div class="main-polises">
+                            <div class="main-polises-header">
+                                <div class="main-polises-title">Полисы на детей</div>
                             </div>
-                        </form>
+
+                            <!-- tabs -->
+                            <div class="tabs">
+                                <div class="tabs-menu">
+                                </div>
+                                <div class="tabs-container">
+
+                                    <!-- tabs content -->
+                                    <div class="tabs-content" data-title="Активные">
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+
+                                            <!-- policy has -->
+                                            <div class="policy-has">
+                                                <div class="policy-has-inner">
+                                                    <div class="policy-has-title">ВЗР № ЦО-206-0097-0327</div>
+                                                    <div class="policy-has-info">
+                                                        <div class="policy-has-info-group">
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Фамилия</div>
+                                                                <div class="policy-has-info-item-value">Baydakov</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Имя</div>
+                                                                <div class="policy-has-info-item-value">Sergey</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Дата рождения</div>
+                                                                <div class="policy-has-info-item-value">28.05.1974</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Номер загран паспорта</div>
+                                                                <div class="policy-has-info-item-value">01 02 123 456</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="policy-has-info-group">
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Страна поездки</div>
+                                                                <div class="policy-has-info-item-value">Весь Мир</div>
+                                                            </div>
+                                                            <div class="policy-has-info-item">
+                                                                <div class="policy-has-info-item-title">Срок действия полиса</div>
+                                                                <div class="policy-has-info-item-value">от 14 марта 2024 до 31 марта 2025 года</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="policy-has-download"><a href="#" class="btn btn-border"><svg><use xlink:href="images/sprite.svg#icon-download"></use></svg>скачать полис<span>PDF 2,4 мб</span></a></div>
+                                                </div>
+                                            </div>
+                                            <!-- policy has END -->
+                                        </div>
+                                        <!-- main polis END -->
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="policy-add-link"><a href="#"><svg><use xlink:href="images/sprite.svg#icon-add"></use></svg><span>Добавить полис&nbsp;путешественника</span></a></div>
+                                            <!-- policy form -->
+                                            <div class="policy-form">
+                                                <form action="#" method="post">
+                                                    <div class="policy-form-title">Оформить полис путешественника</div>
+                                                    <div class="policy-form-notice">Написание латинскими буквами фамилии и&nbsp;имени должно соответствовать данным заграничного паспорта</div>
+                                                    <div class="policy-form-fields">
+                                                        <div class="policy-form-fields-group">
+                                                            <div class="form-input"><span class="form-input-label">Фамилия<span>*</span></span><input type="text" name="lastname" value="" class="required"></div>
+                                                            <div class="form-input"><span class="form-input-label">Имя<span>*</span></span><input type="text" name="firstname" value="" class="required"></div>
+                                                        </div>
+                                                        <div class="policy-form-fields-group">
+                                                            <div class="form-input"><span class="form-input-label">Номер заграничного паспорта</span><input type="text" name="passport" value=""></div>
+                                                            <div class="form-input"><span class="form-input-label">Дата рождения</span><input type="text" name="birthday" value="28.05.1974" disabled></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="policy-form-ctrl">
+                                                        <div class="policy-form-comment">После заполнения данных, полис будет направлен на&nbsp;указанный при регистрации e-mail.<br> А&nbsp;также будет доступен для скачивания в&nbsp;данном разделе.</div>
+                                                        <div class="policy-form-reset"><input type="reset" value="Отменить" class="btn btn-border"></div>
+                                                        <div class="policy-form-submit"><input type="submit" value="Оформить" class="btn"></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- policy form END -->
+                                        </div>
+                                        <!-- main polis END -->
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                            <div class="policy-add-link"><a href="#"><svg><use xlink:href="images/sprite.svg#icon-add"></use></svg><span>Добавить полис&nbsp;путешественника</span></a></div>
+                                            <!-- policy form -->
+                                            <div class="policy-form">
+                                                <form action="#" method="post">
+                                                    <div class="policy-form-title">Оформить полис путешественника</div>
+                                                    <div class="policy-form-notice">Написание латинскими буквами фамилии и&nbsp;имени должно соответствовать данным заграничного паспорта</div>
+                                                    <div class="policy-form-fields">
+                                                        <div class="policy-form-fields-group">
+                                                            <div class="form-input"><span class="form-input-label">Фамилия<span>*</span></span><input type="text" name="lastname" value="" class="required"></div>
+                                                            <div class="form-input"><span class="form-input-label">Имя<span>*</span></span><input type="text" name="firstname" value="" class="required"></div>
+                                                        </div>
+                                                        <div class="policy-form-fields-group">
+                                                            <div class="form-input"><span class="form-input-label">Номер заграничного паспорта</span><input type="text" name="passport" value=""></div>
+                                                            <div class="form-input"><span class="form-input-label">Дата рождения</span><input type="text" name="birthday" value="28.05.1974" disabled></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="policy-form-ctrl">
+                                                        <div class="policy-form-comment">После заполнения данных, полис будет направлен на&nbsp;указанный при регистрации e-mail.<br> А&nbsp;также будет доступен для скачивания в&nbsp;данном разделе.</div>
+                                                        <div class="policy-form-reset"><input type="reset" value="Отменить" class="btn btn-border"></div>
+                                                        <div class="policy-form-submit"><input type="submit" value="Оформить" class="btn"></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- policy form END -->
+                                        </div>
+                                        <!-- main polis END -->
+
+                                    </div>
+                                    <!-- tabs content END -->
+
+                                    <!-- tabs content -->
+                                    <div class="tabs-content" data-title="Архивные">
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child main-polis-prime-archive">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                        <!-- main polis -->
+                                        <div class="main-polis main-polis-prime main-polis-child main-polis-prime-archive">
+                                            <div class="main-polis-prime-title"><span>Полис ребенка</span></div>
+                                            <div class="main-polis-header">
+                                                <div class="main-polis-title">ДМС № ЦО-206-0097-0327</div>
+                                                <div class="main-polis-period">25 декабря 2023 — 27 декабря 2025</div>
+                                            </div>
+                                            <div class="main-polis-name">Рокоссовский Сергей Константинович</div>
+                                        </div>
+                                        <!-- main polis END -->
+
+                                    </div>
+                                    <!-- tabs content END -->
+
+                                </div>
+                            </div>
+                            <!-- tabs END -->
+
+                        </div>
+                        <!-- main polises END -->
+
                     </div>
-                    <!-- policy form END -->
+                    <!-- policy container END -->
+
+                    <!-- policy manual -->
+                    <div class="policy-manual">
+                        <div class="policy-manual-title">При самостоятельной оплате расходов за&nbsp;рубежом Вам необходимо</div>
+                        <div class="policy-manual-container">
+                            <div class="policy-manual-content">
+                                <div class="policy-manual-steps">
+                                    <div class="policy-manual-step">
+                                        <div class="policy-manual-step-number">1.</div>
+                                        <div class="policy-manual-step-title">Заполнить заявление<div class="policy-manual-step-download-link"><a href="#"><svg><use xlink:href="images/sprite.svg#icon-download"></use></svg><span>скачать заявление<em>PDF 2,4 мб</em></span></a></div></div>
+                                    </div>
+                                    <div class="policy-manual-step">
+                                        <div class="policy-manual-step-number">2.</div>
+                                        <div class="policy-manual-step-title">Приложить оригиналы документов, подтверждающих оплату:</div>
+                                        <div class="policy-manual-step-list">
+                                            <div class="policy-manual-step-list-item">Счет на&nbsp;медицинские и&nbsp;иные услуги</div>
+                                            <div class="policy-manual-step-list-item">Рецепт на&nbsp;медикаменты</div>
+                                            <div class="policy-manual-step-list-item">Подтверждение оплаты счета и&nbsp;иные документы согласно <a href="#">Правилам страхования</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="policy-manual-content">
+                                <div class="policy-manual-contacts">
+                                    <div class="policy-manual-contacts-item">
+                                        <div class="policy-manual-contacts-item-title">Оригиналы заявления и&nbsp;документы необходимо направить по&nbsp;адресу</div>
+                                        <div class="policy-manual-contacts-list">
+                                            <div class="policy-manual-contacts-list-item"><svg><use xlink:href="images/sprite.svg#icon-location"></use></svg>109240, г. Москва, Большой Ватин переулок, дом 3</div>
+                                        </div>
+                                    </div>
+                                    <div class="policy-manual-contacts-item">
+                                        <div class="policy-manual-contacts-item-title">Если у&nbsp;Вас есть вопросы по&nbsp;выплате</div>
+                                        <div class="policy-manual-contacts-list">
+                                            <div class="policy-manual-contacts-list-item"><a href="mailto:ns-vzr@psbins.ru"><svg><use xlink:href="images/sprite.svg#icon-email"></use></svg>ns-vzr@psbins.ru</a></div>
+                                            <div class="policy-manual-contacts-list-item"><a href="tel:+78005558565"><svg><use xlink:href="images/sprite.svg#icon-phone"></use></svg>8 (800) 555-85-65</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- policy manual END-->
 
                 </div>
                 <!-- container END -->
@@ -131,7 +500,6 @@
                         <div class="footer-right">
                             <div class="footer-copyrights">&copy;&nbsp;2022, ООО &laquo;ПСБ Страхование&raquo;</div>
                             <div class="footer-menu">
-                                <a href="#">Карта сайта</a>
                                 <a href="#">Политика обработки персональных данных</a>
                             </div>
                         </div>
