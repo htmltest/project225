@@ -57,7 +57,7 @@
 
 .select2-container--full::after {content:attr(data-placeholder); font-weight:600; position:absolute; left:15px; top:10px; color:#8D8DA6; font-size:11px; line-height:15px; text-transform:uppercase; letter-spacing:0.09em; pointer-events:none}
 .select2-container--default .select2-selection--single .select2-selection__rendered {color:#3E3E59}
-.select2-container--default .select2-selection--single .select2-selection__clear {cursor:pointer; float:right; font-weight:bold}
+.select2-container--default .select2-selection--single .select2-selection__clear {cursor:pointer; position:absolute; right:0; top:0; bottom:0; width:44px; background:#FFFFFF; background:url(clear.svg) no-repeat center; z-index:1; color:rgba(0, 0, 0, 0)}
 .select2-container--default .select2-selection--single .select2-selection__placeholder {font-weight:600; color:#8D8DA6}
 .select2-container--default .select2-selection--single .select2-selection__arrow {position:absolute; top:0; right:0; height:66px; width:34px}
 .select2-container--default .select2-selection--single .select2-selection__arrow b {display:block; width:16px; height:16px; position:absolute; left:0; top:50%; margin-top:-8px; background:url("arrow.svg") no-repeat; background-size:100%}

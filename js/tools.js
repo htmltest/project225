@@ -364,9 +364,11 @@ $(document).ready(function() {
             $('.clinics-views a.active').removeClass('active');
             curLink.addClass('active');
             if (curLink.hasClass('clinics-view-map')) {
+                $('.clinics').removeClass('list');
                 $('.clinics').addClass('map');
             } else {
                 $('.clinics').removeClass('map');
+                $('.clinics').addClass('list');
             }
         }
         e.preventDefault();
@@ -399,12 +401,41 @@ $(document).ready(function() {
     $('.clinics-sort-list input').change(function() {
         $('.clinics-sort-current').html($('.clinics-sort-list input:checked').parent().find('span').html());
         $('.clinics-sort').removeClass('open');
+        updateClinicList();
     });
 
     $('body').on('click', '.clinics-filter-param a', function(e) {
         var curItem = $(this).parent();
+        var curID = curItem.attr('data-id');
+        $('.clinics-filter-window-field').eq(curID).each(function() {
+            var curField = $(this);
+            curField.find('.form-input input').each(function() {
+                var curInput = $(this);
+                curInput.val('').trigger('change');
+            });
+            curField.find('.form-select select').each(function() {
+                var curSelect = $(this);
+                curSelect.val('').trigger('change');
+            });
+            curField.find('.form-checkbox input').each(function() {
+                var curCheckbox = $(this);
+                curCheckbox.prop('checked', false).trigger('change');
+            });
+        });
         curItem.remove();
+        updateClinicFilterParams();
         e.preventDefault();
+    });
+
+    $('.clinics-filter-window-field-content .form-input input').keydown(function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+    });
+
+    $('.clinics-filter-window-field-content .form-input input, .clinics-filter-window-field-content .form-select select, .clinics-filter-window-field-content .form-checkbox input').change(function() {
+        updateClinicFilterParams();
+        updateClinicList();
     });
 
     $('.clinics-filter-link').click(function(e) {
@@ -412,8 +443,26 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.clinics-filter').each(function() {
+        updateClinicFilterParams();
+    });
+
+    $('body').on('click', '.clinics-list .pager a', function(e) {
+        var curLink = $(this);
+        if (!curLink.hasClass('active')) {
+            $('.clinics-list .pager a.active').removeClass('active');
+            curLink.addClass('active');
+            if (e.originalEvent === undefined) {
+                updateClinicList();
+            } else {
+                updateClinicList(true);
+            }
+        }
+        e.preventDefault();
+    });
+
     $(document).click(function(e) {
-        if ($(e.target).parents().filter('.clinics-ctrl').length == 0) {
+        if (($(e.target).parents().filter('.clinics-ctrl').length == 0 && $(e.target).parents().filter('.select2-container').length == 0) || $(e.target).hasClass('clinics-filter')) {
             $('html').removeClass('clinics-filter-open');
         }
     });
@@ -421,6 +470,70 @@ $(document).ready(function() {
     $('.clinics-map').each(function() {
         var curOffset = ($('.wrapper').width() - $('.container').width()) / 2;
         $('.clinics-map').css({'margin-left': -curOffset + 'px', 'width': $('.wrapper').width() + 'px'});
+    });
+
+    $('body').on('click', '.clinics-map-list-item-header', function(e) {
+        var curItem = $(this).parent();
+        if (!curItem.hasClass('active')) {
+            $('.clinics-map-list-item.active').removeClass('active');
+            curItem.addClass('active');
+            $('.clinics-map-detail-container').html(curItem.find('.clinics-map-list-item-detail').html());
+            $('.clinics-map-detail').addClass('visible');
+
+            var curIndex = $('.clinics-map-list-item').index(curItem);
+            for (var i = 0; i < myPlacemarks.length; i++) {
+                var curPlacemark = myPlacemarks[i];
+                if (i == curIndex) {
+                    curPlacemark.options.set('iconImageHref', $('.clinics-map').attr('data-iconactive'));
+                } else {
+                    curPlacemark.options.set('iconImageHref', $('.clinics-map').attr('data-icon'));
+                }
+            }
+
+            myMap.setZoom(15);
+            myMap.panTo([Number(curItem.attr('data-lat')), Number(curItem.attr('data-lng'))]);
+        }
+        $('.clinics').removeClass('map-list-open');
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.clinics-map-detail-close', function(e) {
+        $('.clinics-map-list-item.active').removeClass('active');
+        $('.clinics-map-detail-container').html('');
+        $('.clinics-map-detail').removeClass('visible');
+        for (var i = 0; i < myPlacemarks.length; i++) {
+            var curPlacemark = myPlacemarks[i];
+            curPlacemark.options.set('iconImageHref', $('.clinics-map').attr('data-icon'));
+        }
+        e.preventDefault();
+    });
+
+    $('.clinics-map-list-link a').click(function(e) {
+        $('.clinics').toggleClass('map-list-open');
+        e.preventDefault();
+    });
+
+    $('.clinics-map-list-search .form-input input').keydown(function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+    });
+
+    $('.clinics-map-list-search .form-input input').on('keyup blur change', function() {
+        var curInput = $(this);
+        var curValue = curInput.val().toLowerCase();
+        $('.clinics-map-list-item').each(function() {
+            var curItem = $(this);
+
+            var curIndex = curItem.find('.clinics-map-list-item-header-title').text().toLowerCase().indexOf(curValue);
+            if (curIndex == -1) {
+                curItem.addClass('hidden');
+            } else {
+                curItem.removeClass('hidden');
+            }
+        });
+        $('.clinics-map-list-item.first-child').removeClass('first-child');
+        $('.clinics-map-list-item:not(.hidden)').eq(0).addClass('first-child');
     });
 
 });
@@ -533,6 +646,9 @@ function initForm(curForm) {
         };
         if (typeof(curSelect.attr('data-searchplaceholder')) != 'undefined') {
             options['searchInputPlaceholder'] = curSelect.attr('data-searchplaceholder');
+        }
+        if (curForm.hasClass('clinics-ctrl')) {
+            options['allowClear'] = true;
         }
         curSelect.select2(options);
         curSelect.parent().find('.select2-container').attr('data-placeholder', curSelect.attr('data-placeholder'));
@@ -721,6 +837,126 @@ $(window).on('load resize', function() {
     $('.clinics-map').each(function() {
         var curOffset = ($('.wrapper').width() - $('.container').width()) / 2;
         $('.clinics-map').css({'margin-left': -curOffset + 'px', 'width': $('.wrapper').width() + 'px'});
+        var curLeftCtrl = -curOffset + 553;
+        var curRightCtrl = -curOffset + 20;
+        if ($(window).width() < 1681) {
+            curLeftCtrl = -curOffset + 420;
+        }
+        $('.clinics-ctrl').css({'left': curLeftCtrl + 'px', 'right': curRightCtrl + 'px'});
     });
 
 });
+
+function updateClinicFilterParams() {
+    var newHTML = '';
+
+    var curIndex = -1;
+    var curParams = 0;
+    $('.clinics-filter-window-field').each(function() {
+        var curField = $(this);
+        curIndex++;
+        curField.find('.form-input input').each(function() {
+            var curInput = $(this);
+            if (curInput.val() != '') {
+                curParams++;
+                newHTML += '<div class="clinics-filter-param" data-id="' + curIndex + '">' + curField.attr('data-title') + ': ' + curInput.val() + '<a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#clinics-filter-param-remove"></use></svg></a></div>';
+            }
+        });
+        curField.find('.form-select select').each(function() {
+            var curSelect = $(this);
+            if (curSelect.val() != '') {
+                curParams++;
+                newHTML += '<div class="clinics-filter-param" data-id="' + curIndex + '">' + curSelect.find('option[value="' + curSelect.val() + '"]').html() + '<a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#clinics-filter-param-remove"></use></svg></a></div>';
+            }
+        });
+        curField.find('.form-checkbox input').each(function() {
+            var curCheckbox = $(this);
+            if (curCheckbox.prop('checked')) {
+                curParams++;
+                newHTML += '<div class="clinics-filter-param" data-id="' + curIndex + '">' + curCheckbox.parent().find('span').html() + '<a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#clinics-filter-param-remove"></use></svg></a></div>';
+            }
+        });
+    });
+    $('.clinics-filter-params').html(newHTML);
+    $('.clinics-filter-link span').html(curParams);
+    if (newHTML != '') {
+        $('.clinics-filter').addClass('active');
+    } else {
+        $('.clinics-filter').removeClass('active');
+    }
+}
+
+var timerUpdateClinicList = null;
+var periodUpdateClinicList = 300;
+
+function updateClinicList(isScroll) {
+    window.clearTimeout(timerUpdateClinicList);
+    timerUpdateClinicList = null;
+
+    timerUpdateClinicList = window.setTimeout(function() { updateClinicListStart(isScroll); }, periodUpdateClinicList);
+}
+
+function updateClinicListStart(isScroll) {
+    $('.clinics-list').addClass('loading');
+    $('.clinics-map').addClass('loading');
+    var curForm = $('.clinics-ctrl');
+    var curData = curForm.serialize();
+    curData += '&page=' + $('.pager a.active').attr('data-value');
+    $.ajax({
+        type: 'POST',
+        url: curForm.attr('action'),
+        dataType: 'html',
+        data: curData,
+        cache: false
+    }).done(function(html) {
+        var newHTML = $(html);
+        if ($('.clinics-list-container').length > 0) {
+            $('.clinics-list-container').html(newHTML.find('.clinics-list-container').html())
+            $('.clinics-list .pager').html(newHTML.find('.pager').html())
+            $('.clinics-map-list-item.active').removeClass('active');
+            $('.clinics-map-detail-container').html('');
+            $('.clinics-map-detail').removeClass('visible');
+            for (var i = 0; i < myPlacemarks.length; i++) {
+                var curPlacemark = myPlacemarks[i];
+                curPlacemark.options.set('iconImageHref', $('.clinics-map').attr('data-icon'));
+            }
+            $('.clinics-map-list-inner').html(newHTML.find('.clinics-map-list-inner').html());
+            $('.clinics-map-list-search .form-input input').val('');
+            updateClinicMap();
+            $('.clinics-list').removeClass('loading');
+            $('.clinics-map').removeClass('loading');
+            if (($(window).scrollTop() > $('.card-tabs-title').offset().top) && isScroll) {
+                $('html, body').animate({'scrollTop': $('.card-tabs-title').offset().top});
+            }
+        }
+    });
+}
+
+function updateClinicMap() {
+    for (var i = 0; i < myPlacemarks.length; i++) {
+        myMap.geoObjects.remove(myPlacemarks[i]);
+    }
+    myPlacemarks = [];
+
+    var curIndex = -1;
+    $('.clinics-map-list-item').each(function() {
+        var curItem = $(this);
+        curIndex++;
+        var myPlacemark = new ymaps.Placemark([curItem.attr('data-lat'), curItem.attr('data-lng')], {
+            hintContent: curItem.find('.clinics-map-list-item-header-title').html(),
+            item: curIndex
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: $('.clinics-map').attr('data-icon'),
+            iconImageSize: [96, 96],
+            iconImageOffset: [48, 38]
+        });
+        myPlacemark.events.add('click', function(e) {
+            var curPlacemark = e.get('target');
+
+            $('.clinics-map-list-item').eq(Number(curPlacemark.properties.get('item'))).find('.clinics-map-list-item-header').trigger('click');
+        });
+        myPlacemarks.push(myPlacemark);
+        myMap.geoObjects.add(myPlacemark);
+    });
+}

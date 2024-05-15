@@ -1527,8 +1527,9 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 
 .card-contacts-form {margin:0}
 
-.clinics {margin:24px 0 0 0; position:relative}
-.clinics-views {position:absolute; right:0; top:-58px; display:flex}
+.clinics {position:relative}
+.clinics.map {margin:0 0 -120px 0; padding-top:30px}
+.clinics-views {position:absolute; right:0; top:-34px; display:flex}
 .clinics-views a {display:flex; min-width:32px; max-width:32px; height:32px; margin:0 0 0 8px; align-items:center; justify-content:center; border:1px solid #C7C7D9; border-radius:4px; transition:border-color 0.2s, background 0.2s, box-shadow 0.2s}
 @media screen and (min-width:1100px) {
     .clinics-views a:hover {border-color:#3E3E59}
@@ -1541,11 +1542,49 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 .clinics-views a.active svg {fill:#3E3E59}
 
 .clinics-ctrl {display:flex; align-items:center; margin:0; padding:0; position:relative}
+.clinics.list .clinics-ctrl {left:auto !important; right:auto !important}
+.clinics.map .clinics-ctrl {position:absolute; left:193px; top:50px; right:0; z-index:28}
 
-.clinics-filter {width:100%; position:relative; overflow:hidden; display:flex; align-items:center}
+@media (max-width:1680px) {
+    .clinics.map {margin:0 0 -60px 0}
+    .clinics.map .clinics-ctrl {left:230px}
+}
+
+@media (max-width:1099px) {
+    .clinics.map {padding-top:20px}
+    .clinics-views {top:-33.5px}
+    .clinics.map .clinics-ctrl {left:auto !important; position:relative; top:auto; right:auto !important; height:94px; background:#FFFFFF; margin:0 -34px}
+}
+
+@media (max-width:767px) {
+    .clinics.map .clinics-ctrl {height:69px; margin:0 -16px}
+}
+
+.clinics-filter {width:100%; position:relative; overflow:hidden; display:flex; align-items:center; padding:24px 0 12px 0}
 .clinics-filter::after {content:""; position:absolute; right:0; top:0; bottom:0; width:100px; background:linear-gradient(270deg, #F8F8FC 23.53%, rgba(248, 248, 252, 0) 64.47%); pointer-events:none}
 
+@media (max-width:1099px) {
+    .clinics-filter {padding:24px 0}
+    .clinics-filter::after {display:none}
+}
+
+@media (max-width:767px) {
+    .clinics-filter {padding:20px 0}
+}
+
+.clinics.map .clinics-filter {padding:0}
+.clinics.map .clinics-filter::after {display:none}
+
+@media (max-width:1099px) {
+    .clinics.map .clinics-filter {padding:20px 20px 20px 34px; width:auto}
+}
+
+@media (max-width:767px) {
+    .clinics.map .clinics-filter {padding:12px 20px 12px 16px}
+}
+
 .clinics-filter-link {display:flex; align-items:center; height:40px; padding:0 24px; background:#FFFFFF; letter-spacing:0.01em; color:#3E3E59; cursor:pointer; box-shadow:0px 0px 10px rgba(0, 0, 0, 0.02), 0px 10px 30px rgba(0, 0, 0, 0.05); border-radius:4px; transition:background 0.2s, color 0.2s}
+.clinics.map .clinics-filter-link {height:45px}
 @media screen and (min-width:1100px) {
     .clinics-filter-link:hover {background:#E86630; color:#FFFFFF}
 }
@@ -1559,6 +1598,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 }
 .clinics-filter.active .clinics-filter-link span {display:flex}
 .clinics-filter-params {display:flex; align-items:center; white-space:nowrap}
+.clinics.map .clinics-filter-params {display:none}
 .clinics-filter-param {margin:0 0 0 10px; display:flex; padding:0 16px; height:40px; align-items:center; background:#E6E6EF; border-radius:4px; font-size:13px; line-height:19px; letter-spacing:0.01em}
 .clinics-filter-param a {min-width:12px; max-width:12px; height:12px; margin:0 0 0 10px; position:relative}
 .clinics-filter-param a::before {content:""; position:absolute; left:-10px; top:-10px; right:-10px; bottom:-10px}
@@ -1567,8 +1607,14 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
     .clinics-filter-param a:hover svg {fill:#3E3E59}
 }
 
-.clinics-sort {position:relative; margin:0 0 0 5px; white-space:nowrap; line-height:21px; letter-spacing:0.02em; color:#3E3E59}
+@media (max-width:1099px) {
+    .clinics-filter-params {display:none}
+}
+
+.clinics-sort {position:relative; margin:24px 0 12px 5px; white-space:nowrap; line-height:21px; letter-spacing:0.02em; color:#3E3E59}
+.clinics.map .clinics-sort {margin:0}
 .clinics-sort-current {display:flex; align-items:center; cursor:pointer; transition:color 0.2s}
+.clinics.map .clinics-sort-current {padding:12px 24px; background:#FFFFFF; box-shadow:0px 0px 10px rgba(0, 0, 0, 0.1); border-radius:6px}
 @media screen and (min-width:1100px) {
     .clinics-sort-current:hover {color:#E86630}
 }
@@ -1587,11 +1633,41 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 .clinics-sort-list span svg {min-width:14px; max-width:14px; height:14px; margin:0 0 0 5px; fill:#8D8DA6}
 .clinics-sort-list span svg.up {transform:scale(1, -1)}
 
-.clinics-filter-window {position:absolute; left:-9999px; top:-9999px; opacity:0; width:100%; margin:5px 0 0 0; z-index:8; padding:30px; background:#FFFFFF; box-shadow:0px 8px 24px rgba(0, 0, 0, 0.1); border-radius:10px; transition:opacity 0.2s}
+@media (max-width:1099px) {
+    .clinics-sort {margin:24px 0}
+    .clinics.map .clinics-sort-current {padding:0; background:none; box-shadow:none; border-radius:0}
+    .clinics.map .clinics-sort {margin:0}
+}
+
+@media (max-width:767px) {
+    .clinics-sort {margin:20px 0}
+}
+
+.clinics-map-list-link {display:none}
+
+@media (max-width:1099px) {
+    .clinics.map .clinics-map-list-link {display:flex}
+    .clinics-map-list-link {flex:1; justify-content:flex-end; margin:0 34px 0 0}
+    .clinics-map-list-link a {min-width:48px; max-width:48px; height:48px}
+    .clinics-map-list-link a svg {display:block; width:48px; height:48px; fill:#1C1B1F}
+    .clinics-map-list-link a svg:nth-child(2) {display:none}
+    .map-list-open .clinics-map-list-link a svg:nth-child(1) {display:none}
+    .map-list-open .clinics-map-list-link a svg:nth-child(2) {display:block}
+}
+
+@media (max-width:767px) {
+    .clinics-map-list-link {margin:0 16px 0 0}
+    .clinics-map-list-link a {min-width:36px; max-width:36px; height:36px}
+    .clinics-map-list-link a svg {width:36px; height:36px}
+}
+
+.clinics-filter-window {position:absolute; left:-9999px; top:-9999px; opacity:0; width:100%; margin:-7px 0 0 0; z-index:28; padding:30px; background:#FFFFFF; box-shadow:0px 8px 24px rgba(0, 0, 0, 0.1); border-radius:10px; transition:opacity 0.2s}
+.clinics.map .clinics-filter-window {margin:5px 0 0 0}
 .clinics-filter-open .clinics-filter-window {left:0; top:100%; opacity:1}
 .clinics-filter-window-title {font-weight:600; font-size:24px; line-height:31px; color:#3E3E59}
 .clinics-filter-window-fields {display:flex; margin:0 -10px; flex-wrap:wrap}
 .clinics-filter-window-field {min-width:320px; max-width:320px; margin:30px 10px 0 10px}
+.clinics.map .clinics-filter-window-field {min-width:calc(33.33% - 20px); max-width:calc(33.33% - 20px)}
 .clinics-filter-window-field-title {font-weight:600; font-size:17px; line-height:22px; color:#3E3E59}
 .clinics-filter-window-field-content {padding:12px 0 0 0}
 .clinics-filter-window-field-content .form-input {margin:0}
@@ -1609,25 +1685,46 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 .clinics-filter-window-field-content .select2-container--default .select2-selection--single {font-size:15px; line-height:20px; font-weight:500; border-radius:6px; border-color:#F0F0F7; padding-top:10px}
 .clinics-filter-window-field-content .select2-container--default .select2-selection--single .select2-selection__placeholder {font-weight:500; color:#A8A8BF}
 .clinics-filter-window-field-content .select2-container--default .select2-selection--single .select2-selection__arrow {height:38px}
+.clinics-filter-open .select2-results__option {font-size:15px; line-height:20px; padding-top:10px; padding-bottom:10px}
+.clinics-filter-open .select2-results__option::after {top:10px; width:20px; height:20px; background-size:100%}
 .clinics-filter-window-field-content .select2-container--full::after {display:none}
 .clinics-filter-window-field-content .form-checkbox {margin:11px 0 0 0; font-size:15px}
 
-.clinics-list {margin:12px 0 0 0; position:relative; left:auto; top:auto; width:100%; opacity:1; transition:opacity 0.2s}
+@media (max-width:1239px) {
+    .clinics.map .clinics-filter-window-field {min-width:calc(50% - 20px); max-width:calc(50% - 20px)}
+}
+
+@media (max-width:1099px) {
+    .clinics-filter-window {margin:-19px 0 0 0}
+    .clinics.map .clinics-filter-window {margin:5px 34px 0 34px; width:calc(100% - 68px)}
+    .clinics-filter-window-field {min-width:calc(50% - 20px); max-width:calc(50% - 20px)}
+    .clinics.map .clinics-filter-window-field {min-width:calc(50% - 20px); max-width:calc(50% - 20px)}
+}
+
+@media (max-width:767px) {
+    .clinics-filter-window {margin:-15px 0 0 0; padding:16px 16px 30px 16px}
+    .clinics.map .clinics-filter-window {margin:5px 16px 0 16px; width:calc(100% - 32px)}
+    .clinics-filter-window-fields {margin:0; display:block}
+    .clinics-filter-window-field {min-width:0; max-width:none; margin:20px 0 0 0}
+    .clinics.map .clinics-filter-window-field {min-width:0; max-width:none}
+    .clinics-filter-window-field-title {font-size:15px; line-height:20px}
+    .clinics-filter-window-field-content {padding:6px 0 0 0}
+}
+
+.clinics-list {position:relative; left:auto; top:auto; width:100%; opacity:1; transition:opacity 0.2s; min-height:30px}
+.clinics-list.loading::after {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(248, 248, 252, 0.8) url(../images/loading-inverse.svg) no-repeat center}
 .clinics.map .clinics-list {position:absolute; left:-9999px; top:-9999px; opacity:0}
 .clinics-list-container {background:#FFFFFF; border-radius:12px; padding:24px}
 .clinics-list-item {margin:16px 0 0 0; padding:16px 0 0 0; border-top:1px solid #E6E6EF}
 .clinics-list-item:first-child {margin:0; padding:0; border-top:none}
-.clinics-list-item-header {display:flex; justify-content:space-between}
+.clinics-list-item-header {display:flex; justify-content:space-between; position:relative; z-index:2}
 .clinics-list-item-title {font-weight:600; font-size:20px; line-height:26px; color:#3E3E59}
 .clinics-list-item-ctrl {min-width:88px; max-width:88px; display:flex; align-items:center; justify-content:space-between; margin:1px 0 0 0}
 .clinics-list-item-status {min-width:24px; max-width:24px; position:relative}
 .clinics-list-item-status svg {display:block; width:24px; height:24px; fill:#8D8DA6}
-.clinics-list-item-status-guarantee svg {fill:#E86630}
 .clinics-list-item-status span {display:none; position:absolute; left:50%; top:100%; margin:23px 0 0 0; white-space:nowrap; transform:translateX(-50%); padding:12px 20px; background:#FFFFFF; border-radius:6px; box-shadow:0px 0px 24px rgba(0, 0, 0, 0.1)}
 .clinics-list-item-status span::before {content:""; position:absolute; left:50%; top:-9px; width:27px; height:9px; margin:0 0 0 -13.5px; background:url(../images/clinics-list-item-status.svg) no-repeat center top}
-@media screen and (min-width:1100px) {
-    .clinics-list-item-status:hover span {display:block}
-}
+.clinics-list-item-status:hover span {display:block}
 .clinics-list-item-ctrl-sep {width:1px; height:26px; background:#E6E6EF}
 .clinics-list-item-bookmark {min-width:24px; max-width:24px; position:relative}
 .clinics-list-item-bookmark svg {display:block; width:24px; height:24px; fill:#8D8DA6; transition:fill 0.2s}
@@ -1660,7 +1757,97 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 .clinics-list-item-address {margin:4px 0 0 0; position:relative; padding:0 0 0 28px; display:flex; flex-wrap:wrap; font-size:13px; line-height:18px; letter-spacing:0.02em}
 .clinics-list-item-address svg {position:absolute; left:0; top:-1px; width:18px; height:18px; fill:#5C5C73}
 
-.clinics-map {margin:30px 0 0 0; position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
+@media (max-width:767px) {
+    .clinics-list-container {margin:0 -16px; border-radius:0; padding:16px}
+    .clinics-list-item-header {flex-wrap:wrap}
+    .clinics-list-item-title {order:1; width:100%; margin:8px 0 0 0; font-size:17px; line-height:22px}
+    .clinics-list-item-ctrl {min-width:100%; max-width:none; margin:0}
+    .clinics-list-item-ctrl-sep {display:none}
+    .clinics-list-item-status span {left:0; transform:none; margin:10px 0 0 0}
+    .clinics-list-item-status span::before {left:12px}
+    .clinics-list-item-phones {display:block}
+    .clinics-list-item-phone {margin:8px 0 0 0}
+    .clinics-list-item-phone:first-child {margin:0}
+    .clinics-list-item-phone+.clinics-list-item-phone {margin:8px 0 0 0; padding:00; border-left:none}
+    .clinics-list-item-phone span {display:block; margin:0 0 2px 0}
+    .clinics-list-item-phone a {color:#3E3E59}
+}
+
+.clinics-map {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s; min-height:30px}
+.clinics-map.loading::after {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(248, 248, 252, 0.8) url(../images/loading-inverse.svg) no-repeat center; z-index:20}
 .clinics.map .clinics-map {position:relative; left:auto; top:auto; opacity:1}
-.clinics-map-container {display:flex}
+.clinics-map-container {display:flex; overflow:hidden}
+.clinics-map-list {display:flex; flex-wrap:wrap; min-width:533px; max-width:533px; position:relative; z-index:19; background:#FFFFFF; box-shadow:0px 10px 12px rgba(0, 0, 0, 0.25); padding:20px 10px 20px 20px}
+.clinics-map-list-search {width:100%; height:86px; border-bottom:1px solid #E6E6EF; padding:0 10px 20px 0}
+.clinics-map-list-search form {margin:0; padding:0}
+.clinics-map-list-search .form-input {margin:0}
+.clinics-map-list-search input {padding:19px 50px 19px 14px}
+.clinics-map-list-search input::-webkit-input-placeholder {opacity:1; color:#8D8DA6}
+.clinics-map-list-search input::-moz-placeholder {opacity:1; color:#8D8DA6}
+.clinics-map-list-search input:-ms-input-placeholder {opacity:1; color:#8D8DA6}
+.clinics-map-list-search svg {position:absolute; right:15px; top:23px; width:20px; height:20px; fill:none; stroke:#8D8DA6; pointer-events:none}
+.clinics-map-list-inner {width:100%; height:100%; max-height:628px; padding:0 10px 0 0; position:relative; overflow:auto}
+.clinics-map-list-inner::-webkit-scrollbar-thumb {background:#DADADA; border-radius:2px}
+.clinics-map-list-inner::-webkit-scrollbar {width:3px; height:3px; background:transparent}
+.clinics-map-list-item {border-top:1px solid rgba(168, 168, 191, 0.3); transition:border-color 0.2s}
+.clinics-map-list-item.hidden {display:none}
+.clinics-map-list-item:first-child,
+.clinics-map-list-item.first-child {border-top:none}
+@media screen and (min-width:1100px) {
+    .clinics-map-list-item:hover {border-color:transparent}
+    .clinics-map-list-item:hover+.clinics-map-list-item {border-color:transparent}
+}
+.clinics-map-list-item.active {border-color:transparent}
+.clinics-map-list-item.active+.clinics-map-list-item {border-color:transparent}
+.clinics-map-list-item-header {border-radius:12px; display:block; transition:background 0.2s; padding:20px}
+@media screen and (min-width:1100px) {
+    .clinics-map-list-item-header:hover {background:#EAE8F7}
+}
+.clinics-map-list-item.active .clinics-map-list-item-header {background:#EAE8F7}
+.clinics-map-list-item-header-title {font-weight:600; font-size:18px; line-height:23px; color:#3E3E59; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis}
+.clinics-map-list-item-header-address {margin:10px 0 0 0; padding:0 0 0 28px; position:relative; font-weight:500; font-size:13px; line-height:18px; color:#5C5C73; letter-spacing:0.02em; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis}
+.clinics-map-list-item-header-address svg {position:absolute; left:0; top:-1px; width:18px; height:18px; fill:#5C5C73}
+.clinics-map-list-item-detail {display:none}
+.clinics-map-detail {position:absolute; left:553px; top:85px; width:400px; display:none; z-index:19; background:#FFFFFF; box-shadow:0px 0px 12px rgba(0, 0, 0, 0.15); border-radius:12px; padding:12px 20px 24px 20px}
+.clinics-map-detail.visible {display:block}
+.clinics-map-detail-status {display:flex; align-items:center; font-weight:500; font-size:13px; line-height:19px; letter-spacing:0.02em; height:24px}
+.clinics-map-detail-status svg {min-width:24px; max-width:24px; height:24px; margin:0 10px 0 0; fill:#8D8DA6}
+.clinics-map-detail-title {margin:12px 0 0 0; font-weight:600; font-size:20px; line-height:25px; color:#3E3E59}
+.clinics-map-detail-types {margin:4px 0 0 0; font-size:15px; line-height:23px}
+.clinics-map-detail-phones {margin:12px 0 0 0; position:relative; padding:0 0 0 28px}
+.clinics-map-detail-phones svg {position:absolute; left:0; top:0; width:18px; height:18px; fill:#5C5C73}
+.clinics-map-detail-phone {margin:10px 0 0 0; font-size:13px; line-height:18px; letter-spacing:0.02em}
+.clinics-map-detail-phone:first-child {margin:0}
+.clinics-map-detail-phone span {font-weight:600; font-size:11px; line-height:15px; text-transform:uppercase; color:#8D8DA6; margin:0 0 4px 0; display:block}
+.clinics-map-detail-phone a {font-weight:500; color:#3E3E59}
+.clinics-map-detail-phone a.main {font-weight:bold}
+@media screen and (min-width:1100px) {
+    .clinics-map-detail-phone a:hover {color:#ED885E}
+}
+.clinics-map-detail-address {margin:12px 0 0 0; position:relative; padding:0 0 0 28px; font-size:13px; line-height:18px; letter-spacing:0.02em}
+.clinics-map-detail-address svg {position:absolute; left:0; top:-1px; width:18px; height:18px; fill:#5C5C73}
+.clinics-map-detail-close {position:absolute; right:20px; top:12px}
+.clinics-map-detail-close svg {width:24px; height:24px; fill:#1C1B1F; transition:fill 0.2s}
+@media screen and (min-width:1100px) {
+    .clinics-map-detail-close svg:hover {fill:#E86630}
+}
 .clinics-map-content {width:100%; height:774px}
+
+@media (max-width:1680px) {
+    .clinics-map-list {min-width:400px; max-width:400px}
+    .clinics-map-detail {left:420px}
+}
+
+@media (max-width:1099px) {
+    .clinics-map-list {display:none; position:absolute; left:0; top:0; right:0; bottom:0; width:auto; min-width:0; max-width:none; box-shadow:none; border-top:1px solid rgba(168, 168, 191, 0.3)}
+    .map-list-open .clinics-map-list {display:block}
+    .clinics-map-list-inner {min-height:735px; max-height:735px}
+    .clinics-map-content {height:862px}
+    .clinics-map-detail {left:34px; top:34px}
+    .clinics-map-list-search {margin:20px 0}
+}
+
+@media (max-width:767px) {
+    .clinics-map-list {padding:0 10px}
+    .clinics-map-detail {left:16px; top:16px; right:16px; width:auto; padding:12px}
+}
