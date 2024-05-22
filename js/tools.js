@@ -536,6 +536,13 @@ $(document).ready(function() {
         $('.clinics-map-list-item:not(.hidden)').eq(0).addClass('first-child');
     });
 
+    $('.main-alert-close').click(function(e) {
+        $('.main-alert').slideUp(function() {
+            $('.main-alert').remove();
+        });
+        e.preventDefault();
+    });
+
 });
 
 $.fn.datepicker.language['ru'] =  {

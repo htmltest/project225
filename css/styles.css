@@ -1439,7 +1439,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
     .apps-close {position:absolute; margin:0; right:15px; top:17.5px}
 }
 
-.notifications {position:fixed; left:0; right:0; top:50px; height:0; z-index:99}
+.notifications {position:fixed; left:0; right:0; top:50px; height:0; z-index:999}
 .notifications .container {height:0}
 .notifications-list {float:right; width:380px}
 .notifications-item {position:relative; margin:12px 0 0 0; padding:12px 38px 12px 42px; color:#FFFFFF; background:rgba(54, 54, 118, 0.8); box-shadow:0px 4px 16px rgba(42, 209, 121, 0.2), 0px 15px 30px rgba(50, 87, 68, 0.04); backdrop-filter:blur(5px); border-radius:4px}
@@ -1719,13 +1719,13 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 .clinics-list-item:first-child {margin:0; padding:0; border-top:none}
 .clinics-list-item-header {display:flex; justify-content:space-between; position:relative; z-index:2}
 .clinics-list-item-title {font-weight:600; font-size:20px; line-height:26px; color:#3E3E59}
-.clinics-list-item-ctrl {min-width:88px; max-width:88px; display:flex; align-items:center; justify-content:space-between; margin:1px 0 0 0}
+.clinics-list-item-ctrl {display:flex; align-items:center; justify-content:space-between; margin:1px 0 0 0}
 .clinics-list-item-status {min-width:24px; max-width:24px; position:relative}
 .clinics-list-item-status svg {display:block; width:24px; height:24px; fill:#8D8DA6}
 .clinics-list-item-status span {display:none; position:absolute; left:50%; top:100%; margin:23px 0 0 0; white-space:nowrap; transform:translateX(-50%); padding:12px 20px; background:#FFFFFF; border-radius:6px; box-shadow:0px 0px 24px rgba(0, 0, 0, 0.1)}
 .clinics-list-item-status span::before {content:""; position:absolute; left:50%; top:-9px; width:27px; height:9px; margin:0 0 0 -13.5px; background:url(../images/clinics-list-item-status.svg) no-repeat center top}
 .clinics-list-item-status:hover span {display:block}
-.clinics-list-item-ctrl-sep {width:1px; height:26px; background:#E6E6EF}
+.clinics-list-item-ctrl-sep {min-width:1px; max-width:1px; height:26px; background:#E6E6EF; margin:0 20px}
 .clinics-list-item-bookmark {min-width:24px; max-width:24px; position:relative}
 .clinics-list-item-bookmark svg {display:block; width:24px; height:24px; fill:#8D8DA6; transition:fill 0.2s}
 .clinics-list-item-bookmark svg+svg {display:none}
@@ -1851,3 +1851,13 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
     .clinics-map-list {padding:0 10px}
     .clinics-map-detail {left:16px; top:16px; right:16px; width:auto; padding:12px}
 }
+
+.main-alert {background:#FFDBCC; padding:16px 40px}
+.main-alert-header {display:flex; align-items:flex-start; justify-content:space-between}
+.main-alert-title {font-weight:600; font-size:20px; line-height:26px; color:#3E3E59}
+.main-alert-close {min-width:26px; max-width:26px; margin:0 0 0 10px}
+.main-alert-close svg {width:26px; height:26px; fill:#3E3E59; transition:fill 0.2s}
+.main-alert-close:hover svg {fill:#E86630}
+.main-alert-text {margin:8px 0 0 0; font-size:15px; line-height:21px; color:#3E3E59}
+.main-alert-text strong {font-weight:bold; white-space:nowrap}
+.main-alert-text strong a {color:#3E3E59}
