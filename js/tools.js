@@ -543,6 +543,13 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.dashboard-agreements-form-confirm a').click(function(e) {
+        if ($('.dashboard-agreements-form-doc input').valid()) {
+            $('.dashboard-agreements-form').addClass('open');
+        }
+        e.preventDefault();
+    });
+
 });
 
 $.fn.datepicker.language['ru'] =  {

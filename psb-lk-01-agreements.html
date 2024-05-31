@@ -86,31 +86,73 @@
                         </div>
                         <!-- dashboard links END -->
 
-                        <!-- main polises -->
-                        <div class="main-polises">
-                            <div class="main-polises-loading"><svg><use xlink:href="images/sprite.svg#icon-info"></use></svg>Внимание! Идет загрузка данных договоров. Информация появится примерно через минуту.</div>
-                            <div class="main-polises-header">
-                                <div class="main-polises-title">Персональные полисы</div>
+                        <!-- dashboard agreements -->
+                        <div class="dashboard-agreements">
+                            <div class="dashboard-warning">
+                                <div class="dashboard-warning-title">Внимание!</div>
+                                <div class="dashboard-warning-text">Уважаемые клиенты мы&nbsp;обновили условие согласия обработки персональных данных и&nbsp;согласие на&nbsp;обработку медицинских данных, для того, что&nbsp;бы использовать приложение пожалуйста ознакомьтесь с&nbsp;документом и&nbsp;подтвердите свое согласие введите смс.</div>
                             </div>
 
-                            <!-- main polis -->
-                            <div class="main-polis loading"></div>
-                            <!-- main polis END -->
-
-                            <!-- dashboard links -->
-                            <div class="dashboard-links">
-                                <div class="dashboard-links-group dashboard-links-group-add">
-                                    <div class="dashboard-links-group-content">
-                                        <div class="dashboard-links-item"><div class="loading"></div></div>
-                                        <div class="dashboard-links-item"><div class="loading"></div></div>
-                                        <div class="dashboard-links-item"><div class="loading"></div></div>
+                            <div class="dashboard-agreements-form">
+                                <form action="#" method="post">
+                                    <div class="dashboard-agreements-form-doc">
+                                        <div class="docs-item">
+                                            <a href="#">
+                                                <div class="docs-item-type">pdf</div>
+                                                <div class="docs-item-title">Согласие на обработку персональных данных ПСБ</div>
+                                            </a>
+                                        </div>
+                                        <div class="form-checkbox">
+                                            <label><input type="checkbox" name="personal" checked class="required"><span>Согласен с политикой обработки персональный данных</span></label>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- dashboard links END -->
+                                    <div class="dashboard-agreements-form-doc">
+                                        <div class="docs-item">
+                                            <a href="#">
+                                                <div class="docs-item-type">pdf</div>
+                                                <div class="docs-item-title">Согласие на обработку персональных данных ПСБ для несовершеннолетних</div>
+                                                <div class="docs-item-info">Рокоссовский Сергей Константинович</div>
+                                            </a>
+                                        </div>
+                                        <div class="form-checkbox">
+                                            <label><input type="checkbox" name="personalchild" checked class="required"><span>Согласен с политикой обработки персональный данных</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-agreements-form-doc">
+                                        <div class="docs-item">
+                                            <a href="#">
+                                                <div class="docs-item-type">pdf</div>
+                                                <div class="docs-item-title">Согласие на обработку персональных данных ПСБ для несовершеннолетних</div>
+                                                <div class="docs-item-info">Рокоссовский Иван Константинович</div>
+                                            </a>
+                                        </div>
+                                        <div class="form-checkbox">
+                                            <label><input type="checkbox" name="personalchild2" checked class="required"><span>Согласен с политикой обработки персональный данных</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-agreements-form-confirm"><a href="#" class="btn">Подтвердить</a></div>
 
+                                    <div class="dashboard-agreements-form-sms">
+                                        <div class="dashboard-agreements-form-sms-title">Укажите СМС-код для подтверждения введенных данных</div>
+                                        <div class="form-input"><span class="form-input-label">Смс-код</span><input type="text" name="code" value="" class="required codeSMS"></div>
+                                        <div class="form-submit"><input type="submit" value="Подтвердить" class="btn"></div>
+                                        <div class="auth-code-not">
+                                            <div class="auth-code-not-container">
+                                                <div class="auth-code-not-link">Не приходит СМС</div>
+                                                <div class="auth-code-not-popup">
+                                                    <p>Возможные причины:</p>
+                                                    <ol>
+                                                        <li>Проблемы у&nbsp;сотового оператора. Обратитесь в&nbsp;службу его поддержки.</li>
+                                                        <li>В&nbsp;случае возникновения технических проблем обратитесь по&nbsp;бесплатному номеру <a href="tel:+78005118569">8&nbsp;800 511-85-69</a>, либо на&nbsp;почтовый ящик <a href="mailto:lkhelp@psbins.ru">lkhelp@psbins.ru</a>.<br> Время работы тех поддержки: пн-пт с&nbsp;10:00 до&nbsp;18:00 по&nbsp;МСК</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <!-- main polises END -->
+                        <!-- dashboard agreements END -->
 
                     </div>
                     <!-- dashboard END -->
@@ -140,13 +182,6 @@
                     </div>
                 </div>
             </footer>
-
-            <div class="apps">
-                <div class="apps-title">Скачать приложение<br> ПСБ&nbsp;Страхование</div>
-                <a href="#" class="apps-link"><img src="images/apps-google.svg" alt="">Google play</a>
-                <a href="#" class="apps-link"><img src="images/apps-store.svg" alt="">Appstore</a>
-                <a href="#" class="apps-close"><svg><use xlink:href="images/sprite.svg#apps-close"></use></svg></a>
-            </div>
 
         </div>
         <!-- wrapper END -->
