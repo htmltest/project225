@@ -550,6 +550,92 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.auth-fingerprint-keyboard-number a').click(function(e) {
+        var curValue = $(this).html();
+        $('.auth-fingerprint-code-item:empty').eq(0).html(curValue);
+        $('#auth-code').val($('#auth-code').val() + curValue);
+        var curCode = $('#auth-code').val();
+        if (curCode.length == 4) {
+            var curForm = $('.auth-fingerprint-form form');
+            if (!curForm.hasClass('loading')) {
+                var curData = curForm.serialize();
+                curForm.addClass('loading');
+                curForm.removeClass('error');
+                curForm.find('label.error').remove();
+                $.ajax({
+                    type: 'POST',
+                    url: curForm.attr('data-url'),
+                    dataType: 'json',
+                    data: curData,
+                    cache: false,
+                    timeout: 30000
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    curForm.removeClass('loading');
+                    curForm.find('.auth-fingerprint-code-title').append('<label class="error">Сервис временно недоступен, попробуйте позже.</label>');
+                }).done(function(data) {
+                    curForm.removeClass('loading');
+                    if (data.status) {
+                        window.location = data.linkSuccess;
+                    } else {
+                        curForm.addClass('error');
+                        curForm.find('.auth-fingerprint-code-title').append('<label class="error">' + data.errorMessage + '</label>');
+                    }
+                });
+            }
+        }
+        e.preventDefault();
+    });
+
+    $('.auth-fingerprint-keyboard-backspace a').click(function(e) {
+        $('.auth-fingerprint-code-item:not(:empty):last').html('');
+        $('#auth-code').val($('#auth-code').val().slice(0, -1));
+        e.preventDefault();
+    });
+
+    $('.fingerprint-header-info-link').click(function(e) {
+        $('.fingerprint-header-info').toggleClass('open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.fingerprint-header-info').length == 0) {
+            $('.fingerprint-header-info').removeClass('open');
+        }
+    });
+
+    $('.auth-fingerprint-help-link').click(function(e) {
+        $('.auth-fingerprint-help').toggleClass('open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.auth-fingerprint-help').length == 0) {
+            $('.auth-fingerprint-help').removeClass('open');
+        }
+    });
+
+    $('.contacts-form-theme select').change(function() {
+        var curValue = $('.contacts-form-theme select').val();
+        if (curValue == $('.contacts-form-theme').attr('data-value')) {
+            $('.contacts-form-record').addClass('visible');
+            $('.contacts-form-record').find('.form-input input, .form-select select').addClass('required');
+        } else {
+            $('.contacts-form-record').removeClass('visible');
+            $('.contacts-form-record').find('.form-input input, .form-select select').removeClass('required');
+        }
+    });
+
+    $('.contacts-form-theme select').each(function() {
+        var curValue = $('.contacts-form-theme select').val();
+        if (curValue == $('.contacts-form-theme').attr('data-value')) {
+            $('.contacts-form-record').addClass('visible');
+            $('.contacts-form-record').find('.form-input input, .form-select select').addClass('required');
+        } else {
+            $('.contacts-form-record').removeClass('visible');
+            $('.contacts-form-record').find('.form-input input, .form-select select').removeClass('required');
+        }
+    });
+
 });
 
 $.fn.datepicker.language['ru'] =  {
@@ -655,8 +741,7 @@ function initForm(curForm) {
     curForm.find('.form-select select').each(function() {
         var curSelect = $(this);
         var options = {
-            minimumResultsForSearch: 10,
-            closeOnSelect: false
+            minimumResultsForSearch: 10
         };
         if (typeof(curSelect.attr('data-searchplaceholder')) != 'undefined') {
             options['searchInputPlaceholder'] = curSelect.attr('data-searchplaceholder');

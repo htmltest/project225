@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>ПСБ</title>
+
+        <link rel="stylesheet" href="css/styles.css?sid=010">
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css">
+        <link rel="stylesheet" href="js/select2/select2.css">
+
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+
+            <!-- auth -->
+            <div class="auth">
+                <div class="auth-header">
+                    <div class="auth-logo"><img src="images/logo.svg" alt=""></div>
+                    <div class="fingerprint-header">
+                        <div class="fingerprint-header-info">
+                            <a href="#" class="fingerprint-header-info-link"><svg><use xlink:href="images/sprite.svg#icon-help"></use></svg></a>
+                            <div class="fingerprint-header-info-window">
+                                <div class="fingerprint-header-info-window-title">Позвонить ПСБ Страхование</div>
+                                <div class="fingerprint-header-info-window-btn"><a href="tel:+78005558565" class="btn"><svg><use xlink:href="images/sprite.svg#icon-phone"></use></svg>8 (800) 555-85-65</a></div>
+                                <div class="fingerprint-header-info-window-notice">Звонок по&nbsp;РФ бесплатный</div>
+                            </div>
+                        </div>
+                        <a href="#" class="fingerprint-header-logout">Выйти<svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></a>
+                    </div>
+                </div>
+
+                <div class="auth-fingerprint">
+                    <div class="auth-fingerprint-user"><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></div>
+                    <div class="auth-fingerprint-user-name">Сергей</div>
+                    <div class="auth-fingerprint-form">
+                        <form method="post" method="post" data-url="ajax/auth-check-code.json">
+                            <input type="hidden" name="code" value="" id="auth-code">
+                            <div class="auth-fingerprint-code-title">Введите пароль</div>
+                            <div class="auth-fingerprint-code">
+                                <div class="auth-fingerprint-code-item"></div>
+                                <div class="auth-fingerprint-code-item"></div>
+                                <div class="auth-fingerprint-code-item"></div>
+                                <div class="auth-fingerprint-code-item"></div>
+                            </div>
+                            <div class="auth-fingerprint-keyboard">
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">1</a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">2</a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">3</a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">4</a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">5</a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">6</a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">7</a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">8</a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">9</a></div>
+                                <div class="auth-fingerprint-keyboard-fingerprint"><a href="#"><svg><use xlink:href="images/sprite.svg#fingerprint"></use></svg></a></div>
+                                <div class="auth-fingerprint-keyboard-number"><a href="#">0</a></div>
+                                <div class="auth-fingerprint-keyboard-backspace"><a href="#"><svg><use xlink:href="images/sprite.svg#backspace"></use></svg></a></div>
+                            </div>
+                            <div class="auth-fingerprint-help">
+                                <div class="auth-fingerprint-help-inner">
+                                    <a href="#" class="auth-fingerprint-help-link">Не могу войти</a>
+                                    <div class="auth-fingerprint-help-window">
+                                        <div class="auth-fingerprint-help-window-title">Плохое соединение с&nbsp;интернетом</div>
+                                        <div class="auth-fingerprint-help-window-text">Частая причина проблем со&nbsp;входом в&nbsp;мобильное приложение&nbsp;&mdash; плохое подключение к&nbsp;сети интернет.</div>
+                                        <div class="auth-fingerprint-help-window-sep"></div>
+                                        <div class="auth-fingerprint-help-window-title">Забыли пароль?</div>
+                                        <div class="auth-fingerprint-help-window-text">Вам понадобится логин или номер телефона для подтверждения</div>
+                                        <div class="auth-fingerprint-help-window-btn"><a href="#" class="btn">создать новый пароль</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- auth END -->
+
+        </div>
+        <!-- wrapper END -->
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/tools.js?sid=010"></script>
+
+    </body>
+</html>

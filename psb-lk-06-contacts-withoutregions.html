@@ -151,11 +151,63 @@
                     <div class="contacts-form">
                         <div class="contacts-form-title">Обращение</div>
                         <form action="#" method="post">
+                            <div class="contacts-form-theme" data-value="4">
+                                <div class="contacts-form-theme-field">
+                                    <div class="form-select">
+                                        <select name="theme" data-placeholder="Тема" class="required">
+                                            <option value=""></option>
+                                            <option value="1">Вопрос</option>
+                                            <option value="2">Предложение</option>
+                                            <option value="3">Претензия</option>
+                                            <option value="4">Запись к врачу</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacts-form-record">
+                                <div class="contacts-form-fields">
+                                    <div class="contacts-form-fields-group">
+                                        <div class="form-input form-input-date"><span class="form-input-label">Дата посещения</span><input type="text" name="date" value=""></div>
+                                        <div class="form-select">
+                                            <select name="clinic" data-placeholder="Клиника">
+                                                <option value=""></option>
+                                                <option value="1">АО "ГК "ОМС" - г. Коломна</option>
+                                                <option value="2">ЗАО "Коопвнешторг"</option>
+                                                <option value="3">ООО "Мать и дитя Юго-запад"</option>
+                                                <option value="4">АО "Группа компаний "Медси" - клиника в г. Красногорске</option>
+                                                <option value="5">ЗАО "Мед.Ком" - Центр стоматологии "Дентадизайн"</option>
+                                                <option value="6">АО "ГК "ОМС" - г. Коломна 1</option>
+                                                <option value="7">ЗАО "Коопвнешторг" 1</option>
+                                                <option value="8">ООО "Мать и дитя Юго-запад" 1</option>
+                                                <option value="9">АО "Группа компаний "Медси" - клиника в г. Красногорске 1</option>
+                                                <option value="10">ЗАО "Мед.Ком" - Центр стоматологии "Дентадизайн" 1</option>
+                                                <option value="11">АО "ГК "ОМС" - г. Коломна 2</option>
+                                                <option value="12">ЗАО "Коопвнешторг" 2</option>
+                                                <option value="13">ООО "Мать и дитя Юго-запад" 2</option>
+                                                <option value="14">АО "Группа компаний "Медси" - клиника в г. Красногорске 2</option>
+                                                <option value="15">ЗАО "Мед.Ком" - Центр стоматологии "Дентадизайн" 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-form-fields-group">
+                                        <div class="form-select">
+                                            <select name="time" data-placeholder="Время посещения">
+                                                <option value=""></option>
+                                                <option value="1">09:00 — 11:00</option>
+                                                <option value="2">11:00 — 13:00</option>
+                                                <option value="3">13:00 — 15:00</option>
+                                                <option value="4">15:00 — 17:00</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-input"><span class="form-input-label">Специальность врача</span><input type="text" name="specialty" value=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacts-form-fields">
+                                <div class="form-input"><span class="form-input-label">ФИО</span><input type="text" name="name" value="" class="required"></div>
+                            </div>
                             <div class="contacts-form-fields">
                                 <div class="contacts-form-fields-group">
-                                    <div class="form-input"><span class="form-input-label">ФИО</span><input type="text" name="name" value="" class="required"></div>
-                                    <div class="form-input"><span class="form-input-label">Электронная почта</span><input type="text" name="email" value="" class="required email"></div>
-                                    <div class="form-input"><span class="form-input-label">Телефон</span><input type="text" name="phone" value="" class="required phoneRU"></div>
                                     <div class="form-label">Ваш регион</div>
                                     <div class="form-radio">
                                         <label><input type="radio" name="region" value="capitals" checked><span>Москва, Московская область<br> Санкт-Петербург, Ленинградская область</span></label>
@@ -165,17 +217,11 @@
                                     </div>
                                 </div>
                                 <div class="contacts-form-fields-group">
-                                    <div class="form-select">
-                                        <select name="theme" data-placeholder="Тема" class="required">
-                                            <option value=""></option>
-                                            <option value="1">Вопрос</option>
-                                            <option value="2">Предложение</option>
-                                            <option value="3">Претензия</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-input"><span class="form-input-label">Сообщение</span><textarea name="message" rows="1" cols="1" class="required"></textarea></div>
+                                    <div class="form-input"><span class="form-input-label">Электронная почта</span><input type="text" name="email" value="" class="required email"></div>
+                                    <div class="form-input"><span class="form-input-label">Телефон</span><input type="text" name="phone" value="" class="required phoneRU"></div>
                                 </div>
                             </div>
+                            <div class="form-input"><span class="form-input-label">Сообщение</span><textarea name="message" rows="1" cols="1" class="required"></textarea></div>
                             <div class="contacts-form-submit"><input type="submit" value="создать обращение" class="btn"></div>
                         </form>
                     </div>
