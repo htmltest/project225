@@ -636,6 +636,14 @@ $(document).ready(function() {
         }
     });
 
+    $('.card-guarantee-form-link').click(function(e) {
+        $('.card-tabs-title').toggleClass('active');
+        $('.card-guarantee-form-link').toggleClass('active');
+        $('.guarantee').toggleClass('hidden');
+        $('.guarantee-form').toggleClass('visible');
+        e.preventDefault();
+    });
+
 });
 
 $.fn.datepicker.language['ru'] =  {
@@ -734,6 +742,14 @@ function initForm(curForm) {
         if (e.originalEvent !== undefined && $(e.originalEvent.relatedTarget).hasClass('form-input-clear')) {
             $(this).parent().find('.form-input-clear').trigger('click');
         }
+    });
+
+    curForm.find('.form-input textarea').each(function() {
+        $(this).css({'height': this.scrollHeight, 'overflow-y': 'hidden'});
+        $(this).on('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
     });
 
     curForm.find('input[autofocus]').trigger('focus');

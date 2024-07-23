@@ -72,7 +72,7 @@ strong, b {font-weight:600}
 .form-input textarea {position:relative; border:1px solid #E6E6EF; font:600 20px/26px Arial, sans-serif; color:#3E3E59; vertical-align:top; margin:0; padding:29px 53px 9px 14px; width:100%; height:66px; box-sizing:border-box; outline:none; border-radius:8px; background:#FFFFFF; -webkit-appearance:none; transition:border-color 0.2s}
 .fonts-loaded .form-input input,
 .fonts-loaded .form-input textarea {font-family:Gilroy, sans-serif}
-.form-input textarea {height:294px; overflow:auto; resize:none}
+.form-input textarea {height:auto; min-height:294px; overflow:auto; resize:none}
 .form-input textarea::-webkit-scrollbar-thumb {background:#F0F0F7; border-radius:2px}
 .form-input textarea::-webkit-scrollbar {width:4px; height:4px; background:transparent}
 .form-input input.error,
@@ -88,13 +88,13 @@ strong, b {font-weight:600}
 .form-input textarea:disabled {background:#F8F8FC; border-color:#E6E6EF; color:#A8A8BF}
 
 @media (max-width:1099px) {
-    .form-input textarea {height:150px}
+    .form-input textarea {min-height:150px}
 }
 
 @media (max-width:767px) {
     .form-input input {font-size:15px; line-height:19px; padding:30px 47px 11px 14px; height:62px}
     .form-input label.error {margin:4px 0 0 0}
-    .form-input textarea {height:120px}
+    .form-input textarea {min-height:120px}
 }
 
 .form-input input:-webkit-autofill,
@@ -848,6 +848,7 @@ header .container {display:flex; align-items:center}
 }
 
 .guarantee {margin:24px 0 0 0}
+.guarantee.hidden {display:none}
 
 @media (max-width:767px) {
     .guarantee {margin:20px 0 0 0}
@@ -891,6 +892,19 @@ header .container {display:flex; align-items:center}
     .guarantee-item-info-title {line-height:17px; margin:0}
     .guarantee-item-info-value {font-size:15px; line-height:21px; margin:2px 0 0 0}
     .guarantee-item-download .btn-border {padding:0; width:100%}
+}
+
+.guarantee-form {display:none; margin:48px 0 0 0}
+.guarantee-form.visible {display:block}
+.guarantee-form form {padding:30px; background:#FFFFFF; border-radius:12px; box-shadow:0px 8px 24px rgba(0, 0, 0, 0.05)}
+.guarantee-form .contacts-form-fields {margin:0}
+.guarantee-form .contacts-form-fields .form-input {margin:0}
+.guarantee-form .form-input textarea {min-height:122px}
+.guarantee-form .contacts-form-submit {margin:20px 0 0 0}
+
+@media (max-width:767px) {
+    .guarantee-form {margin:24px -16px 0 -16px}
+    .guarantee-form form {padding:16px}
 }
 
 .telemedicine {margin:20px 0 0 0; display:flex; justify-content:space-between; padding:0 36px; border-radius:8px; background:#FFFFFF; box-shadow:0px 10px 30px 0px rgba(0, 0, 0, 0.05)}
@@ -1115,7 +1129,7 @@ header .container {display:flex; align-items:center}
 .contacts-form .form-select:first-child {margin:0}
 .contacts-form .form-radio {margin:10px 0 0 0; font-weight:600; font-size:15px; line-height:21px; color:#3E3E59}
 .contacts-form .form-radio span::before {top:0}
-.contacts-form .form-input textarea {height:120px}
+.contacts-form .form-input textarea {min-height:120px}
 .contacts-form-submit {display:flex; margin:30px 0 0 0; justify-content:flex-end}
 .contacts-form-submit .btn {height:54px; font-size:11px; border-radius:4px}
 
@@ -1593,15 +1607,35 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
     .card {margin:36px 0 0 0}
 }
 
-.card-tabs-header {margin:40px 0 0 0}
+.card-tabs-header {margin:40px 0 0 0; display:flex; align-items:center; justify-content:space-between}
 .card-tabs-title {font-weight:600; font-size:30px; line-height:36px; color:#3E3E59}
+.card-tabs-title span+span {display:none}
+.card-tabs-title.active span {display:none}
+.card-tabs-title.active span+span {display:block}
+.card-guarantee-form-link {letter-spacing:0.01em}
+.card-guarantee-form-link a {display:flex; align-items:center; line-height:21px}
+.card-guarantee-form-link a svg {min-width:22px; max-width:22px; height:22px; margin:0 10px 0 0; fill:#E86630; transition:fill 0.2s}
+@media screen and (min-width:1100px) {
+    .card-guarantee-form-link a:hover svg {fill:#ED885E}
+}
+.card-guarantee-form-link a svg+svg {display:none}
+.card-guarantee-form-link.active a svg {display:none}
+.card-guarantee-form-link.active a svg+svg {display:block}
+.card-guarantee-form-link a span {border-bottom:1px dashed #E86630; transition:border-color 0.2s}
+@media screen and (min-width:1100px) {
+    .card-guarantee-form-link a:hover span {border-color:transparent}
+}
+.card-guarantee-form-link a span+span {display:none}
+.card-guarantee-form-link.active a span {display:none}
+.card-guarantee-form-link.active a span+span {display:block}
 
 @media (max-width:1099px) {
     .card-tabs-header {margin:24px 0 0 0}
     .card-tabs-title {font-size:22px; line-height:29px}
 }
 @media (max-width:767px) {
-    .card-tabs-header {margin:20px 0 0 0}
+    .card-tabs-header {margin:20px 0 0 0; display:block}
+    .card-guarantee-form-link {margin:20px 0 0 0}
 }
 
 .card-contacts-form {margin:0}
