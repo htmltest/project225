@@ -380,30 +380,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.clinics-sort').each(function() {
-        $('.clinics-sort-current').html($('.clinics-sort-list input:checked').parent().find('span').html());
-    });
-
-    $('.clinics-sort-current').click(function(e) {
-        $('.clinics-sort').toggleClass('open');
-    });
-
-    $('.clinics-sort-list label').click(function(e) {
-        $('.clinics-sort').removeClass('open');
-    });
-
-    $(document).click(function(e) {
-        if ($(e.target).parents().filter('.clinics-sort').length == 0) {
-            $('.clinics-sort').removeClass('open');
-        }
-    });
-
-    $('.clinics-sort-list input').change(function() {
-        $('.clinics-sort-current').html($('.clinics-sort-list input:checked').parent().find('span').html());
-        $('.clinics-sort').removeClass('open');
-        updateClinicList();
-    });
-
     $('body').on('click', '.clinics-filter-param a', function(e) {
         var curItem = $(this).parent();
         var curID = curItem.attr('data-id');
@@ -436,6 +412,20 @@ $(document).ready(function() {
     $('.clinics-filter-window-field-content .form-input input, .clinics-filter-window-field-content .form-select select, .clinics-filter-window-field-content .form-checkbox input').change(function() {
         updateClinicFilterParams();
         updateClinicList();
+    });
+
+    $('.clinics-list-search .form-input input').keydown(function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+    });
+
+    $('.clinics-list-search .form-input input').change(function() {
+        $('.clinics-filter-search-input').val($(this).val()).trigger('change');
+    });
+
+    $('.clinics-filter-search-input').change(function() {
+        $('.clinics-list-search .form-input input').val($(this).val());
     });
 
     $('.clinics-filter-link').click(function(e) {
@@ -614,33 +604,41 @@ $(document).ready(function() {
         }
     });
 
-    $('.contacts-form-theme select').change(function() {
-        var curValue = $('.contacts-form-theme select').val();
-        if (curValue == $('.contacts-form-theme').attr('data-value')) {
-            $('.contacts-form-record').addClass('visible');
-            $('.contacts-form-record').find('.form-input input, .form-select select').addClass('required');
-        } else {
-            $('.contacts-form-record').removeClass('visible');
-            $('.contacts-form-record').find('.form-input input, .form-select select').removeClass('required');
-        }
-    });
-
-    $('.contacts-form-theme select').each(function() {
-        var curValue = $('.contacts-form-theme select').val();
-        if (curValue == $('.contacts-form-theme').attr('data-value')) {
-            $('.contacts-form-record').addClass('visible');
-            $('.contacts-form-record').find('.form-input input, .form-select select').addClass('required');
-        } else {
-            $('.contacts-form-record').removeClass('visible');
-            $('.contacts-form-record').find('.form-input input, .form-select select').removeClass('required');
-        }
-    });
-
     $('.card-guarantee-form-link').click(function(e) {
         $('.card-tabs-title').toggleClass('active');
         $('.card-guarantee-form-link').toggleClass('active');
         $('.guarantee').toggleClass('hidden');
         $('.guarantee-form').toggleClass('visible');
+        e.preventDefault();
+    });
+
+    $('.polises-tabs').each(function() {
+        var curTabs = $(this);
+        var menuHTML =  '<ul>';
+        curTabs.find('.main-polis-prime').each(function() {
+            menuHTML +=     '<li><a href="#">' + $(this).find('.main-polis-prime-title span').html() + '</a></li>';
+        });
+        menuHTML +=     '</ul>';
+        curTabs.find('.polises-tabs-menu').html(menuHTML);
+        curTabs.find('.polises-tabs-menu li').eq(0).addClass('active');
+        curTabs.find('.polises-tabs-content').eq(0).addClass('active');
+    });
+
+    $('body').on('click', '.polises-tabs-menu li a', function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            var curTabs = curLi.parents().filter('.polises-tabs');
+            curTabs.find('.polises-tabs-menu li.active').removeClass('active');
+            curLi.addClass('active');
+            var curIndex = curTabs.find('.polises-tabs-menu li').index(curLi);
+            curTabs.find('.polises-tabs-content.active').removeClass('active');
+            curTabs.find('.polises-tabs-content').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+    
+    $('.dashboard-events-all a').click(function(e) {
+        $('.dashboard-events').addClass('open');
         e.preventDefault();
     });
 
