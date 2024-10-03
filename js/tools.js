@@ -612,33 +612,21 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.polises-tabs').each(function() {
-        var curTabs = $(this);
-        var menuHTML =  '<ul>';
-        curTabs.find('.main-polis-prime').each(function() {
-            menuHTML +=     '<li><a href="#">' + $(this).find('.main-polis-prime-title span').html() + '</a></li>';
-        });
-        menuHTML +=     '</ul>';
-        curTabs.find('.polises-tabs-menu').html(menuHTML);
-        curTabs.find('.polises-tabs-menu li').eq(0).addClass('active');
-        curTabs.find('.polises-tabs-content').eq(0).addClass('active');
-    });
-
-    $('body').on('click', '.polises-tabs-menu li a', function(e) {
-        var curLi = $(this).parent();
-        if (!curLi.hasClass('active')) {
-            var curTabs = curLi.parents().filter('.polises-tabs');
-            curTabs.find('.polises-tabs-menu li.active').removeClass('active');
-            curLi.addClass('active');
-            var curIndex = curTabs.find('.polises-tabs-menu li').index(curLi);
-            curTabs.find('.polises-tabs-content.active').removeClass('active');
-            curTabs.find('.polises-tabs-content').eq(curIndex).addClass('active');
-        }
-        e.preventDefault();
-    });
-    
     $('.dashboard-events-all a').click(function(e) {
         $('.dashboard-events').addClass('open');
+        e.preventDefault();
+    });
+
+    $('.main-polis-list').each(function() {
+        var curList = $(this);
+        var count = curList.find('.main-polis-item').length;
+        if (count > 2) {
+            curList.addClass('with-more');
+        }
+    });
+
+    $('.main-polis-list-more a').click(function(e) {
+        $(this).parents().filter('.main-polis-list').toggleClass('open');
         e.preventDefault();
     });
 
@@ -1062,7 +1050,7 @@ function updateClinicMap() {
             iconLayout: 'default#image',
             iconImageHref: $('.clinics-map').attr('data-icon'),
             iconImageSize: [96, 96],
-            iconImageOffset: [48, 38]
+            iconImageOffset: [-48, -38]
         });
         myPlacemark.events.add('click', function(e) {
             var curPlacemark = e.get('target');
@@ -1070,6 +1058,22 @@ function updateClinicMap() {
             $('.clinics-map-list-item').eq(Number(curPlacemark.properties.get('item'))).find('.clinics-map-list-item-header').trigger('click');
         });
         myPlacemarks.push(myPlacemark);
-        myMap.geoObjects.add(myPlacemark);
     });
+    var MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+        '<div style="color:#3E3E59; font:500 15px/128px Gilroy, sans-serif;">{{ properties.geoObjects.length }}</div>'
+    );
+    var clusterer = new ymaps.Clusterer({
+        clusterIcons: [
+            {
+                href: 'images/map-cluster.svg',
+                size: [108, 128],
+                offset: [-54, -64]
+            }
+        ],
+        clusterHideIconOnBalloonOpen: false,
+        geoObjectHideIconOnBalloonOpen: false,
+        clusterIconContentLayout: MyIconContentLayout
+    });
+    clusterer.add(myPlacemarks);
+    myMap.geoObjects.add(clusterer);
 }

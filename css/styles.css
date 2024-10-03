@@ -516,6 +516,23 @@ header .container {display:flex; align-items:center}
     .menu-mobile-open body {position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidden}
 }
 
+.welcome {height:166px; background:url(../images/welcome.png) no-repeat center; display:flex; align-items:center}
+.welcome .container {width:100%}
+.welcome-title {font-size:30px; line-height:42px; color:#FFFFFF; letter-spacing:0.02em}
+.welcome-text {font-weight:300; font-size:30px; line-height:42px; color:#FFFFFF; letter-spacing:0.02em}
+
+@media (max-width:1680px) {
+    .welcome {background-image:url(../images/welcome-desktop.png)}
+}
+
+@media (max-width:1099px) {
+    .welcome {background-image:url(../images/welcome-tablet.png)}
+}
+
+@media (max-width:767px) {
+    .welcome {display:none}
+}
+
 .dashboard {margin:80px 0 0 0}
 
 @media (max-width:1680px) {
@@ -649,12 +666,17 @@ header .container {display:flex; align-items:center}
 
 @media (max-width:767px) {
     .dashboard-header {padding:10px 0; background:none; border-radius:0; border-bottom:1px solid #E6E6EF}
+    .dashboard-header-app {background:#EAE9F7; border-bottom:none; margin:0 -16px; padding:16px 32px}
     .dashboard-header-left {display:block}
     .dashboard-header-icon {display:none}
     .dashboard-header-title {display:flex; align-items:center; white-space:nowrap; margin:0; font-weight:600; font-size:12px; line-height:18px}
+    .dashboard-header-app .dashboard-header-title {justify-content:center}
     .dashboard-header-title::before {content:""; flex-grow:1; height:1px; margin:0 10px 0 0; background:#E6E6EF}
+    .dashboard-header-app .dashboard-header-title::before {display:none}
     .dashboard-header-title::after {content:""; flex-grow:1; height:1px; margin:0 0 0 10px; background:#E6E6EF}
+    .dashboard-header-app .dashboard-header-title::after {display:none}
     .dashboard-header-right {margin:24px 16px}
+    .dashboard-header-app .dashboard-header-right {margin:24px 0 16px 0}
     .dashboard-header-right-title {font-size:12px; line-height:17px; font-weight:normal}
     .dashboard-header-right-phones {margin:8px 0 0 0; font-size:14px; line-height:18px}
     .dashboard-header-right-phones a {margin:0 0 0 29px}
@@ -669,7 +691,7 @@ header .container {display:flex; align-items:center}
 .dashboard-links-item {padding:0 5px 10px 5px; flex-grow:1; width:100%}
 .dashboard-links-item .loading {min-height:84px; border-radius:12px; background:#F0F0F7; position:relative; overflow:hidden}
 .dashboard-links-item .loading::before {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(270deg, #F0F0F7 0%, #FFFFFF 21%, #F0F0F7 100%); transform:translateX(-100%); animation:loading 4s infinite ease-out}
-.dashboard-links-item a {display:flex; align-items:center; padding:0 0 0 30px; position:relative; height:84px; background:#FFFFFF; border-radius:8px; text-decoration:none; color:#3E3E59; transition:box-shadow 0.2s; overflow:hidden}
+.dashboard-links-item a {display:flex; align-items:center; padding:0 0 0 30px; position:relative; height:84px; background:#FFFFFF; border-radius:8px; text-decoration:none; color:#3E3E59; transition:box-shadow 0.2s; overflow:hidden; border:2px solid #F0F0F5; box-shadow:1px 1px 5px 2px #F0F0F7}
 @media screen and (min-width:1100px) {
     .dashboard-links-item a:hover {box-shadow:0px 4px 24px 0px rgba(0, 0, 0, 0.06)}
 }
@@ -681,6 +703,7 @@ header .container {display:flex; align-items:center}
 @media (max-width:1099px) {
     .dashboard-links-group-content {flex-wrap:wrap}
     .dashboard-links-item {flex-grow:0; width:auto; min-width:50%; max-width:50%}
+    .main-polis-child+.dashboard-links .dashboard-links-item:last-child {min-width:100%; max-width:100%}
     .dashboard-links-item img {right:-20px}
     .dashboard-links-group-add .dashboard-links-item img {right:0}
 }
@@ -704,32 +727,11 @@ header .container {display:flex; align-items:center}
     .dashboard-links-group-add .dashboard-links-item:first-child {padding-top:0}
     .dashboard-links-group-add .dashboard-links-item img {display:block}
     .dashboard-links-group-add-new,
-    .dashboard-links-group-add-new:first-child {margin:20px 0 0 0}
+    .dashboard-links-group-add-new:first-child {margin:12px 0 0 0}
     .dashboard-links-group-add-new .dashboard-links-group-content {margin:0 -5px}
-    .dashboard-links-group-add-new .dashboard-links-item {min-width:50%; max-width:50%; padding:0 5px}
+    .dashboard-links-group-add-new .dashboard-links-item {min-width:50%; max-width:50%; padding:0 5px; margin:8px 0 0 0}
     .dashboard-links-group-add-new .dashboard-links-item img {display:none}
     .dashboard-links-group-add-new .dashboard-links-item a {padding:0 30px}
-}
-
-.polises-tabs-menu {display:none}
-
-@media (max-width:767px) {
-    .polises-tabs-menu {display:block; position:relative; z-index:1; margin:20px -16px 0 -16px; overflow:auto}
-    .polises-tabs-menu::-webkit-scrollbar-thumb {background:transparent; border-radius:0}
-    .polises-tabs-menu::-webkit-scrollbar {width:0; height:0; background:transparent}
-    .polises-tabs-menu ul {display:inline-flex; margin:0; padding:0 16px; list-style:none}
-    .polises-tabs-menu ul li {margin:0 0 0 -13px; padding:0; position:relative}
-    .polises-tabs-menu ul li::before {display:none}
-    .polises-tabs-menu ul li:first-child {margin:0}
-    .polises-tabs-menu ul li.active {z-index:1}
-    .polises-tabs-menu ul li a {display:block; padding:8px 20px 6px 20px; background:#EFEFF6; border-radius:6px; color:#3E3E59; font-weight:600; font-size:11px; line-height:16px; text-transform:uppercase; white-space:nowrap}
-    .polises-tabs-menu ul li.active a {color:#FFFFFF; background:#2F2A85}
-    .polises-tabs-childs .polises-tabs-menu ul li.active a {color:#3E3E59; background:#FEEF1F}
-    .polises-tabs-container {position:relative; margin:-14px 0 0 0}
-    .polises-tabs-content {position:absolute; left:-999px; top:-999px; width:100%; opacity:0; transition:opacity 0.2s}
-    .polises-tabs-content.active {position:relative; left:auto; top:auto; opacity:1}
-    .polises-tabs-content .main-polis-prime {margin:0; padding-top:32px}
-    .polises-tabs-content .main-polis-prime-title {display:none}
 }
 
 .dashboard-events {margin:80px 0 0 0}
@@ -1657,6 +1659,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 
 @media (max-width:767px) {
     .footer-container {padding:16px 0}
+    .page-app .footer-container {padding:16px 0 76px 0}
     .footer-left {display:block}
     .footer-disclamer {margin:16px 0 0 0; text-align:left; white-space:normal}
     .footer-right {margin:16px 0 0 0; display:block}
@@ -2269,4 +2272,35 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
     .contacts-warning-inner {border-radius:0; border-width:1px 0 0 0; display:bock; padding:16px 0 0 0}
     .contacts-warning-icon {display:none}
     .contacts-warning-text {max-width:none}
+}
+
+.app-control {display:none}
+
+@media (max-width:767px) {
+    .app-control {position:fixed; left:0; bottom:0; right:0; z-index:99; padding:10px 15px; justify-content:space-between; display:flex; background:#FFFFFF; height:60px; box-shadow:0px -0.5px 0px rgba(0, 0, 0, 0.3)}
+    .app-control a {display:flex; align-items:center; justify-content:center; width:40px; height:40px; background:#F5F7FB; border-radius:10px}
+    .app-control a.active {background:#E86630}
+    .app-control a svg {width:24px; height:24px; fill:#8D8DA6; stroke:#8D8DA6}
+    .app-control a.active svg {fill:#FFFFFF; stroke:#FFFFFF}
+}
+
+.main-polis-item:nth-child(n + 3) {display:none}
+.main-polis-list.open .main-polis-item:nth-child(n + 3) {display:block}
+.main-polis-list-more {display:none; justify-content:center; margin:36px 0 0 0; font-weight:600; font-size:17px; line-height:22px}
+.main-polis-list.with-more .main-polis-list-more {display:flex}
+.main-polis-list-more a {display:flex; align-items:center; color:#E86630; text-decoration:none}
+@media screen and (min-width:1100px) {
+    .main-polis-list-more a:hover {color:#ED885E}
+}
+.main-polis-list-more a svg {min-width:24px; max-width:24px; height:24px; margin:0 10px 0 0; fill:#E86630; transition:fill 0.2s, transform 0.2s}
+@media screen and (min-width:1100px) {
+    .main-polis-list-more a:hover svg {fill:#ED885E}
+}
+.main-polis-list.open .main-polis-list-more a svg {transform:rotate(-180deg)}
+.main-polis-list-more a span+span {display:none}
+.main-polis-list.open .main-polis-list-more a span {display:none}
+.main-polis-list.open .main-polis-list-more a span+span {display:block}
+
+@media (max-width:767px) {
+    .main-polis-list-more {margin:27px 0 0 0}
 }

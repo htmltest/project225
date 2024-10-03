@@ -13,6 +13,9 @@ if (sessionStorage.fontsLoaded) {
     script.async = true;
 
     script.onload = function () {
+        var font300 = new FontFaceObserver('Gilroy', {
+            weight: '300'
+        });
         var font400 = new FontFaceObserver('Gilroy', {
             weight: 'normal'
         });
@@ -27,6 +30,7 @@ if (sessionStorage.fontsLoaded) {
         });
 
         Promise.all([
+            font300.load(),
             font400.load(),
             font500.load(),
             font600.load(),
