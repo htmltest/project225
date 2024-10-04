@@ -276,6 +276,17 @@ $(document).ready(function() {
         }
     });
 
+    $('.page-app .header-user-link').click(function(e) {
+        $('html').toggleClass('header-user-menu-open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.header-user').length == 0) {
+            $('html').removeClass('header-user-menu-open');
+        }
+    });
+
     $('.tabs').each(function() {
         var curTabs = $(this);
         var menuHTML =  '<ul>';
