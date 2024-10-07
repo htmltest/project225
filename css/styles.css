@@ -829,6 +829,10 @@ header .container {display:flex; align-items:center}
 .profile-section-form-field-notice {margin:6px 0 0 0}
 .profile-section-form-field-hint {margin:10px 0 0 0; font-size:13px; line-height:18px; letter-spacing:0.02em; color:#8D8DA6}
 .profile-section-form-field-hint a {color:#8D8DA6}
+.profile-section-form-field-hint a.profile-section-form-field-hint-email {color:#E86630}
+.profile-section-form-field-hint-email-clipboard {display:inline-block; vertical-align:middle; margin:-2px 0 0 5px; width:18px; height:18px; cursor:pointer}
+.profile-section-form-field-hint-email-clipboard svg {display:block; width:18px; height:18px; fill:#A8A8BF; transition:fill 0.2s}
+.profile-section-form-field-hint-email-clipboard:hover svg {fill:#E86630}
 .profile-edit-link {position:absolute; right:20px; top:17px; width:32px; height:32px; background:#E6E6EF; border-radius:6px; display:flex; align-items:center; justify-content:center; transition:background 0.2s}
 .profile-section-form.editable .profile-edit-link {display:none}
 @media screen and (min-width:1100px) {
@@ -2103,6 +2107,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
     .map-list-open .clinics-map-list {display:block}
     .clinics-map-list-inner {min-height:735px; max-height:735px}
     .clinics-map-content {height:862px}
+    .clinics-filter-open .clinics-map-content {pointer-events:none}
     .clinics-map-detail {left:34px; top:34px}
     .clinics-map-list-search {margin:20px 0}
 }

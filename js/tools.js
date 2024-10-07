@@ -463,7 +463,7 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if (($(e.target).parents().filter('.clinics-ctrl').length == 0 && $(e.target).parents().filter('.select2-container').length == 0) || $(e.target).hasClass('clinics-filter')) {
+        if (($(e.target).parents().filter('.clinics-ctrl').length == 0 && $(e.target).parents().filter('.select2-container').length == 0) || $(e.target).hasClass('clinics-filter') || $(e.target).hasClass('clinics-map-list-link')) {
             $('html').removeClass('clinics-filter-open');
         }
     });
@@ -639,6 +639,11 @@ $(document).ready(function() {
     $('.main-polis-list-more a').click(function(e) {
         $(this).parents().filter('.main-polis-list').toggleClass('open');
         e.preventDefault();
+    });
+
+    var clipboardEmail = new ClipboardJS('.profile-section-form-field-hint-email-clipboard')
+    clipboardEmail.on('success', function(e) {
+        alert($('.profile-section-form-field-hint-email-clipboard').attr('data-clipboard-success'));
     });
 
 });
