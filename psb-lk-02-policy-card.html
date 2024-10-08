@@ -91,37 +91,39 @@
 
                                         <!-- clinics ctrl -->
                                         <form action="ajax/clinics.html" method="post" class="clinics-ctrl">
-                                            <div class="clinics-filter">
-                                                <a href="#" class="clinics-filter-link"><svg><use xlink:href="images/sprite.svg#clinics-filter"></use></svg>Фильтр<span>0</span></a>
-                                                <div class="clinics-filter-params"></div>
-                                            </div>
-                                            <div class="clinics-map-list-link"><a href="#"><svg><use xlink:href="images/sprite.svg#clinics-map-list-link"></use></svg><svg><use xlink:href="images/sprite.svg#clinics-map-list-close"></use></svg></a></div>
-                                            <div class="clinics-filter-window">
-                                                <div class="clinics-filter-window-title">Фильтр</div>
-                                                <div class="clinics-filter-window-fields">
-                                                    <div class="clinics-filter-window-field" data-title="Поиск">
-                                                        <div class="clinics-filter-window-field-title">Поиск по названию ЛПУ</div>
-                                                        <div class="clinics-filter-window-field-content">
-                                                            <div class="form-input"><input type="text" name="name" value="" placeholder="Введите название" class="clinics-filter-search-input"><svg><use xlink:href="images/sprite.svg#clinics-filter-search"></use></svg></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="clinics-filter-window-field">
-                                                        <div class="clinics-filter-window-field-title">Поиск по виду помощи</div>
-                                                        <div class="clinics-filter-window-field-content">
-                                                            <div class="form-select">
-                                                                <select name="type" data-placeholder="Выберете">
-                                                                    <option value=""></option>
-                                                                    <option value="1">Амбулаторно-поликлиническая помощь</option>
-                                                                    <option value="2">Стоматология</option>
-                                                                </select>
+                                            <div class="clinics-ctrl-inner">
+                                                <div class="clinics-filter">
+                                                    <a href="#" class="clinics-filter-link"><svg><use xlink:href="images/sprite.svg#clinics-filter"></use></svg>Фильтр<span>0</span></a>
+                                                    <div class="clinics-filter-params"></div>
+                                                </div>
+                                                <div class="clinics-map-list-link"><a href="#"><svg><use xlink:href="images/sprite.svg#clinics-map-list-link"></use></svg><svg><use xlink:href="images/sprite.svg#clinics-map-list-close"></use></svg></a></div>
+                                                <div class="clinics-filter-window">
+                                                    <div class="clinics-filter-window-title">Фильтр</div>
+                                                    <div class="clinics-filter-window-fields">
+                                                        <div class="clinics-filter-window-field" data-title="Поиск">
+                                                            <div class="clinics-filter-window-field-title">Поиск по названию ЛПУ</div>
+                                                            <div class="clinics-filter-window-field-content">
+                                                                <div class="form-input"><input type="text" name="name" value="" placeholder="Введите название" class="clinics-filter-search-input"><svg><use xlink:href="images/sprite.svg#clinics-filter-search"></use></svg></div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="clinics-filter-window-field">
-                                                        <div class="clinics-filter-window-field-title">Тип доступа:</div>
-                                                        <div class="clinics-filter-window-field-content">
-                                                            <div class="form-checkbox">
-                                                                <label><input type="checkbox" name="direct"><span>Доступ без гарантийного письма</span></label>
+                                                        <div class="clinics-filter-window-field">
+                                                            <div class="clinics-filter-window-field-title">Поиск по виду помощи</div>
+                                                            <div class="clinics-filter-window-field-content">
+                                                                <div class="form-select">
+                                                                    <select name="type" data-placeholder="Выберете">
+                                                                        <option value=""></option>
+                                                                        <option value="1">Амбулаторно-поликлиническая помощь</option>
+                                                                        <option value="2">Стоматология</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clinics-filter-window-field">
+                                                            <div class="clinics-filter-window-field-title">Тип доступа:</div>
+                                                            <div class="clinics-filter-window-field-content">
+                                                                <div class="form-checkbox">
+                                                                    <label><input type="checkbox" name="direct"><span>Доступ без гарантийного письма</span></label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

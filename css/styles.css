@@ -828,7 +828,7 @@ header .container {display:flex; align-items:center}
 .profile-section-form-field-title {font-weight:600; font-size:20px; line-height:26px; color:#3E3E59}
 .profile-section-form-field-notice {margin:6px 0 0 0}
 .profile-section-form-field-hint {margin:10px 0 0 0; font-size:13px; line-height:18px; letter-spacing:0.02em; color:#8D8DA6}
-.profile-section-form-field-hint a {color:#8D8DA6}
+.profile-section-form-field-hint a {color:#8D8DA6; white-space:nowrap}
 .profile-section-form-field-hint a.profile-section-form-field-hint-email {color:#E86630}
 .profile-section-form-field-hint-email-clipboard {display:inline-block; vertical-align:middle; margin:-2px 0 0 5px; width:18px; height:18px; cursor:pointer}
 .profile-section-form-field-hint-email-clipboard svg {display:block; width:18px; height:18px; fill:#A8A8BF; transition:fill 0.2s}
@@ -1822,7 +1822,8 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 }
 .clinics-views a.active {background:#FFFFFF; border-color:#FFFFFF; color:#3E3E59}
 
-.clinics-ctrl {display:flex; align-items:center; margin:0; padding:0; position:relative}
+.clinics-ctrl-inner {display:flex; align-items:center; margin:0; padding:0; position:relative}
+.clinics.list .clinics-ctrl-inner {display:block}
 .clinics.list .clinics-ctrl {left:auto !important; right:auto !important}
 .clinics.map .clinics-ctrl {position:absolute; left:193px; top:50px; right:0; z-index:28}
 
@@ -1834,11 +1835,14 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 @media (max-width:1099px) {
     .clinics.map {padding-top:20px}
     .clinics-views {top:-33.5px}
-    .clinics.map .clinics-ctrl {left:auto !important; position:relative; top:auto; right:auto !important; height:94px; background:#FFFFFF; margin:0 -34px}
+    .clinics.map .clinics-ctrl {display:block; padding:0 34px; left:auto !important; position:relative; top:auto; right:auto !important; background:#FFFFFF; margin:0 -34px}
+    .clinics.map .clinics-ctrl-inner {display:block}
+    .clinics-ctrl-fixed .clinics.map .clinics-ctrl-inner {position:fixed; left:0; top:50px; right:0; z-index:9; background:#FFFFFF; padding:0 34px}
 }
 
 @media (max-width:767px) {
-    .clinics.map .clinics-ctrl {height:69px; margin:0 -16px}
+    .clinics.map .clinics-ctrl-inner {margin:0 -16px}
+    .clinics-ctrl-fixed .clinics.map .clinics-ctrl-inner {padding:0 16px}
 }
 
 .clinics-filter {width:100%; position:relative; overflow:hidden; display:flex; align-items:center; padding:24px 0 12px 0}
@@ -1847,6 +1851,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 @media (max-width:1099px) {
     .clinics-filter {padding:24px 0}
     .clinics-filter::after {display:none}
+    .clinics-filter {padding:20px 0; display:block}
 }
 
 @media (max-width:767px) {
@@ -1857,7 +1862,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 .clinics.map .clinics-filter::after {display:none}
 
 @media (max-width:1099px) {
-    .clinics.map .clinics-filter {padding:20px 20px 20px 34px; width:auto}
+    .clinics-filter {padding:20px 20px 20px 0; width:auto; overflow:visible}
 }
 
 @media (max-width:767px) {
@@ -1879,9 +1884,8 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 }
 .clinics-filter.active .clinics-filter-link span {display:flex}
 .clinics-filter-params {display:flex; align-items:center; white-space:nowrap}
-.clinics.map .clinics-filter-params {display:none}
 .clinics-filter-param {margin:0 0 0 10px; display:flex; padding:0 16px; height:40px; align-items:center; background:#E6E6EF; border-radius:4px; font-size:13px; line-height:19px; letter-spacing:0.01em}
-.clinics-filter-param a {min-width:12px; max-width:12px; height:12px; margin:0 0 0 10px; position:relative}
+.clinics-filter-param a {min-width:12px; max-width:12px; height:12px; margin:-2px 0 0 10px; position:relative}
 .clinics-filter-param a::before {content:""; position:absolute; left:-10px; top:-10px; right:-10px; bottom:-10px}
 .clinics-filter-param a svg {width:12px; height:12px; fill:#5C5C73; transition:fill 0.2s}
 @media screen and (min-width:1100px) {
@@ -1889,14 +1893,28 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 }
 
 @media (max-width:1099px) {
+    .clinics-filter-link {display:inline-flex}
     .clinics-filter-params {display:none}
+    .clinics-filter-params {margin:10px -54px 0 0; position:relative; overflow:hidden}
+    .clinics-filter-params::after {content:""; position:absolute; right:0; top:0; bottom:0; width:98px; background:linear-gradient(270deg, #F8F8FC 23.53%, rgba(248, 248, 252, 0) 64.47%); pointer-events:none}
+    .clinics.map .clinics-filter-params::after {background:linear-gradient(270deg, #FFFFFF 23.53%, rgba(255, 255, 255, 0) 64.47%)}
+    .clinics-filter.active .clinics-filter-params {display:flex}
+    .clinics-filter-param:first-child {margin:0}
+}
+
+@media (max-width:767px) {
+    .clinics-filter-params {margin:5px 20px 0 0; flex-wrap:wrap}
+    .clinics-filter-params::after {display:none}
+    .clinics-filter-param {margin:5px 5px 0 0}
+    .clinics-filter-param:first-child {margin:5px 5px 0 0}
 }
 
 .clinics-map-list-link {display:none}
 
 @media (max-width:1099px) {
-    .clinics.map .clinics-map-list-link {display:flex}
-    .clinics-map-list-link {flex:1; justify-content:flex-end; margin:0 34px 0 0}
+    .clinics.map .clinics-map-list-link {display:flex; position:absolute; right:0; top:19px}
+    .clinics-ctrl-fixed .clinics.map .clinics-map-list-link {right:34px}
+    .clinics-map-list-link {flex:1; justify-content:flex-end; margin:0}
     .clinics-map-list-link a {min-width:48px; max-width:48px; height:48px}
     .clinics-map-list-link a svg {display:block; width:48px; height:48px; fill:#1C1B1F}
     .clinics-map-list-link a svg:nth-child(2) {display:none}
@@ -1905,6 +1923,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 }
 
 @media (max-width:767px) {
+    .clinics-ctrl-fixed .clinics.map .clinics-map-list-link {right:16px}
     .clinics-map-list-link {margin:0 16px 0 0}
     .clinics-map-list-link a {min-width:36px; max-width:36px; height:36px}
     .clinics-map-list-link a svg {width:36px; height:36px}
@@ -1928,7 +1947,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 .clinics-filter-window-field-content input::-webkit-input-placeholder {opacity:1; color:#A8A8BF}
 .clinics-filter-window-field-content input::-moz-placeholder {opacity:1; color:#A8A8BF}
 .clinics-filter-window-field-content input:-ms-input-placeholder {opacity:1; color:#A8A8BF}
-.clinics-filter-window-field-content .form-input svg {position:absolute; left:16px; top:10px; width:20px; height:20px; fill:none; stroke:#5C5C73; pointer-events:none}
+.clinics-filter-window-field-content .form-input svg {position:absolute; left:16px; top:10px; width:20px; height:20px; fill:none; stroke:#5C5C73; cursor:pointer}
 .clinics-filter-window-field-content .form-select {margin:0}
 .clinics-filter-window-field-content .select2-container .select2-selection--single {height:40px}
 .clinics-filter-window-field-content .select2-container--default .select2-selection--single {font-size:15px; line-height:20px; font-weight:500; border-radius:6px; border-color:#F0F0F7; padding-top:10px}
@@ -1945,7 +1964,8 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 
 @media (max-width:1099px) {
     .clinics-filter-window {margin:-19px 0 0 0}
-    .clinics.map .clinics-filter-window {margin:5px 34px 0 34px; width:calc(100% - 68px)}
+    .clinics.map .clinics-filter-window {margin:5px 0 0 0; width:100%}
+    .clinics-ctrl-fixed .clinics.map .clinics-filter-window {margin:5px 34px 0 34px; width:calc(100% - 68px)}
     .clinics-filter-window-field {min-width:calc(50% - 20px); max-width:calc(50% - 20px)}
     .clinics.map .clinics-filter-window-field {min-width:calc(50% - 20px); max-width:calc(50% - 20px)}
 }
@@ -1969,7 +1989,7 @@ footer {margin:120px 0 0 0; background:#EAE8F7}
 .clinics-list-search input::-webkit-input-placeholder {opacity:1; color:#8D8DA6}
 .clinics-list-search input::-moz-placeholder {opacity:1; color:#8D8DA6}
 .clinics-list-search input:-ms-input-placeholder {opacity:1; color:#8D8DA6}
-.clinics-list-search svg {position:absolute; right:15px; top:23px; width:20px; height:20px; fill:none; stroke:#8D8DA6; pointer-events:none}
+.clinics-list-search svg {position:absolute; right:15px; top:23px; width:20px; height:20px; fill:none; stroke:#8D8DA6; cursor:pointer}
 .clinics-list.loading::after {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(248, 248, 252, 0.8) url(../images/loading-inverse.svg) no-repeat center}
 .clinics-list-container {background:#FFFFFF; border-radius:12px; padding:24px}
 .clinics-list-item {margin:16px 0 0 0; padding:16px 0 0 0; border-top:1px solid #E6E6EF}

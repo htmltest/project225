@@ -1001,6 +1001,7 @@ function updateClinicFilterParams() {
     } else {
         $('.clinics-filter').removeClass('active');
     }
+    $(window).trigger('resize');
 }
 
 var timerUpdateClinicList = null;
@@ -1093,3 +1094,25 @@ function updateClinicMap() {
     clusterer.add(myPlacemarks);
     myMap.geoObjects.add(clusterer);
 }
+
+$(window).on('load resize', function() {
+    $('.clinics-ctrl').each(function() {
+        $('.clinics-ctrl').css({'min-height': $('.clinics-ctrl-inner').outerHeight()});
+    });
+});
+
+$(window).on('load resize scroll', function() {
+    var windowScroll = $(window).scrollTop();
+
+    $('.clinics-ctrl').each(function() {
+        if ($('.clinics').hasClass('map')) {
+            if (windowScroll > $('.clinics-ctrl').offset().top - $('header').height()) {
+                $('html').addClass('clinics-ctrl-fixed');
+            } else {
+                $('html').removeClass('clinics-ctrl-fixed');
+            }
+        } else {
+            $('html').removeClass('clinics-ctrl-fixed');
+        }
+    });
+});
