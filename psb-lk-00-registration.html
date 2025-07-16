@@ -38,16 +38,16 @@
                                 <div class="form-input"><span class="form-input-label">Электронная почта<span>*</span></span><input type="text" name="email" value="" class="required email"><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                 <div class="registration-form-checkbox-nopolis">
                                     <div class="form-checkbox">
-                                        <label><input type="checkbox" name="nopolis" checked><span>Не&nbsp;являюсь застрахованным<b><svg><use xlink:href="images/sprite.svg#icon-checkbox-hint"></use></svg><i>Застрахованное лицо не&nbsp;может отказаться от&nbsp;договора страхования, не&nbsp;являясь ни&nbsp;его стороной, ни&nbsp;выгодоприобретателем по&nbsp;договору.</i></b></span></label>
+                                        <label><input type="checkbox" name="nopolis"><span>Не&nbsp;являюсь застрахованным<b><svg><use xlink:href="images/sprite.svg#icon-checkbox-hint"></use></svg><i>Выберите этот пункт, если у вас нет договора страхования по ДМС.</i></b></span></label>
                                     </div>
                                 </div>
-                                <div class="form-input registration-input-polis"><span class="form-input-label">Номер полиса<span>*</span></span><input type="text" name="polis" value="" class="required"><div class="form-input-hint">Например: 1234-5678-9010-1112-1345</div></div>
+                                <div class="form-input registration-input-polis"><span class="form-input-label">Номер полиса<span>*</span></span><input type="text" name="polis" value="" class="required"><div class="form-input-hint">Например: ЦО-П012-1234567/12345</div></div>
                                 <div class="registration-form-checkboxes">
                                     <div class="form-checkbox">
-                                        <label><input type="checkbox" name="personal" class="required" checked><span>Выражаю свое согласие ООО «ПСБ Страхование»<br> <a href="#">на обработку моих персональных данных</a></span></label>
+                                        <label><input type="checkbox" name="personal" class="required"><span>Выражаю свое согласие ООО&nbsp;&laquo;ПСБ&nbsp;Страхование&raquo;<br> <a href="#">на обработку моих персональных данных</a></span></label>
                                     </div>
                                     <div class="form-checkbox">
-                                        <label><input type="checkbox" name="medical" checked><span>Выражаю свое согласие ООО «ПСБ Страхование»<br> <a href="#">на обработку моих медицинских данных</a></span></label>
+                                        <label><input type="checkbox" name="medical" class="required"><span>Выражаю свое согласие ООО&nbsp;&laquo;ПСБ&nbsp;Страхование&raquo;<br> <a href="#">на использование личного кабинета</a></span></label>
                                     </div>
                                 </div>
                                 <div class="registration-form-ctrl">
@@ -55,7 +55,16 @@
                                         <div class="registration-form-help-container">
                                             <div class="registration-form-help-link">Возникли проблемы?</div>
                                             <div class="registration-form-help-popup">
-                                                В&nbsp;случае возникновения технических проблем обратитесь по&nbsp;бесплатному номеру <a href="tel:+78005118569">8&nbsp;800 511-85-69</a>, либо на&nbsp;почтовый ящик <a href="mailto:lkhelp@psbins.ru">lkhelp@psbins.ru</a>.<br> Время работы тех поддержки: пн-пт с&nbsp;10:00 до&nbsp;18:00 по&nbsp;МСК
+                                                <p>
+                                                    В&nbsp;случае возникновения технических проблем обратитесь по&nbsp;бесплатному номеру&nbsp;
+                                                    <a href="tel:+78005118569" class="auth-code-not-popup-phone"><svg><use xlink:href="images/sprite.svg#icon-phone"></use></svg>8 800 511-85-69</a>
+                                                    либо на&nbsp;почтовый ящик&nbsp;
+                                                    <span class="auth-code-not-popup-email">
+                                                        <span class="auth-code-not-popup-email-value"><a href="mailto:zayavki_itdms@psbins.ru">zayavki_itdms@psbins.ru</a></span>
+                                                        <span class="auth-code-not-popup-email-copy" data-clipboard-text="zayavki_itdms@psbins.ru" data-clipboard-success="E-mail скопирован в буфер"><svg><use xlink:href="images/sprite.svg#icon-copy"></use></svg></span>
+                                                    </span>
+                                                </p>
+                                                <p>Время работы тех поддержки:<br> пн-пт с 10:00 до 18:00 по МСК</p>
                                             </div>
                                         </div>
                                     </div>
