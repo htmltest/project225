@@ -465,7 +465,7 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if (($(e.target).parents().filter('.clinics-ctrl').length == 0 && $(e.target).parents().filter('.select2-container').length == 0) || $(e.target).hasClass('clinics-filter') || $(e.target).hasClass('clinics-map-list-link')) {
+        if (($(e.target).parents().filter('.clinics-ctrl').length == 0 && $(e.target).parents().filter('.select2-container').length == 0) || $(e.target).hasClass('clinics-filter')) {
             $('html').removeClass('clinics-filter-open');
         }
     });
@@ -499,7 +499,6 @@ $(document).ready(function() {
             myMap.setZoom(15);
             myMap.panTo([Number(curItem.attr('data-lat')), Number(curItem.attr('data-lng'))]);
         }
-        $('.clinics').removeClass('map-list-open');
         e.preventDefault();
     });
 
@@ -511,11 +510,6 @@ $(document).ready(function() {
             var curPlacemark = myPlacemarks[i];
             curPlacemark.options.set('iconImageHref', $('.clinics-map').attr('data-icon'));
         }
-        e.preventDefault();
-    });
-
-    $('.clinics-map-list-link a').click(function(e) {
-        $('.clinics').toggleClass('map-list-open');
         e.preventDefault();
     });
 
@@ -643,12 +637,60 @@ $(document).ready(function() {
         alert($('.profile-section-form-field-hint-email-clipboard').attr('data-clipboard-success'));
     });
 
-    $('.policy-help-new-item-contacts-item-copy, .main-polis-text-email-copy').each(function() {
+    $('.policy-help-new-item-contacts-item-copy, .main-polis-text-email-copy, .auth-code-not-popup-email-copy').each(function() {
         var curItem = $(this);
         var clipboardContacts = new ClipboardJS(curItem[0]);
         clipboardContacts.on('success', function(e) {
             alert(curItem.attr('data-clipboard-success'));
         });
+    });
+
+    $('.profile-add-form-ctrl-with-checkboxes').each(function() {
+        if ($('.profile-add-form-ctrl-with-checkboxes .form-checkbox input.required:checked').length == $('.profile-add-form-ctrl-with-checkboxes .form-checkbox input.required').length) {
+            $('.profile-add-form-ctrl-with-checkboxes .btn').prop('disabled', false);
+        } else {
+            $('.profile-add-form-ctrl-with-checkboxes .btn').prop('disabled', true);
+        }
+    });
+
+    $('.profile-add-form-ctrl-with-checkboxes .form-checkbox input').change(function() {
+        if ($('.profile-add-form-ctrl-with-checkboxes .form-checkbox input.required:checked').length == $('.profile-add-form-ctrl-with-checkboxes .form-checkbox input.required').length) {
+            $('.profile-add-form-ctrl-with-checkboxes .btn').prop('disabled', false);
+        } else {
+            $('.profile-add-form-ctrl-with-checkboxes .btn').prop('disabled', true);
+        }
+    });
+
+    $('.registration-form-checkboxes').each(function() {
+        if ($('.registration-form-checkboxes .form-checkbox input.required:checked').length == $('.registration-form-checkboxes .form-checkbox input.required').length) {
+            $('.registration-form-ctrl .btn').prop('disabled', false);
+        } else {
+            $('.registration-form-ctrl .btn').prop('disabled', true);
+        }
+    });
+
+    $('.registration-form-checkboxes .form-checkbox input').change(function() {
+        if ($('.registration-form-checkboxes .form-checkbox input.required:checked').length == $('.registration-form-checkboxes .form-checkbox input.required').length) {
+            $('.registration-form-ctrl .btn').prop('disabled', false);
+        } else {
+            $('.registration-form-ctrl .btn').prop('disabled', true);
+        }
+    });
+
+    $('.dashboard-agreements-form').each(function() {
+        if ($('.dashboard-agreements-form .form-checkbox input.required:checked').length == $('.dashboard-agreements-form .form-checkbox input.required').length) {
+            $('.dashboard-agreements-form-confirm .btn').prop('disabled', false);
+        } else {
+            $('.dashboard-agreements-form-confirm .btn').prop('disabled', true);
+        }
+    });
+
+    $('.dashboard-agreements-form .form-checkbox input').change(function() {
+        if ($('.dashboard-agreements-form .form-checkbox input.required:checked').length == $('.dashboard-agreements-form .form-checkbox input.required').length) {
+            $('.dashboard-agreements-form-confirm .btn').prop('disabled', false);
+        } else {
+            $('.dashboard-agreements-form-confirm .btn').prop('disabled', true);
+        }
     });
 
 });
@@ -1181,25 +1223,3 @@ function updateClinicMap() {
     clusterer.add(myPlacemarks);
     myMap.geoObjects.add(clusterer);
 }
-
-$(window).on('load resize', function() {
-    $('.clinics-ctrl').each(function() {
-        $('.clinics-ctrl').css({'min-height': $('.clinics-ctrl-inner').outerHeight()});
-    });
-});
-
-$(window).on('load resize scroll', function() {
-    var windowScroll = $(window).scrollTop();
-
-    $('.clinics-ctrl').each(function() {
-        if ($('.clinics').hasClass('map')) {
-            if (windowScroll > $('.clinics-ctrl').offset().top - $('header').height()) {
-                $('html').addClass('clinics-ctrl-fixed');
-            } else {
-                $('html').removeClass('clinics-ctrl-fixed');
-            }
-        } else {
-            $('html').removeClass('clinics-ctrl-fixed');
-        }
-    });
-});
